@@ -1,5 +1,6 @@
 import { View, Image, Text, StyleSheet, TextInput, Dimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import MainButton from "../components/MainButton";
 
 
 export default function RegisterScreen() {
@@ -27,28 +28,29 @@ export default function RegisterScreen() {
                     <View style={{ alignItems: "center" }}>
                         <Text style={{ fontSize: 35, color: "#324B49", fontWeight: "bold", textAlign: "center", paddingVertical: 30 }}>Register</Text>
                     </View>
-                    <View style={{ gap: 5 }}>
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Email"
-                        placeholderTextColor={"#c2c2c2"}
-                        keyboardType="email-address"
-                    />
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Password"
-                        placeholderTextColor={"#c2c2c2"}
-                        keyboardType="name-phone-pad"
-                        secureTextEntry={true}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        placeholder="Confirm Password"
-                        placeholderTextColor={"#c2c2c2"}
-                        keyboardType="name-phone-pad"
-                        secureTextEntry={true}
-                    />
-                </View>
+                    <View>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Email"
+                            placeholderTextColor={"#c2c2c2"}
+                            keyboardType="email-address"
+                        />
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Password"
+                            placeholderTextColor={"#c2c2c2"}
+                            keyboardType="name-phone-pad"
+                            secureTextEntry={true}
+                        />
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Confirm Password"
+                            placeholderTextColor={"#c2c2c2"}
+                            keyboardType="name-phone-pad"
+                            secureTextEntry={true}
+                        />
+                    </View>
+                    <MainButton title="Register" style={{marginTop: 30}}/>
                 </View>
             </View>
         </SafeAreaView>
@@ -57,7 +59,7 @@ export default function RegisterScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#F1F1F1",
+        backgroundColor: "#B3E0DB",
         flex: 1,
         position: "relative"
     },
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         top: 175,
-        height: "80%",  
+        height: "80%",
         zIndex: 1,
         elevation: 5,
         padding: 30,
@@ -78,10 +80,10 @@ const styles = StyleSheet.create({
     },
     input: {
         padding: 15,
-        borderRadius: 20,
+        borderRadius: 25,
         marginBottom: 15,
         fontSize: 16,
         borderWidth: 2,
-        borderColor: '#AAD5D1',
+        borderColor: "#B3E0DB",
     },
 })
