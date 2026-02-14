@@ -6,17 +6,10 @@ import { ScrollView } from "react-native";
 
 
 export default function RegisterScreen() {
-    const { width, height } = Dimensions.get("window");
+    const { width } = Dimensions.get("window");
 
     return (
         <SafeAreaView style={styles.container}>
-            {/* <View style={{ margin: 15 }}>
-                <Image source={require("../../assets/paw.png")}
-                    style={{
-                        width: 58,
-                        height: 50,
-                    }} />
-            </View> */}
             <View style={{ width: width, height: "100%", alignItems: "center" }}>
 
                 <Image source={require("../../assets/registation-dog.png")}
