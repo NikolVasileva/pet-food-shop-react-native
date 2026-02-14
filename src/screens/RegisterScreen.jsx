@@ -1,6 +1,8 @@
-import { View, Image, Text, StyleSheet, TextInput, Dimensions } from "react-native";
+import { View, Image, Text, StyleSheet, TextInput, Dimensions, KeyboardAvoidingView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MainButton from "../components/MainButton";
+import { Platform } from "react-native";
+import { ScrollView } from "react-native";
 
 
 export default function RegisterScreen() {
@@ -8,14 +10,15 @@ export default function RegisterScreen() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <View style={{ margin: 15 }}>
+            {/* <View style={{ margin: 15 }}>
                 <Image source={require("../../assets/paw.png")}
                     style={{
                         width: 58,
                         height: 50,
                     }} />
-            </View>
+            </View> */}
             <View style={{ width: width, height: "100%", alignItems: "center" }}>
+
                 <Image source={require("../../assets/registation-dog.png")}
                     style={{
                         width: 300,
@@ -26,9 +29,12 @@ export default function RegisterScreen() {
                     }} />
                 <View style={styles.whiteContainer}>
                     <View style={{ alignItems: "center" }}>
-                        <Text style={{ fontSize: 35, color: "#324B49", fontWeight: "bold", textAlign: "center", paddingVertical: 30 }}>Register</Text>
+                        <Text style={{ fontSize: 35, color: "#324B49", fontWeight: "bold", textAlign: "center", paddingVertical: 20 }}>Register</Text>
                     </View>
-                    <View>
+                    <KeyboardAvoidingView
+                        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                        style={{ flex: 1 }}
+                    >
                         <TextInput
                             style={styles.input}
                             placeholder="Email"
@@ -49,11 +55,13 @@ export default function RegisterScreen() {
                             keyboardType="name-phone-pad"
                             secureTextEntry={true}
                         />
-                    </View>
-                    <MainButton title="Register" style={{marginTop: 30}}/>
+
+                        <MainButton title="Register" style={{ marginTop: 70 }} />
+                        <Text style={{ fontWeight: "bold", color: "#324B49", marginTop: 30, textAlign: "center" }}>Have an account? Log in.</Text>
+                    </KeyboardAvoidingView>
                 </View>
             </View>
-        </SafeAreaView>
+        </SafeAreaView >
     )
 }
 
@@ -72,7 +80,7 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         top: 175,
-        height: "80%",
+        height: "100%",
         zIndex: 1,
         elevation: 5,
         padding: 30,
