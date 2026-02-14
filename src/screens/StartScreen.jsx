@@ -1,9 +1,14 @@
-import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import MainButton from "../components/MainButton";
 
 export default function StartScreen() {
 
-    const { width, height } = Dimensions.get("window")
+    const { width } = Dimensions.get("window");
+
+    const registerPressHandler = () => {
+        console.log("Press")
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -31,9 +36,7 @@ export default function StartScreen() {
             <View style={styles.whiteContainer}>
                 <View style={{paddingHorizontal: 40, paddingVertical: 70, gap: 30, alignItems: "center"}}>
                     <Text style={{ fontSize: 26, fontWeight: "bold", textAlign: "center" }}>Evertything needed for you <Text style={{color: "#B6B2E1"}}>lovely friend</Text>!</Text>
-                    <Pressable style={{width: 300}}>
-                        <Text style={{fontWeight: "bold", fontSize: 22, backgroundColor: "#B3E0DB", paddingHorizontal: 60, paddingVertical: 15, borderRadius: 25, textAlign:"center"}}>Register Now</Text>
-                    </Pressable>
+                    <MainButton title="Register Now" onPress={registerPressHandler}/>
                     <Text style={{fontWeight: "bold"}}>Have an account? Log in.</Text>
                 </View>
             </View>
