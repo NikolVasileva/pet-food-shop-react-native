@@ -2,12 +2,12 @@ import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MainButton from "../components/MainButton";
 
-export default function StartScreen() {
+export default function StartScreen({navigation}) {
 
     const { width } = Dimensions.get("window");
 
     const registerPressHandler = () => {
-        console.log("Press")
+        navigation.navigate("RegisterScreen")
     }
 
     return (
