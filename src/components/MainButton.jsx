@@ -6,7 +6,7 @@ export default function MainButton({
     style,
 }) {
     return (
-        <Pressable onPress={ onPress() } style={[styles.buttonContainer, style]}>
+        <Pressable onPress={onPress} style={[styles.buttonContainer, style]}>
             <View>
                 <Text style={{fontWeight: "bold", fontSize: 22, textAlign: "center"}}>{title}</Text>
             </View>
