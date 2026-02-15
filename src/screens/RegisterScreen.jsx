@@ -23,7 +23,7 @@ export default function RegisterScreen({ navigation }) {
             return Toast.show({
                 type: "error",
                 text1: "All fields are required!",
-                topOffset: 200,
+                topOffset: 160,
             })
         }
 
@@ -31,13 +31,13 @@ export default function RegisterScreen({ navigation }) {
             return Toast.show({
                 type: "error",
                 text1: "Email is required!",
-                topOffset: 200,
+                topOffset: 160,
             })
         } else if (!/\S+@\S+\.\S+/.test(email)) {
             return Toast.show({
                 type: "error",
                 text1: "Please enter a valid email",
-                topOffset: 200,
+                topOffset: 160,
             })
         }
 
@@ -45,13 +45,13 @@ export default function RegisterScreen({ navigation }) {
             return Toast.show({
                 type: "error",
                 text1: "Password is required!",
-                topOffset: 200,
+                topOffset: 160,
             })
         } else if (password.length < 4) {
             return Toast.show({
                 type: "error",
                 text1: "Password must be at least 4 characters!",
-                topOffset: 200,
+                topOffset: 160,
             })
         }
 
@@ -59,7 +59,7 @@ export default function RegisterScreen({ navigation }) {
             return Toast.show({
                 type: "error",
                 text1: "Password missmatch!",
-                topOffset: 200,
+                topOffset: 160,
             })
         }
     }
