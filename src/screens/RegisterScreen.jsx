@@ -3,10 +3,21 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import MainButton from "../components/MainButton";
 import { Platform } from "react-native";
 import { ScrollView } from "react-native";
+import { useState } from "react";
 
 
 export default function RegisterScreen() {
     const { width } = Dimensions.get("window");
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    const registerHandler = () => {
+        if (password !== confirmPassword) {
+            return alert("Password missmatch!")
+        }
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -30,12 +41,16 @@ export default function RegisterScreen() {
                     >
                         <TextInput
                             style={styles.input}
+                            value={email}
+                            onChangeText={setEmail}
                             placeholder="Email"
                             placeholderTextColor={"#c2c2c2"}
                             keyboardType="email-address"
                         />
                         <TextInput
                             style={styles.input}
+                            value={password}
+                            onChangeText={setPassword}
                             placeholder="Password"
                             placeholderTextColor={"#c2c2c2"}
                             keyboardType="name-phone-pad"
@@ -43,13 +58,15 @@ export default function RegisterScreen() {
                         />
                         <TextInput
                             style={styles.input}
+                            value={confirmPassword}
+                            onChangeText={setConfirmPassword}
                             placeholder="Confirm Password"
                             placeholderTextColor={"#c2c2c2"}
                             keyboardType="name-phone-pad"
                             secureTextEntry={true}
                         />
 
-                        <MainButton title="Register" style={{ marginTop: 70 }} />
+                        <MainButton title="Register" onPress={registerHandler} style={{ marginTop: 70 }} />
                         <Text style={{ fontWeight: "bold", color: "#324B49", marginTop: 30, textAlign: "center" }}>Have an account? Log in.</Text>
                     </KeyboardAvoidingView>
                 </View>
