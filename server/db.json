@@ -1,3 +1,9 @@
 {
-    "users": []
+  "users": [
+    {
+      "email": "test@abv.bg",
+      "password": "$2a$10$HF7iVgrPkB8tAgiOR.9tpOdK2T.VbnPmhCO4jEqfvznMNe2niCL8O",
+      "id": 1
+    }
+  ]
 }

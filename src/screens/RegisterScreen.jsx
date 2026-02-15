@@ -4,19 +4,23 @@ import MainButton from "../components/MainButton";
 import { Platform } from "react-native";
 import { ScrollView } from "react-native";
 import { useState } from "react";
+import { register } from "../services/authService";
 
 
-export default function RegisterScreen() {
+export default function RegisterScreen({navigation}) {
     const { width } = Dimensions.get("window");
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
-    const registerHandler = () => {
+    const registerHandler = async () => {
         if (password !== confirmPassword) {
             return alert("Password missmatch!")
         }
+
+        await register(email, password, confirmPassword)
+        navigation.navigate("LoginScreen")
     }
 
     return (

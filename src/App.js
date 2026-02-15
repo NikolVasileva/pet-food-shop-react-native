@@ -4,7 +4,6 @@ import { StyleSheet } from 'react-native';
 import RootNavigator from './navigator/RootNavigator';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AuthProvider from './contexts/auth/AuthProvider';
-import "dotenv/config"
 
 export default function App() {
   return (
