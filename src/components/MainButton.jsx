@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
 export default function MainButton({
     title,
@@ -6,11 +6,11 @@ export default function MainButton({
     style,
 }) {
     return (
-        <Pressable onPress={onPress} style={[styles.buttonContainer, style]}>
+        <TouchableOpacity onPress={onPress} activeOpacity={0.6} style={[styles.buttonContainer, style ]}>
             <View>
                 <Text style={{fontWeight: "bold", fontSize: 22, textAlign: "center"}}>{title}</Text>
             </View>
-        </Pressable>
+        </TouchableOpacity>
     )
 }
 
