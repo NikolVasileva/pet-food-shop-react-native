@@ -3,14 +3,19 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
 import RootNavigator from './navigator/RootNavigator';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import AuthProvider from './contexts/auth/AuthProvider';
 
 export default function App() {
   return (
     <SafeAreaProvider>
-        <NavigationContainer>
-          <StatusBar translucent backgroundColor="transparent" style="dark"/>
+      <NavigationContainer>
+        <StatusBar translucent backgroundColor="transparent" style="dark" />
+
+        <AuthProvider>
           <RootNavigator />
-        </NavigationContainer>
+        </AuthProvider>
+        
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }
