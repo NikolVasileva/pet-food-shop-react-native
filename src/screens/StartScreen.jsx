@@ -1,10 +1,12 @@
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MainButton from "../components/MainButton";
+import useAuth from "../contexts/auth/useAuth";
 
 export default function StartScreen({navigation}) {
 
     const { width } = Dimensions.get("window");
+    // const { isLoading } = useAuth()
 
     const registerPressHandler = () => {
         navigation.navigate("RegisterScreen")
@@ -36,7 +38,7 @@ export default function StartScreen({navigation}) {
             <View style={styles.whiteContainer}>
                 <View style={{paddingHorizontal: 40, paddingVertical: 70, gap: 30, alignItems: "center"}}>
                     <Text style={{ fontSize: 26, fontWeight: "bold", textAlign: "center", color: "#324B49" }}>Evertything needed for you <Text style={{color: "#B6B2E1"}}>lovely friend</Text>!</Text>
-                    <MainButton title="Register Now" onPress={registerPressHandler}/>
+                    <MainButton title="Register Now" onPress={registerPressHandler} />
                     <Text style={{fontWeight: "bold", color: "#324B49"}}>Have an account? Log in.</Text>
                 </View>
             </View>

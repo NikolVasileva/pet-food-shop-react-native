@@ -4,9 +4,10 @@ export default function MainButton({
     title,
     onPress,
     style,
+    disabled = false,
 }) {
     return (
-        <TouchableOpacity onPress={onPress} activeOpacity={0.6} style={[styles.buttonContainer, style ]}>
+        <TouchableOpacity onPress={onPress} activeOpacity={0.6} disabled={disabled} style={[styles.buttonStyle, style ]}>
             <View>
                 <Text style={{fontWeight: "bold", fontSize: 22, textAlign: "center"}}>{title}</Text>
             </View>
@@ -15,10 +16,10 @@ export default function MainButton({
 }
 
 const styles = StyleSheet.create({
-    buttonContainer: {
+    buttonStyle: {
         backgroundColor: "#B3E0DB", 
         paddingHorizontal: 60, 
         paddingVertical: 15, 
         borderRadius: 25, 
-    }
+    },
 })

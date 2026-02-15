@@ -4,8 +4,9 @@ import MainButton from "../components/MainButton";
 import { Platform } from "react-native";
 import { ScrollView } from "react-native";
 import { useState } from "react";
-import { register } from "../services/authService";
 import Toast from "react-native-toast-message";
+import { useAuth } from "../contexts/auth/useAuth";
+
 
 
 export default function RegisterScreen({ navigation }) {
@@ -14,6 +15,7 @@ export default function RegisterScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const { register, isLoading } = useAuth()
 
     const validate = () => {
 
@@ -119,7 +121,7 @@ export default function RegisterScreen({ navigation }) {
                                 secureTextEntry={true}
                             />
 
-                            <MainButton title="Register" onPress={registerHandler} style={{ marginTop: 70 }} />
+                            <MainButton title="Register" onPress={registerHandler} disabled={isLoading} style={{ marginTop: 70 }} />
                             <Text style={{ fontWeight: "bold", color: "#324B49", marginTop: 30, textAlign: "center" }}>Have an account? Log in.</Text>
                         </ScrollView>
                     </KeyboardAvoidingView>
