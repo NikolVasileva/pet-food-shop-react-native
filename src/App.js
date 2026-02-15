@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import RootNavigator from './navigator/RootNavigator';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AuthProvider from './contexts/auth/AuthProvider';
+import Toast from 'react-native-toast-message';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <RootNavigator />
         </AuthProvider>
 
+        <Toast />
       </NavigationContainer>
     </SafeAreaProvider>
   );

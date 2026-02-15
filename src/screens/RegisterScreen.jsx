@@ -5,18 +5,29 @@ import { Platform } from "react-native";
 import { ScrollView } from "react-native";
 import { useState } from "react";
 import { register } from "../services/authService";
+import Toast from "react-native-toast-message";
 
 
-export default function RegisterScreen({navigation}) {
+export default function RegisterScreen({ navigation }) {
     const { width } = Dimensions.get("window");
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    // const validate = () => {
+    //     if(!email.trim()) {
+    //         Toast.error("Email is required")
+    //     }
+    // }
+
     const registerHandler = async () => {
         if (password !== confirmPassword) {
-            return alert("Password missmatch!")
+            return Toast.show({
+                type: "error",
+                text1: "Password missmatch!",
+                topOffset: 200,
+            })
         }
 
         await register(email, password, confirmPassword)
@@ -41,37 +52,41 @@ export default function RegisterScreen({navigation}) {
                     </View>
                     <KeyboardAvoidingView
                         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-                        style={{ flex: 1 }}
-                    >
-                        <TextInput
-                            style={styles.input}
-                            value={email}
-                            onChangeText={setEmail}
-                            placeholder="Email"
-                            placeholderTextColor={"#c2c2c2"}
-                            keyboardType="email-address"
-                        />
-                        <TextInput
-                            style={styles.input}
-                            value={password}
-                            onChangeText={setPassword}
-                            placeholder="Password"
-                            placeholderTextColor={"#c2c2c2"}
-                            keyboardType="name-phone-pad"
-                            secureTextEntry={true}
-                        />
-                        <TextInput
-                            style={styles.input}
-                            value={confirmPassword}
-                            onChangeText={setConfirmPassword}
-                            placeholder="Confirm Password"
-                            placeholderTextColor={"#c2c2c2"}
-                            keyboardType="name-phone-pad"
-                            secureTextEntry={true}
-                        />
+                        style={{ flex: 1 }}>
+                        <ScrollView
+                            contentContainerStyle={styles.scrollContent}
+                            keyboardShouldPersistTaps="handled"
+                        >
+                            <TextInput
+                                style={styles.input}
+                                value={email}
+                                onChangeText={setEmail}
+                                placeholder="Email"
+                                placeholderTextColor={"#c2c2c2"}
+                                keyboardType="email-address"
+                            />
+                            <TextInput
+                                style={styles.input}
+                                value={password}
+                                onChangeText={setPassword}
+                                placeholder="Password"
+                                placeholderTextColor={"#c2c2c2"}
+                                keyboardType="name-phone-pad"
+                                secureTextEntry={true}
+                            />
+                            <TextInput
+                                style={styles.input}
+                                value={confirmPassword}
+                                onChangeText={setConfirmPassword}
+                                placeholder="Confirm Password"
+                                placeholderTextColor={"#c2c2c2"}
+                                keyboardType="name-phone-pad"
+                                secureTextEntry={true}
+                            />
 
-                        <MainButton title="Register" onPress={registerHandler} style={{ marginTop: 70 }} />
-                        <Text style={{ fontWeight: "bold", color: "#324B49", marginTop: 30, textAlign: "center" }}>Have an account? Log in.</Text>
+                            <MainButton title="Register" onPress={registerHandler} style={{ marginTop: 70 }} />
+                            <Text style={{ fontWeight: "bold", color: "#324B49", marginTop: 30, textAlign: "center" }}>Have an account? Log in.</Text>
+                        </ScrollView>
                     </KeyboardAvoidingView>
                 </View>
             </View>
