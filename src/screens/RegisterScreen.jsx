@@ -15,13 +15,44 @@ export default function RegisterScreen({ navigation }) {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
-    // const validate = () => {
-    //     if(!email.trim()) {
-    //         Toast.error("Email is required")
-    //     }
-    // }
+    const validate = () => {
 
-    const registerHandler = async () => {
+        if (!email && !password && !confirmPassword) {
+            return Toast.show({
+                type: "error",
+                text1: "All fields are required!",
+                topOffset: 200,
+            })
+        }
+
+        if(!email.trim()) {
+            return Toast.show({
+                type: "error",
+                text1: "Email is required!",
+                topOffset: 200,
+            })
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            return Toast.show({
+                type: "error",
+                text1: "Please enter a valid email",
+                topOffset: 200,
+            })
+        }
+
+        if (!password) {
+            return Toast.show({
+                type: "error",
+                text1: "Password is required!",
+                topOffset: 200,
+            })
+        } else if (password.length < 4) {
+            return Toast.show({
+                type: "error",
+                text1: "Password must be at least 4 characters!",
+                topOffset: 200,
+            })
+        }
+
         if (password !== confirmPassword) {
             return Toast.show({
                 type: "error",
@@ -29,6 +60,10 @@ export default function RegisterScreen({ navigation }) {
                 topOffset: 200,
             })
         }
+    }
+
+    const registerHandler = async () => {
+        if (!validate()) return
 
         await register(email, password, confirmPassword)
         navigation.navigate("LoginScreen")
