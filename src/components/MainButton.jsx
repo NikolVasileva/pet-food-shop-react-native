@@ -9,7 +9,7 @@ export default function MainButton({
     return (
         <TouchableOpacity onPress={onPress} activeOpacity={0.6} disabled={disabled} style={[styles.buttonStyle, style ]}>
             <View>
-                <Text style={{fontWeight: "bold", fontSize: 22, textAlign: "center"}}>{title}</Text>
+                <Text style={{fontWeight: "bold", fontSize: 22, textAlign: "center", color: "#fff"}}>{title}</Text>
             </View>
         </TouchableOpacity>
     )
@@ -17,7 +17,8 @@ export default function MainButton({
 
 const styles = StyleSheet.create({
     buttonStyle: {
-        backgroundColor: "#B3E0DB", 
+        // backgroundColor: "#B3E0DB", 
+        backgroundColor: "#00B8BD",
         paddingHorizontal: 60, 
         paddingVertical: 15, 
         borderRadius: 25, 

@@ -37,7 +37,7 @@ export default function StartScreen({navigation}) {
             </View>
             <View style={styles.whiteContainer}>
                 <View style={{paddingHorizontal: 40, paddingVertical: 70, gap: 30, alignItems: "center"}}>
-                    <Text style={{ fontSize: 26, fontWeight: "bold", textAlign: "center", color: "#324B49" }}>Evertything needed for you <Text style={{color: "#B6B2E1"}}>lovely friend</Text>!</Text>
+                    <Text style={{ fontSize: 26, fontWeight: "bold", textAlign: "center", color: "#324B49" }}>Evertything needed for you <Text style={{color: "#00B8BD"}}>lovely friend</Text>!</Text>
                     <MainButton title="Register Now" onPress={registerPressHandler} />
                     <Text style={{fontWeight: "bold", color: "#324B49"}}>Have an account? Log in.</Text>
                 </View>
@@ -48,7 +48,8 @@ export default function StartScreen({navigation}) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#B3E0DB",
+        // backgroundColor: "#B3E0DB",
+        backgroundColor: "#00B8BD",
         flex: 1,
     },
     whiteContainer: {
