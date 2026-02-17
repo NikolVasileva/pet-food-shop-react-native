@@ -1,4 +1,4 @@
-import { View, Image, Text, StyleSheet, TextInput, Dimensions, KeyboardAvoidingView } from "react-native";
+import { View, Image, Text, StyleSheet, TextInput, Dimensions, KeyboardAvoidingView, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MainButton from "../components/MainButton";
 import { Platform } from "react-native";
@@ -6,6 +6,7 @@ import { ScrollView } from "react-native";
 import { useState } from "react";
 import Toast from "react-native-toast-message";
 import { useAuth } from "../contexts/auth/useAuth";
+import { FontAwesome } from "@expo/vector-icons";
 
 
 
@@ -17,7 +18,8 @@ export default function RegisterScreen({ navigation }) {
     const [confirmPassword, setConfirmPassword] = useState("");
     const { register, isLoading } = useAuth()
 
-    const [isFocusedField, setIsFocusedField] = useState(null)
+    const [isFocusedField, setIsFocusedField] = useState(null);
+    const [showPassword, setShowPassword] = useState(false);
 
     const validate = () => {
 
@@ -29,7 +31,7 @@ export default function RegisterScreen({ navigation }) {
             })
         }
 
-        if(!email.trim()) {
+        if (!email.trim()) {
             return Toast.show({
                 type: "error",
                 text1: "Email is required!",
@@ -97,7 +99,7 @@ export default function RegisterScreen({ navigation }) {
                             keyboardShouldPersistTaps="handled"
                         >
                             <TextInput
-                                style={[styles.input, isFocusedField === "email" ? styles.inputFocused : "null"]}
+                                style={[styles.input, isFocusedField === "email" && styles.inputFocused]}
                                 value={email}
                                 onChangeText={setEmail}
                                 placeholder="Email"
@@ -108,21 +110,35 @@ export default function RegisterScreen({ navigation }) {
                                 onFocus={() => setIsFocusedField("email")}
                                 onBlur={() => setIsFocusedField(null)}
                             />
+                            <View>
+                                <TextInput
+                                    style={[styles.input, isFocusedField === "password" && styles.inputFocused]}
+                                    value={password}
+                                    onChangeText={setPassword}
+                                    placeholder="Password"
+                                    placeholderTextColor={"#c2c2c2"}
+                                    keyboardType="name-phone-pad"
+                                    autoCapitalize="none"
+                                    secureTextEntry={!showPassword}
+                                    autoCorrect={false}
+                                    onFocus={() => setIsFocusedField("password")}
+                                    onBlur={() => setIsFocusedField(null)}
+                                />
+                                <FontAwesome
+                                    name={showPassword ? "eye" : "eye-slash"}
+                                    size={18}
+                                    color="#007175"
+                                    style={{
+                                        position: "absolute",
+                                        right: 20,
+                                        top: 18,
+                                    }}
+                                    onPress={() => setShowPassword(!showPassword)}
+                                />
+
+                            </View>
                             <TextInput
-                                style={[styles.input, isFocusedField === "password" ? styles.inputFocused : "null"]}
-                                value={password}
-                                onChangeText={setPassword}
-                                placeholder="Password"
-                                placeholderTextColor={"#c2c2c2"}
-                                keyboardType="name-phone-pad"
-                                autoCapitalize="none"
-                                secureTextEntry={true}
-                                autoCorrect={false}
-                                onFocus={() => setIsFocusedField("password")}
-                                onBlur={() => setIsFocusedField(null)}
-                            />
-                            <TextInput
-                                style={[styles.input, isFocusedField === "confirmPassword" ? styles.inputFocused : "null"]}
+                                style={[styles.input, isFocusedField === "confirmPassword" && styles.inputFocused]}
                                 value={confirmPassword}
                                 onChangeText={setConfirmPassword}
                                 placeholder="Confirm Password"
@@ -179,5 +195,5 @@ const styles = StyleSheet.create({
     inputFocused: {
         borderColor: "#4A90E2",
         backgroundColor: "#F0F7FF",
-      },
+    },
 })
