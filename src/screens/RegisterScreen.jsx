@@ -101,6 +101,8 @@ export default function RegisterScreen({ navigation }) {
                                 placeholder="Email"
                                 placeholderTextColor={"#c2c2c2"}
                                 keyboardType="email-address"
+                                autoCapitalize="none"
+                                autoCorrect={false}
                             />
                             <TextInput
                                 style={styles.input}
@@ -109,7 +111,9 @@ export default function RegisterScreen({ navigation }) {
                                 placeholder="Password"
                                 placeholderTextColor={"#c2c2c2"}
                                 keyboardType="name-phone-pad"
+                                autoCapitalize="none"
                                 secureTextEntry={true}
+                                autoCorrect={false}
                             />
                             <TextInput
                                 style={styles.input}
@@ -118,7 +122,9 @@ export default function RegisterScreen({ navigation }) {
                                 placeholder="Confirm Password"
                                 placeholderTextColor={"#c2c2c2"}
                                 keyboardType="name-phone-pad"
+                                autoCapitalize="none"
                                 secureTextEntry={true}
+                                autoCorrect={false}
                             />
 
                             <MainButton title="Register" onPress={registerHandler} disabled={isLoading} style={{ marginTop: 70 }} />
