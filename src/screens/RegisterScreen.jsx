@@ -17,6 +17,8 @@ export default function RegisterScreen({ navigation }) {
     const [confirmPassword, setConfirmPassword] = useState("");
     const { register, isLoading } = useAuth()
 
+    const [isFocusedField, setIsFocusedField] = useState(null)
+
     const validate = () => {
 
         if (!email && !password && !confirmPassword) {
@@ -95,7 +97,7 @@ export default function RegisterScreen({ navigation }) {
                             keyboardShouldPersistTaps="handled"
                         >
                             <TextInput
-                                style={styles.input}
+                                style={[styles.input, isFocusedField === "email" ? styles.inputFocused : "null"]}
                                 value={email}
                                 onChangeText={setEmail}
                                 placeholder="Email"
@@ -103,9 +105,11 @@ export default function RegisterScreen({ navigation }) {
                                 keyboardType="email-address"
                                 autoCapitalize="none"
                                 autoCorrect={false}
+                                onFocus={() => setIsFocusedField("email")}
+                                onBlur={() => setIsFocusedField(null)}
                             />
                             <TextInput
-                                style={styles.input}
+                                style={[styles.input, isFocusedField === "password" ? styles.inputFocused : "null"]}
                                 value={password}
                                 onChangeText={setPassword}
                                 placeholder="Password"
@@ -114,9 +118,11 @@ export default function RegisterScreen({ navigation }) {
                                 autoCapitalize="none"
                                 secureTextEntry={true}
                                 autoCorrect={false}
+                                onFocus={() => setIsFocusedField("password")}
+                                onBlur={() => setIsFocusedField(null)}
                             />
                             <TextInput
-                                style={styles.input}
+                                style={[styles.input, isFocusedField === "confirmPassword" ? styles.inputFocused : "null"]}
                                 value={confirmPassword}
                                 onChangeText={setConfirmPassword}
                                 placeholder="Confirm Password"
@@ -125,6 +131,8 @@ export default function RegisterScreen({ navigation }) {
                                 autoCapitalize="none"
                                 secureTextEntry={true}
                                 autoCorrect={false}
+                                onFocus={() => setIsFocusedField("confirmPassword")}
+                                onBlur={() => setIsFocusedField(null)}
                             />
 
                             <MainButton title="Register" onPress={registerHandler} disabled={isLoading} style={{ marginTop: 70 }} />
@@ -139,7 +147,9 @@ export default function RegisterScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#B3E0DB",
+        // backgroundColor: "#B4FAF8",
+        // backgroundColor: "#CFFCFB",
+        backgroundColor: "#00B8BD",
         flex: 1,
         position: "relative"
     },
@@ -164,6 +174,10 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         fontSize: 16,
         borderWidth: 2,
-        borderColor: "#B3E0DB",
+        borderColor: "#00B8BD",
     },
+    inputFocused: {
+        borderColor: "#4A90E2",
+        backgroundColor: "#F0F7FF",
+      },
 })
