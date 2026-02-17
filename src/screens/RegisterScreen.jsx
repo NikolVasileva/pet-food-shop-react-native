@@ -20,6 +20,7 @@ export default function RegisterScreen({ navigation }) {
 
     const [isFocusedField, setIsFocusedField] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const validate = () => {
 
@@ -137,19 +138,32 @@ export default function RegisterScreen({ navigation }) {
                                 />
 
                             </View>
-                            <TextInput
-                                style={[styles.input, isFocusedField === "confirmPassword" && styles.inputFocused]}
-                                value={confirmPassword}
-                                onChangeText={setConfirmPassword}
-                                placeholder="Confirm Password"
-                                placeholderTextColor={"#c2c2c2"}
-                                keyboardType="name-phone-pad"
-                                autoCapitalize="none"
-                                secureTextEntry={true}
-                                autoCorrect={false}
-                                onFocus={() => setIsFocusedField("confirmPassword")}
-                                onBlur={() => setIsFocusedField(null)}
-                            />
+                            <View>
+                                <TextInput
+                                    style={[styles.input, isFocusedField === "confirmPassword" && styles.inputFocused]}
+                                    value={confirmPassword}
+                                    onChangeText={setConfirmPassword}
+                                    placeholder="Confirm Password"
+                                    placeholderTextColor={"#c2c2c2"}
+                                    keyboardType="name-phone-pad"
+                                    autoCapitalize="none"
+                                    secureTextEntry={true}
+                                    autoCorrect={false}
+                                    onFocus={() => setIsFocusedField("confirmPassword")}
+                                    onBlur={() => setIsFocusedField(null)}
+                                />
+                                <FontAwesome
+                                    name={showConfirmPassword ? "eye" : "eye-slash"}
+                                    size={18}
+                                    color="#007175"
+                                    style={{
+                                        position: "absolute",
+                                        right: 20,
+                                        top: 18,
+                                    }}
+                                    onPress={() => setShowConfirmPassword(!showConfirmPassword)}
+                                />
+                            </View>
 
                             <MainButton title="Register" onPress={registerHandler} disabled={isLoading} style={{ marginTop: 70 }} />
                             <Text style={{ fontWeight: "bold", color: "#324B49", marginTop: 30, textAlign: "center" }}>Have an account? Log in.</Text>
