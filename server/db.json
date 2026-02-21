@@ -4,6 +4,16 @@
       "email": "test@abv.bg",
       "password": "$2a$10$HF7iVgrPkB8tAgiOR.9tpOdK2T.VbnPmhCO4jEqfvznMNe2niCL8O",
       "id": 1
+    },
+    {
+      "email": "rr@fff.gg",
+      "password": "$2a$10$DbxKfIvhsXRdsRa0lNf4bOIn.pt06hKeeC2GBLXt1szKmx3FZmlwq",
+      "id": 2
+    },
+    {
+      "email": "tisyyyyy@abv.bg",
+      "password": "$2a$10$7xfIsXJm0g2yG/GXIi7mbeD5IFRkTcvu8cNQ/YRvt.zu9jdEwkzUe",
+      "id": 3
     }
   ]
 }

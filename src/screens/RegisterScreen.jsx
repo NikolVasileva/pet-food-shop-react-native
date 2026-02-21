@@ -16,7 +16,7 @@ export default function RegisterScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const { register, isLoading } = useAuth()
+    const { register, isLoading, error, clearError } = useAuth()
 
     const [isFocusedField, setIsFocusedField] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
@@ -67,14 +67,31 @@ export default function RegisterScreen({ navigation }) {
                 topOffset: 160,
             })
         }
+        return true
     }
 
     const registerHandler = async () => {
-        if (!validate()) return
-
-        await register(email, password, confirmPassword)
-        navigation.navigate("LoginScreen")
-    }
+        if (!validate()) return;
+    
+        const result = await register(email, password);
+    
+        if (!result.success) {
+            Toast.show({
+                type: "error",
+                text1: result.message,
+                topOffset: 160,
+            });
+            clearError();
+            return; 
+        }
+    
+        Toast.show({
+            type: "success",
+            text1: "Registration successful!",
+            topOffset: 160,
+        });
+        navigation.navigate("LoginScreen");
+    };
 
     return (
         <SafeAreaView style={styles.container}>
@@ -147,7 +164,7 @@ export default function RegisterScreen({ navigation }) {
                                     placeholderTextColor={"#c2c2c2"}
                                     keyboardType="name-phone-pad"
                                     autoCapitalize="none"
-                                    secureTextEntry={true}
+                                    secureTextEntry={!showConfirmPassword}
                                     autoCorrect={false}
                                     onFocus={() => setIsFocusedField("confirmPassword")}
                                     onBlur={() => setIsFocusedField(null)}
