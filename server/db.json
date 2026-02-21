@@ -34,6 +34,11 @@
       "email": "tesrtt@gf.jk",
       "password": "$2a$10$/1ypVfkmm2sHXayIrrdTmOakcIhuYnX4Dnsddh/HuRdUFZkKKIcaS",
       "id": 7
+    },
+    {
+      "email": "nikol@abv.bg",
+      "password": "$2a$10$KrT8FAsDauzAMHMiD1Wlz.Ol8s3qfWiMR3.q.5iolD2211RpZPLca",
+      "id": 8
     }
   ]
 }

@@ -1,9 +1,9 @@
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MainButton from "../components/MainButton";
 import useAuth from "../contexts/auth/useAuth";
 
-export default function StartScreen({navigation}) {
+export default function StartScreen({ navigation }) {
 
     const { width } = Dimensions.get("window");
     // const { isLoading } = useAuth()
@@ -36,10 +36,14 @@ export default function StartScreen({navigation}) {
                     }} />
             </View>
             <View style={styles.whiteContainer}>
-                <View style={{paddingHorizontal: 40, paddingVertical: 70, gap: 30, alignItems: "center"}}>
-                    <Text style={{ fontSize: 26, fontWeight: "bold", textAlign: "center", color: "#324B49" }}>Evertything needed for you <Text style={{color: "#00B8BD"}}>lovely friend</Text>!</Text>
+                <View style={{ paddingHorizontal: 40, paddingVertical: 70, gap: 30, alignItems: "center" }}>
+                    <Text style={{ fontSize: 26, fontWeight: "bold", textAlign: "center", color: "#324B49" }}>Evertything needed for you <Text style={{ color: "#00B8BD" }}>lovely friend</Text>!</Text>
                     <MainButton title="Register Now" onPress={registerPressHandler} />
-                    <Text style={{fontWeight: "bold", color: "#324B49"}}>Have an account? Log in.</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
+                        <Text style={styles.linkText}>
+                            Have an account? Log in.
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </SafeAreaView>
@@ -53,12 +57,21 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     whiteContainer: {
-        backgroundColor: "#fff", 
-        borderTopLeftRadius: 80, 
-        borderTopRightRadius: 80, 
-        zIndex: 100, 
-        justifyContent: "space-between", 
-        position: "absolute", 
+        backgroundColor: "#fff",
+        borderTopLeftRadius: 80,
+        borderTopRightRadius: 80,
+        zIndex: 100,
+        justifyContent: "space-between",
+        position: "absolute",
         bottom: 0,
+    },
+    linkText: {
+        fontSize: 14,
+        fontWeight: "bold", 
+        color: "#324B49", 
+        marginTop: 30, 
+        textAlign: "center",
+        textDecorationLine: "underline",
+        textDecorationColor: "#324B49", 
     },
 })

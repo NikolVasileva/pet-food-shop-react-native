@@ -1,4 +1,4 @@
-import { View, Image, Text, StyleSheet, TextInput, Dimensions, KeyboardAvoidingView, } from "react-native";
+import { View, Image, Text, StyleSheet, TextInput, Dimensions, KeyboardAvoidingView, TouchableOpacity, } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MainButton from "../components/MainButton";
 import { Platform } from "react-native";
@@ -68,7 +68,7 @@ export default function RegisterScreen({ navigation }) {
     // };
 
     const registerHandler = async () => {
-        if (!validate()) return; 
+        if (!validate()) return;
         clearError();
 
         try {
@@ -214,7 +214,12 @@ export default function RegisterScreen({ navigation }) {
                             </View>
 
                             <MainButton title="Register" onPress={registerHandler} disabled={isLoading} style={{ marginTop: 70 }} />
-                            <Text style={{ fontWeight: "bold", color: "#324B49", marginTop: 30, textAlign: "center" }}>Have an account? Log in.</Text>
+                            {/* <Text style={{ fontWeight: "bold", color: "#324B49", marginTop: 30, textAlign: "center" }}>Have an account? Log in.</Text> */}
+                            <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
+                                <Text style={styles.linkText}>
+                                    Have an account? Log in.
+                                </Text>
+                            </TouchableOpacity>
                         </ScrollView>
                     </KeyboardAvoidingView>
                 </View>
@@ -268,5 +273,14 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         marginLeft: 15,
         fontSize: 14,
-    }
+    },
+    linkText: {
+        fontSize: 14,
+        fontWeight: "bold", 
+        color: "#324B49", 
+        marginTop: 30, 
+        textAlign: "center",
+        textDecorationLine: "underline",
+        textDecorationColor: "#324B49", 
+    },
 })
