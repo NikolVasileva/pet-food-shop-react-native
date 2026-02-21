@@ -164,7 +164,7 @@ export default function RegisterScreen({ navigation }) {
                                 <FontAwesome
                                     name={showPassword ? "eye" : "eye-slash"}
                                     size={18}
-                                    color="#007175"
+                                    color="#473000"
                                     style={{
                                         position: "absolute",
                                         right: 20,
@@ -181,6 +181,10 @@ export default function RegisterScreen({ navigation }) {
                                     Don't have an account? Register.
                                 </Text>
                             </TouchableOpacity>
+                            <View style={styles.demoInfo}>
+                                <Text style={styles.demoTitle}>Demo Account:</Text>
+                                <Text style={styles.demoText}>test@abv.bg / test</Text>
+                            </View>
                         </ScrollView>
                     </KeyboardAvoidingView>
                 </View>
@@ -237,11 +241,28 @@ const styles = StyleSheet.create({
     },
     linkText: {
         fontSize: 14,
-        fontWeight: "bold", 
+        fontWeight: "bold",
         color: "#324B49", 
-        marginTop: 30, 
+        marginTop: 30,
         textAlign: "center",
         textDecorationLine: "underline",
-        textDecorationColor: "#324B49", 
+        textDecorationColor: "#324B49",
+    },
+    demoInfo: {
+        marginTop: 40,
+        padding: 16,
+        backgroundColor: "#FFE9B5",
+        borderRadius: 12,
+        alignItems: "center",
+    },
+    demoTitle: {
+        fontSize: 12,
+        color: "#324B49",
+        fontWeight: "600",
+        marginBottom: 4,
+    },
+    demoText: {
+        fontSize: 13,
+        color: "#324B49",
     },
 })

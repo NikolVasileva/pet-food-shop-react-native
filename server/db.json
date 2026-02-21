@@ -2,48 +2,8 @@
   "users": [
     {
       "email": "test@abv.bg",
-      "password": "$2a$10$HF7iVgrPkB8tAgiOR.9tpOdK2T.VbnPmhCO4jEqfvznMNe2niCL8O",
+      "password": "$2a$10$C.T.4FzER4dQUbijJ96QFOas9FJqAwa8MIP5hcWzSNT.Y081fTV86",
       "id": 1
-    },
-    {
-      "email": "rr@fff.gg",
-      "password": "$2a$10$DbxKfIvhsXRdsRa0lNf4bOIn.pt06hKeeC2GBLXt1szKmx3FZmlwq",
-      "id": 2
-    },
-    {
-      "email": "tisyyyyy@abv.bg",
-      "password": "$2a$10$7xfIsXJm0g2yG/GXIi7mbeD5IFRkTcvu8cNQ/YRvt.zu9jdEwkzUe",
-      "id": 3
-    },
-    {
-      "email": "bh@gh.hg",
-      "password": "$2a$10$ZRmQcHCtbIdzNG55WUaMeulC7ZTxxmzwLKp/6VSwPM0A/a2wo.9ta",
-      "id": 4
-    },
-    {
-      "email": "ggf@abv.bg",
-      "password": "$2a$10$QkX8rMljwpGZ5dEP0GkAw.0jcwbnWyfS.cqzSVXqbz57QV8ea2Mw2",
-      "id": 5
-    },
-    {
-      "email": "tetsttttt@abv.bg",
-      "password": "$2a$10$l8wAbzrX/W/XADoGL1uG2OWnSDAYMyyM1Wst/vvBX7Y/lCZ.SpKXe",
-      "id": 6
-    },
-    {
-      "email": "tesrtt@gf.jk",
-      "password": "$2a$10$/1ypVfkmm2sHXayIrrdTmOakcIhuYnX4Dnsddh/HuRdUFZkKKIcaS",
-      "id": 7
-    },
-    {
-      "email": "nikol@abv.bg",
-      "password": "$2a$10$KrT8FAsDauzAMHMiD1Wlz.Ol8s3qfWiMR3.q.5iolD2211RpZPLca",
-      "id": 8
-    },
-    {
-      "email": "nikolvas@abv.bg",
-      "password": "$2a$10$S5U7NJEnWkpy5qPAKyBD4Oe8DLpmb2dflOKqTyJHU0IzhKN4FzPOG",
-      "id": 9
     }
   ]
 }
