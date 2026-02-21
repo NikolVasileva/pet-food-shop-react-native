@@ -22,75 +22,82 @@ export default function RegisterScreen({ navigation }) {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+    const [fieldErrors, setFieldErrors] = useState({
+        email: false,
+        password: false,
+        confirmPassword: false,
+    });
+
     const validate = () => {
+        const errors = { email: "", password: "", confirmPassword: "" };
 
-        if (!email && !password && !confirmPassword) {
-            return Toast.show({
-                type: "error",
-                text1: "All fields are required!",
-                topOffset: 160,
-            })
-        }
+        if (!email.trim()) errors.email = "Email is required!";
+        else if (!/\S+@\S+\.\S+/.test(email)) errors.email = "Please enter a valid email";
 
-        if (!email.trim()) {
-            return Toast.show({
-                type: "error",
-                text1: "Email is required!",
-                topOffset: 160,
-            })
-        } else if (!/\S+@\S+\.\S+/.test(email)) {
-            return Toast.show({
-                type: "error",
-                text1: "Please enter a valid email",
-                topOffset: 160,
-            })
-        }
+        if (!password) errors.password = "Password is required!";
+        else if (password.length < 4) errors.password = "Password must be at least 4 characters!";
 
-        if (!password) {
-            return Toast.show({
-                type: "error",
-                text1: "Password is required!",
-                topOffset: 160,
-            })
-        } else if (password.length < 4) {
-            return Toast.show({
-                type: "error",
-                text1: "Password must be at least 4 characters!",
-                topOffset: 160,
-            })
-        }
+        if (password !== confirmPassword) errors.confirmPassword = "Passwords do not match!";
 
-        if (password !== confirmPassword) {
-            return Toast.show({
-                type: "error",
-                text1: "Password missmatch!",
-                topOffset: 160,
-            })
-        }
-        return true
-    }
+        setFieldErrors(errors);
+
+        return !Object.values(errors).some(Boolean);
+    };
+
+    // const registerHandler = async () => {
+    //     if (!validate()) return;
+
+    //     const result = await register(email, password);
+
+    //     if (!result.success) {
+    //         Toast.show({
+    //             type: "error",
+    //             text1: result.message,
+    //             topOffset: 160,
+    //         });
+    //         clearError();
+    //         return; 
+    //     }
+
+    //     Toast.show({
+    //         type: "success",
+    //         text1: "Registration successful!",
+    //         topOffset: 160,
+    //     });
+    //     navigation.navigate("LoginScreen");
+    // };
 
     const registerHandler = async () => {
-        if (!validate()) return;
-    
-        const result = await register(email, password);
-    
-        if (!result.success) {
+        if (!validate()) return; 
+        clearError();
+
+        try {
+            const result = await register(email, password);
+
+            if (!result.success) {
+                Toast.show({
+                    type: "error",
+                    text1: result.message || "Registration failed",
+                    topOffset: 160,
+                });
+                setFieldErrors((prev) => ({ ...prev, email: " " }));
+                return;
+            }
+
             Toast.show({
-                type: "error",
-                text1: result.message,
+                type: "success",
+                text1: "Registration successful!",
                 topOffset: 160,
             });
-            clearError();
-            return; 
+
+            navigation.navigate("LoginScreen");
+        } catch (error) {
+            Toast.show({
+                type: "error",
+                text1: err.message || "Something went wrong!",
+                topOffset: 160,
+            });
         }
-    
-        Toast.show({
-            type: "success",
-            text1: "Registration successful!",
-            topOffset: 160,
-        });
-        navigation.navigate("LoginScreen");
     };
 
     return (
@@ -116,10 +123,18 @@ export default function RegisterScreen({ navigation }) {
                             contentContainerStyle={styles.scrollContent}
                             keyboardShouldPersistTaps="handled"
                         >
+
+                            {fieldErrors.email ? (
+                                <Text style={styles.errorText}>{fieldErrors.email}</Text>
+                            ) : null}
                             <TextInput
-                                style={[styles.input, isFocusedField === "email" && styles.inputFocused]}
+                                style={[styles.input, isFocusedField === "email" && styles.inputFocused, fieldErrors.email && styles.inputError]}
                                 value={email}
-                                onChangeText={setEmail}
+                                // onChangeText={setEmail}
+                                onChangeText={(text) => {
+                                    setEmail(text);
+                                    setFieldErrors((prev) => ({ ...prev, email: "" }));
+                                }}
                                 placeholder="Email"
                                 placeholderTextColor={"#c2c2c2"}
                                 keyboardType="email-address"
@@ -128,11 +143,20 @@ export default function RegisterScreen({ navigation }) {
                                 onFocus={() => setIsFocusedField("email")}
                                 onBlur={() => setIsFocusedField(null)}
                             />
+
+
+                            {fieldErrors.password ? (
+                                <Text style={styles.errorText}>{fieldErrors.password}</Text>
+                            ) : null}
                             <View>
                                 <TextInput
-                                    style={[styles.input, isFocusedField === "password" && styles.inputFocused]}
+                                    style={[styles.input, isFocusedField === "password" && styles.inputFocused, fieldErrors.password && styles.inputError]}
                                     value={password}
-                                    onChangeText={setPassword}
+                                    // onChangeText={setPassword}
+                                    onChangeText={(text) => {
+                                        setPassword(text);
+                                        setFieldErrors((prev) => ({ ...prev, password: "" }));
+                                    }}
                                     placeholder="Password"
                                     placeholderTextColor={"#c2c2c2"}
                                     keyboardType="name-phone-pad"
@@ -153,13 +177,20 @@ export default function RegisterScreen({ navigation }) {
                                     }}
                                     onPress={() => setShowPassword(!showPassword)}
                                 />
-
                             </View>
+
+                            {fieldErrors.confirmPassword ? (
+                                <Text style={styles.errorText}>{fieldErrors.confirmPassword}</Text>
+                            ) : null}
                             <View>
                                 <TextInput
-                                    style={[styles.input, isFocusedField === "confirmPassword" && styles.inputFocused]}
+                                    style={[styles.input, isFocusedField === "confirmPassword" && styles.inputFocused, fieldErrors.confirmPassword && styles.inputError]}
                                     value={confirmPassword}
-                                    onChangeText={setConfirmPassword}
+                                    // onChangeText={setConfirmPassword}
+                                    onChangeText={(text) => {
+                                        setConfirmPassword(text);
+                                        setFieldErrors((prev) => ({ ...prev, confirmPassword: "" }));
+                                    }}
                                     placeholder="Confirm Password"
                                     placeholderTextColor={"#c2c2c2"}
                                     keyboardType="name-phone-pad"
@@ -227,4 +258,15 @@ const styles = StyleSheet.create({
         borderColor: "#4A90E2",
         backgroundColor: "#F0F7FF",
     },
+    inputError: {
+        borderColor: "red",
+        backgroundColor: "#ffe6e6",
+    },
+    errorText: {
+        color: "red",
+        marginTop: 2,
+        marginBottom: 5,
+        marginLeft: 15,
+        fontSize: 14,
+    }
 })
