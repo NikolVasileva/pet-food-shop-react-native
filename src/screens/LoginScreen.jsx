@@ -100,10 +100,10 @@ export default function RegisterScreen({ navigation }) {
         <SafeAreaView style={styles.container}>
             <View style={{ width: width, height: "100%", alignItems: "center" }}>
 
-                <Image source={require("../../assets/registation-dog.png")}
+                <Image source={require("../../assets/login-cat.png")}
                     style={{
                         width: 300,
-                        height: 251,
+                        height: 205,
                         resizeMode: "cover",
                         zIndex: 2,
                         position: "relative"
@@ -174,7 +174,7 @@ export default function RegisterScreen({ navigation }) {
                                 />
                             </View>
 
-                            <MainButton title="Log in" onPress={loginHandler} disabled={isLoading} style={{ marginTop: 70 }} />
+                            <MainButton title="Log in" onPress={loginHandler} disabled={isLoading} style={{ marginTop: 70, backgroundColor: "#F2A305", }} />
                             {/* <Text style={{ fontWeight: "bold", color: "#324B49", marginTop: 30, textAlign: "center" }}>Have an account? Log in.</Text> */}
                             <TouchableOpacity onPress={() => navigation.navigate("RegisterScreen")}>
                                 <Text style={styles.linkText}>
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     container: {
         // backgroundColor: "#B4FAF8",
         // backgroundColor: "#CFFCFB",
-        backgroundColor: "#00B8BD",
+        backgroundColor: "#F2A305",
         flex: 1,
         position: "relative"
     },
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         fontSize: 16,
         borderWidth: 2,
-        borderColor: "#00B8BD",
+        borderColor: "#F2A305",
     },
     inputFocused: {
         borderColor: "#4A90E2",
