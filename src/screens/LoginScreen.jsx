@@ -256,13 +256,13 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     demoTitle: {
-        fontSize: 12,
+        fontSize: 16,
         color: "#324B49",
         fontWeight: "600",
         marginBottom: 4,
     },
     demoText: {
-        fontSize: 13,
+        fontSize: 16,
         color: "#324B49",
     },
 })
