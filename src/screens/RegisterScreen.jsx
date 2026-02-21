@@ -107,7 +107,7 @@ export default function RegisterScreen({ navigation }) {
                 <Image source={require("../../assets/registation-dog.png")}
                     style={{
                         width: 300,
-                        height: 250,
+                        height: 251,
                         resizeMode: "cover",
                         zIndex: 2,
                         position: "relative"
@@ -159,7 +159,7 @@ export default function RegisterScreen({ navigation }) {
                                     }}
                                     placeholder="Password"
                                     placeholderTextColor={"#c2c2c2"}
-                                    keyboardType="name-phone-pad"
+                                    // keyboardType="name-phone-pad"
                                     autoCapitalize="none"
                                     secureTextEntry={!showPassword}
                                     autoCorrect={false}
@@ -193,7 +193,7 @@ export default function RegisterScreen({ navigation }) {
                                     }}
                                     placeholder="Confirm Password"
                                     placeholderTextColor={"#c2c2c2"}
-                                    keyboardType="name-phone-pad"
+                                    // keyboardType="name-phone-pad"
                                     autoCapitalize="none"
                                     secureTextEntry={!showConfirmPassword}
                                     autoCorrect={false}
