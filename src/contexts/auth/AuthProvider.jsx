@@ -31,8 +31,24 @@ export default function AuthProvider({ children }) {
     };
 
     const login = async (email, password) => {
-        const userData = await authService.login(email, password)
-        setUser(userData)
+        try {
+            setIsLoading(true);
+            const userData = await authService.login(email, password);
+            setUser(userData);
+            return { success: true };
+        } catch (err) {
+            let message = "Login failed!";
+            if (err.response && err.response.status === 400) {
+                message = err.response.data?.message || "Cannot find user";
+            } else if (err.message) {
+                message = err.message;
+            }
+    
+            setError(message);
+            return { success: false, message };
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     const contextValue = {

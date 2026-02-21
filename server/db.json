@@ -39,6 +39,11 @@
       "email": "nikol@abv.bg",
       "password": "$2a$10$KrT8FAsDauzAMHMiD1Wlz.Ol8s3qfWiMR3.q.5iolD2211RpZPLca",
       "id": 8
+    },
+    {
+      "email": "nikolvas@abv.bg",
+      "password": "$2a$10$S5U7NJEnWkpy5qPAKyBD4Oe8DLpmb2dflOKqTyJHU0IzhKN4FzPOG",
+      "id": 9
     }
   ]
 }
