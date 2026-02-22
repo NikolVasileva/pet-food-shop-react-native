@@ -1,11 +1,43 @@
-import { Text, View } from "react-native";
+import { useEffect, useState } from "react";
+import { ScrollView, Text, View } from "react-native";
+import { api } from "../services/api";
+import { shopService } from "../services";
+import Toast from "react-native-toast-message";
+import BrandBanner from "../components/BrandBanner";
 
 export default function HomeScreen() {
+    const [allBrands, setAllBrands] = useState([]);
+    const [toggleRefresh, setToggleRefresh] = useState(false);
+    const [refreshing, setRefreshing] = useState(true)
+
+    useEffect(() => {
+        async function fetchData() {
+            setRefreshing(true);
+
+            try {
+                const allBrandsResult = await shopService.fetchGetAllBrands();
+                setAllBrands(allBrandsResult.data);
+            } catch (error) {
+                Toast.show({
+                    type: "error",
+                    text1: err.message || "Cannot load data!",
+                    topOffset: 160,
+                });
+            } finally {
+                setRefreshing(false)
+            }
+        }
+        fetchData()
+    }, [toggleRefresh])
+
     return(
-        <View>
-            <Text>
-                Test
-            </Text>
-        </View>
+        <ScrollView>
+            <View>
+                {allBrands.map((brand) => (
+                    <BrandBanner key={brand.id} logo={brand.logo}/>
+                ))}
+
+            </View>
+        </ScrollView>
     )
 }
