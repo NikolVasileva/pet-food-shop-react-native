@@ -35,7 +35,7 @@ export default function HomeScreen() {
             <ScrollView>
 
                 {/* Home Banner */}
-                <View style={{padding: 16}}>
+                <View style={{ padding: 16 }}>
                     <Image source={require("../../assets/promo-banner.png")}
                         style={{
                             width: "100%",
@@ -46,16 +46,20 @@ export default function HomeScreen() {
                 </View>
 
                 {/* Brand Section */}
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={styles.section}
-                >
-                    {allBrands.map((brand) => (
-                        <BrandBanner key={brand.id} logo={brand.logo} />
-                    ))}
+                <View style={styles.section}>
+                    <Text style={styles.sectionTitle}>Premium Brands</Text>
 
-                </ScrollView>
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={styles.sectionBanner}
+                    >
+                        {allBrands.map((brand) => (
+                            <BrandBanner key={brand.id} logo={brand.logo} />
+                        ))}
+
+                    </ScrollView>
+                </View>
             </ScrollView>
         </SafeAreaView>
     )
@@ -73,10 +77,16 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         gap: 12,
     },
+    sectionBanner: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        gap: 12,
+    },
     sectionTitle: {
-        fontSize: 20,
-        fontWeight: '700',
+        fontSize: 18,
+        fontWeight: "bold",
         color: '#333',
         marginBottom: 12,
+        color: "#00B8BD"
     },
 })
