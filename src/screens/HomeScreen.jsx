@@ -32,6 +32,8 @@ export default function HomeScreen() {
 
     return(
         <ScrollView>
+
+            {/* Brand Section */}
             <View>
                 {allBrands.map((brand) => (
                     <BrandBanner key={brand.id} logo={brand.logo}/>
