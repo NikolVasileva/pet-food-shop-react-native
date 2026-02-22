@@ -1,13 +1,19 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AuthNavigator from "./AuthNavigator";
+import ShopNavigator from "./ShopNavigator";
+import { useAuth } from "../contexts/auth/useAuth";
 
 export default function RootNavigator() {
    
     const Stack = createNativeStackNavigator();
+    const { isAuthenticated } = useAuth()
 
     return(
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Auth" component={AuthNavigator} />
+            {!isAuthenticated
+            ? <Stack.Screen name="Home" component={ShopNavigator} />
+            : <Stack.Screen name="Auth" component={AuthNavigator} />
+            }
         </Stack.Navigator>
     )
 }

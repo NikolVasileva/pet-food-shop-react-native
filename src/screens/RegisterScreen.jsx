@@ -90,7 +90,7 @@ export default function RegisterScreen({ navigation }) {
                 topOffset: 160,
             });
 
-            navigation.navigate("LoginScreen");
+            // navigation.navigate("LoginScreen");
         } catch (error) {
             Toast.show({
                 type: "error",

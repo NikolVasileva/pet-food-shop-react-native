@@ -4,6 +4,11 @@
       "email": "test@abv.bg",
       "password": "$2a$10$C.T.4FzER4dQUbijJ96QFOas9FJqAwa8MIP5hcWzSNT.Y081fTV86",
       "id": 1
+    },
+    {
+      "email": "test13@abv.bg",
+      "password": "$2a$10$MmafD2KMDvS5./tRzPwG2uAF4yyioCI474ZP0a8ZNtJ//EaHxSBHe",
+      "id": 2
     }
   ]
 }

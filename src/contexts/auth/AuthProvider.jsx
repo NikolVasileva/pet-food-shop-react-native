@@ -1,7 +1,17 @@
 import { createContext, use, useState } from "react";
 import { authService } from "../../services";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext({
+    isLoading: false,
+    isAuthenticated: false,
+    error: null,
+    user: null,
+    auth: null,
+    login: async (email, password) => { },
+    register: async (email, password, name) => { },
+    clearError: () => { },
+    logout: () => { },
+});
 
 export default function AuthProvider({ children }) {
 
