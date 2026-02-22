@@ -10,5 +10,37 @@
       "password": "$2a$10$MmafD2KMDvS5./tRzPwG2uAF4yyioCI474ZP0a8ZNtJ//EaHxSBHe",
       "id": 2
     }
+  ],
+"brands": [
+    {
+      "id": "brand1",
+      "title": "Royal Canin",
+      "logo": "https://1000logos.net/wp-content/uploads/2020/07/Royal-Canin-Logo.png"
+    },
+    {
+      "id": "brand2",
+      "title": "Purina Pro Plan",
+      "logo": "https://www.purina.bg/sites/default/files/2023-09/Purina_Pro_Plan_Gold-01.png"
+    },
+    {
+      "id": "brand3",
+      "title": "Hill's Science Diet",
+      "logo": "https://icon2.cleanpng.com/20180527/tzo/kisspng-cat-food-dog-puppy-science-diet-5b0b497dcfa771.4444452215274663658506.jpg"
+    },
+    {
+      "id": "brand4",
+      "title": "Orijen",
+      "logo": "https://e7.pngegg.com/pngimages/436/355/png-clipart-orijen-logo-pet-food-brands-logos.png"
+    },
+    {
+      "id": "brand5",
+      "title": "Acana",
+      "logo": "https://1000logos.net/wp-content/uploads/2023/10/Acana-Logo.png"
+    },
+    {
+      "id": "brand6",
+      "title": "Pedigree",
+      "logo": "https://e7.pngegg.com/pngimages/792/248/png-clipart-pedigree-logo-pet-food-brands-logos-thumbnail.png"
+    }
   ]
 }
