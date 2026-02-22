@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { api } from "../services/api";
 import { shopService } from "../services";
 import Toast from "react-native-toast-message";
@@ -30,16 +30,40 @@ export default function HomeScreen() {
         fetchData()
     }, [toggleRefresh])
 
-    return(
+    return (
         <ScrollView>
 
             {/* Brand Section */}
-            <View>
+            <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.section}
+            >
                 {allBrands.map((brand) => (
-                    <BrandBanner key={brand.id} logo={brand.logo}/>
+                    <BrandBanner key={brand.id} logo={brand.logo} />
                 ))}
 
-            </View>
+            </ScrollView>
         </ScrollView>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#f8f8f8',
+    },
+    section: {
+        padding: 16,
+        paddingBottom: 8,
+        flexDirection: "row", // хоризонтално
+        flexWrap: "wrap", // ако са много – да минават на нов ред
+        gap: 12,
+    },
+    sectionTitle: {
+        fontSize: 20,
+        fontWeight: '700',
+        color: '#333',
+        marginBottom: 12,
+    },
+})
