@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { api } from "../services/api";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { shopService } from "../services";
 import Toast from "react-native-toast-message";
 import BrandBanner from "../components/BrandBanner";
@@ -31,20 +31,33 @@ export default function HomeScreen() {
     }, [toggleRefresh])
 
     return (
-        <ScrollView>
+        <SafeAreaView style={styles.container}>
+            <ScrollView>
 
-            {/* Brand Section */}
-            <ScrollView
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={styles.section}
-            >
-                {allBrands.map((brand) => (
-                    <BrandBanner key={brand.id} logo={brand.logo} />
-                ))}
+                {/* Home Banner */}
+                <View style={{padding: 16}}>
+                    <Image source={require("../../assets/promo-banner.png")}
+                        style={{
+                            width: "100%",
+                            height: 205,
+                            resizeMode: "cover",
+                            borderRadius: 20,
+                        }} />
+                </View>
 
+                {/* Brand Section */}
+                <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={styles.section}
+                >
+                    {allBrands.map((brand) => (
+                        <BrandBanner key={brand.id} logo={brand.logo} />
+                    ))}
+
+                </ScrollView>
             </ScrollView>
-        </ScrollView>
+        </SafeAreaView>
     )
 }
 
@@ -56,8 +69,8 @@ const styles = StyleSheet.create({
     section: {
         padding: 16,
         paddingBottom: 8,
-        flexDirection: "row", // хоризонтално
-        flexWrap: "wrap", // ако са много – да минават на нов ред
+        flexDirection: "row",
+        flexWrap: "wrap",
         gap: 12,
     },
     sectionTitle: {
