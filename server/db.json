@@ -1,73 +1,190 @@
 {
-  "users": [
-    {
-      "email": "test@abv.bg",
-      "password": "$2a$10$C.T.4FzER4dQUbijJ96QFOas9FJqAwa8MIP5hcWzSNT.Y081fTV86",
-      "id": 1
-    },
-    {
-      "email": "test13@abv.bg",
-      "password": "$2a$10$MmafD2KMDvS5./tRzPwG2uAF4yyioCI474ZP0a8ZNtJ//EaHxSBHe",
-      "id": 2
-    }
-  ],
-  "brands": [
-    {
-      "id": "brand1",
-      "title": "Royal Canin",
-      "logo": "https://1000logos.net/wp-content/uploads/2020/07/Royal-Canin-Logo.png"
-    },
-    {
-      "id": "brand2",
-      "title": "Purina Pro Plan",
-      "logo": "https://www.purina.bg/sites/default/files/2023-09/Purina_Pro_Plan_Gold-01.png"
-    },
-    {
-      "id": "brand3",
-      "title": "Hill's Science Diet",
-      "logo": "https://www.hillspet.mt/content/dam/cp-sites-aem/hills/hills-pet/global/svg-logos/sp-logo.png"
-    },
-    {
-      "id": "brand4",
-      "title": "Orijen",
-      "logo": "https://1000logos.net/wp-content/uploads/2023/10/Orijen-Logo.png"
-    },
-    {
-      "id": "brand5",
-      "title": "Acana",
-      "logo": "https://1000logos.net/wp-content/uploads/2023/10/Acana-Logo.png"
-    },
-    {
-      "id": "brand6",
-      "title": "Pedigree",
-      "logo": "https://host03pet.nexopet.com///media/images/subcategories/Pedigree-logo-0B0352F571-seeklogo.com.png"
-    }
-  ],
-  "category": [
-    {
-      "id": "category-1",
-      "name": "Dogs",
-      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/dog-icon.png"
-    },
-    {
-      "id": "category-2",
-      "name": "Cats",
-      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/cat-icon.png"
-    },
-    {
-      "id": "category-3",
-      "name": "Birds",
-      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/bird-icon.png"
-    },
-    {
-      "id": "category-4",
-      "name": "Fish",
-      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/fish-icon.png"
-    },
-    {
-      "id": "category-5",
-      "name": "Rodents",
-      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/mouse-icon.png"
-    }
-  ]
+    "users": [
+        {
+            "email": "test@abv.bg",
+            "password": "$2a$10$C.T.4FzER4dQUbijJ96QFOas9FJqAwa8MIP5hcWzSNT.Y081fTV86",
+            "id": 1
+        },
+        {
+            "email": "test13@abv.bg",
+            "password": "$2a$10$MmafD2KMDvS5./tRzPwG2uAF4yyioCI474ZP0a8ZNtJ//EaHxSBHe",
+            "id": 2
+        }
+    ],
+    "brands": [
+        {
+            "id": "brand1",
+            "title": "Royal Canin",
+            "logo": "https://1000logos.net/wp-content/uploads/2020/07/Royal-Canin-Logo.png"
+        },
+        {
+            "id": "brand2",
+            "title": "Purina Pro Plan",
+            "logo": "https://www.purina.bg/sites/default/files/2023-09/Purina_Pro_Plan_Gold-01.png"
+        },
+        {
+            "id": "brand3",
+            "title": "Hill's Science Diet",
+            "logo": "https://www.hillspet.mt/content/dam/cp-sites-aem/hills/hills-pet/global/svg-logos/sp-logo.png"
+        },
+        {
+            "id": "brand4",
+            "title": "Orijen",
+            "logo": "https://1000logos.net/wp-content/uploads/2023/10/Orijen-Logo.png"
+        },
+        {
+            "id": "brand5",
+            "title": "Acana",
+            "logo": "https://1000logos.net/wp-content/uploads/2023/10/Acana-Logo.png"
+        },
+        {
+            "id": "brand6",
+            "title": "Pedigree",
+            "logo": "https://host03pet.nexopet.com///media/images/subcategories/Pedigree-logo-0B0352F571-seeklogo.com.png"
+        }
+    ],
+    "category": [
+        {
+            "id": "category-1",
+            "name": "Dogs",
+            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/dog-icon.png"
+        },
+        {
+            "id": "category-2",
+            "name": "Cats",
+            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/cat-icon.png"
+        },
+        {
+            "id": "category-3",
+            "name": "Birds",
+            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/bird-icon.png"
+        },
+        {
+            "id": "category-4",
+            "name": "Fish",
+            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/fish-icon.png"
+        },
+        {
+            "id": "category-5",
+            "name": "Rodents",
+            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/mouse-icon.png"
+        }
+    ],
+
+    "products": [
+        {
+            "id": "product-1",
+            "name": "Royal Canin Adult Dog Food",
+            "category": "category-1",
+            "brand": "brand1",
+            "description": "Complete dry food for adult dogs that supports digestion and healthy skin.",
+            "price": 79.99,
+            "promoPrice": 64.99,
+            "image": "https://images.unsplash.com/photo-1601758123927-1969d8b6f6e3"
+        },
+        {
+            "id": "product-2",
+            "name": "Royal Canin Kitten Food",
+            "category": "category-2",
+            "brand": "brand1",
+            "description": "Balanced nutrition specially designed for growing kittens.",
+            "price": 59.99,
+            "image": "https://images.unsplash.com/photo-1598137261461-7c0b89b6d0f4"
+        },
+        {
+            "id": "product-3",
+            "name": "Purina Pro Plan Puppy",
+            "category": "category-1",
+            "brand": "brand2",
+            "description": "High protein formula that helps puppies grow strong and healthy.",
+            "price": 69.99,
+            "promoPrice": 54.99,
+            "image": "https://images.unsplash.com/photo-1583512603872-62c5fbaecb4e"
+        },
+        {
+            "id": "product-4",
+            "name": "Purina Pro Plan Cat Adult",
+            "category": "category-2",
+            "brand": "brand2",
+            "description": "Premium nutrition for adult cats with essential vitamins.",
+            "price": 62.50,
+            "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131"
+        },
+        {
+            "id": "product-5",
+            "name": "Hill's Science Diet Small Dog",
+            "category": "category-1",
+            "brand": "brand3",
+            "description": "Specially formulated food for small breed dogs.",
+            "price": 74.90,
+            "promoPrice": 59.90,
+            "image": "https://images.unsplash.com/photo-1558788353-f76d92427f16"
+        },
+        {
+            "id": "product-6",
+            "name": "Hill's Science Diet Indoor Cat",
+            "category": "category-2",
+            "brand": "brand3",
+            "description": "Supports healthy weight and digestion for indoor cats.",
+            "price": 66.40,
+            "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006"
+        },
+        {
+            "id": "product-7",
+            "name": "Orijen Original Dog Food",
+            "category": "category-1",
+            "brand": "brand4",
+            "description": "Biologically appropriate dog food with fresh ingredients.",
+            "price": 89.99,
+            "promoPrice": 72.99,
+            "image": "https://images.unsplash.com/photo-1561037404-61cd46aa615b"
+        },
+        {
+            "id": "product-8",
+            "name": "Acana Wild Prairie Dog",
+            "category": "category-1",
+            "brand": "brand5",
+            "description": "Grain-free dog food rich in protein and natural nutrients.",
+            "price": 82.30,
+            "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b"
+        },
+        {
+            "id": "product-9",
+            "name": "Pedigree Adult Dog Chicken",
+            "category": "category-1",
+            "brand": "brand6",
+            "description": "Tasty dry dog food with chicken flavor for everyday nutrition.",
+            "price": 39.99,
+            "promoPrice": 29.99,
+            "image": "https://images.unsplash.com/photo-1601758003122-58b2b7a0c9b6"
+        },
+        {
+            "id": "product-10",
+            "name": "Bird Seed Mix Premium",
+            "category": "category-3",
+            "brand": "brand5",
+            "description": "Healthy seed mix for parrots and small birds.",
+            "price": 14.99,
+            "image": "https://images.unsplash.com/photo-1591198936750-16d8e15edb9e"
+        },
+        {
+            "id": "product-11",
+            "name": "Fish Flakes Nutrition",
+            "category": "category-4",
+            "brand": "brand2",
+            "description": "Balanced flakes for tropical aquarium fish.",
+            "price": 9.99,
+            "promoPrice": 7.49,
+            "image": "https://images.unsplash.com/photo-1524704796725-9fc3044a58b2"
+        },
+        {
+            "id": "product-12",
+            "name": "Rodent Food Mix",
+            "category": "category-5",
+            "brand": "brand1",
+            "description": "Nutritious mix for hamsters, mice and small rodents.",
+            "price": 11.99,
+            "image": "https://images.unsplash.com/photo-1595433562696-5f46f99c7b71"
+        }
+    ]
 }
