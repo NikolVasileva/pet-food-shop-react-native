@@ -9,6 +9,7 @@ import CategoryCard from "../components/CategoryCard";
 export default function HomeScreen() {
     const [allBrands, setAllBrands] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [products, setProducts] = useState([]);
     const [toggleRefresh, setToggleRefresh] = useState(false);
     const [refreshing, setRefreshing] = useState(true)
 
@@ -21,7 +22,11 @@ export default function HomeScreen() {
                 setAllBrands(allBrandsResult.data);
 
                 const allCategoriesResult = await shopService.fetchGetAllCategories();
-                setCategories(allCategoriesResult.data)
+                setCategories(allCategoriesResult.data);
+
+                const allProductsResult = await shopService.fetchGetAllProducts();
+                setProducts(allProductsResult.data);
+                
             } catch (error) {
                 Toast.show({
                     type: "error",

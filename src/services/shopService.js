@@ -7,3 +7,7 @@ export async function fetchGetAllBrands() {
 export async function fetchGetAllCategories() {
     return api.get("/category")
 }
+
+export async function fetchGetAllProducts() {
+    return api.get("/products")
+}

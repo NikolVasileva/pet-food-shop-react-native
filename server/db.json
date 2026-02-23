@@ -80,7 +80,8 @@
             "description": "Complete dry food for adult dogs that supports digestion and healthy skin.",
             "price": 79.99,
             "promoPrice": 64.99,
-            "image": "https://images.unsplash.com/photo-1601758123927-1969d8b6f6e3"
+            "image": "https://images.unsplash.com/photo-1601758123927-1969d8b6f6e3",
+            "isBestSeller": true
         },
         {
             "id": "product-2",
@@ -89,7 +90,8 @@
             "brand": "brand1",
             "description": "Balanced nutrition specially designed for growing kittens.",
             "price": 59.99,
-            "image": "https://images.unsplash.com/photo-1598137261461-7c0b89b6d0f4"
+            "image": "https://images.unsplash.com/photo-1598137261461-7c0b89b6d0f4",
+            "isBestSeller": true
         },
         {
             "id": "product-3",
@@ -99,7 +101,8 @@
             "description": "High protein formula that helps puppies grow strong and healthy.",
             "price": 69.99,
             "promoPrice": 54.99,
-            "image": "https://images.unsplash.com/photo-1583512603872-62c5fbaecb4e"
+            "image": "https://images.unsplash.com/photo-1583512603872-62c5fbaecb4e",
+            "isBestSeller": true
         },
         {
             "id": "product-4",
@@ -108,7 +111,8 @@
             "brand": "brand2",
             "description": "Premium nutrition for adult cats with essential vitamins.",
             "price": 62.50,
-            "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131"
+            "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+            "isBestSeller": true
         },
         {
             "id": "product-5",
@@ -118,7 +122,8 @@
             "description": "Specially formulated food for small breed dogs.",
             "price": 74.90,
             "promoPrice": 59.90,
-            "image": "https://images.unsplash.com/photo-1558788353-f76d92427f16"
+            "image": "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+            "isBestSeller": false
         },
         {
             "id": "product-6",
@@ -127,7 +132,8 @@
             "brand": "brand3",
             "description": "Supports healthy weight and digestion for indoor cats.",
             "price": 66.40,
-            "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006"
+            "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006",
+            "isBestSeller": false
         },
         {
             "id": "product-7",
@@ -137,7 +143,8 @@
             "description": "Biologically appropriate dog food with fresh ingredients.",
             "price": 89.99,
             "promoPrice": 72.99,
-            "image": "https://images.unsplash.com/photo-1561037404-61cd46aa615b"
+            "image": "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+            "isBestSeller": false
         },
         {
             "id": "product-8",
@@ -146,7 +153,8 @@
             "brand": "brand5",
             "description": "Grain-free dog food rich in protein and natural nutrients.",
             "price": 82.30,
-            "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b"
+            "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b",
+            "isBestSeller": false
         },
         {
             "id": "product-9",
@@ -156,7 +164,8 @@
             "description": "Tasty dry dog food with chicken flavor for everyday nutrition.",
             "price": 39.99,
             "promoPrice": 29.99,
-            "image": "https://images.unsplash.com/photo-1601758003122-58b2b7a0c9b6"
+            "image": "https://images.unsplash.com/photo-1601758003122-58b2b7a0c9b6",
+            "isBestSeller": false
         },
         {
             "id": "product-10",
@@ -165,7 +174,8 @@
             "brand": "brand5",
             "description": "Healthy seed mix for parrots and small birds.",
             "price": 14.99,
-            "image": "https://images.unsplash.com/photo-1591198936750-16d8e15edb9e"
+            "image": "https://images.unsplash.com/photo-1591198936750-16d8e15edb9e",
+            "isBestSeller": true
         },
         {
             "id": "product-11",
@@ -175,7 +185,8 @@
             "description": "Balanced flakes for tropical aquarium fish.",
             "price": 9.99,
             "promoPrice": 7.49,
-            "image": "https://images.unsplash.com/photo-1524704796725-9fc3044a58b2"
+            "image": "https://images.unsplash.com/photo-1524704796725-9fc3044a58b2",
+            "isBestSeller": true
         },
         {
             "id": "product-12",
@@ -184,7 +195,8 @@
             "brand": "brand1",
             "description": "Nutritious mix for hamsters, mice and small rodents.",
             "price": 11.99,
-            "image": "https://images.unsplash.com/photo-1595433562696-5f46f99c7b71"
+            "image": "https://images.unsplash.com/photo-1595433562696-5f46f99c7b71",
+            "isBestSeller": false
         }
     ]
 }
