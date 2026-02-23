@@ -11,7 +11,7 @@
       "id": 2
     }
   ],
-"brands": [
+  "brands": [
     {
       "id": "brand1",
       "title": "Royal Canin",
@@ -41,6 +41,33 @@
       "id": "brand6",
       "title": "Pedigree",
       "logo": "https://host03pet.nexopet.com///media/images/subcategories/Pedigree-logo-0B0352F571-seeklogo.com.png"
+    }
+  ],
+  "category": [
+    {
+      "id": "category-1",
+      "name": "Dogs",
+      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/dog-icon.png"
+    },
+    {
+      "id": "category-2",
+      "name": "Cats",
+      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/cat-icon.png"
+    },
+    {
+      "id": "category-3",
+      "name": "Birds",
+      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/bird-icon.png"
+    },
+    {
+      "id": "category-4",
+      "name": "Fish",
+      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/fish-icon.png"
+    },
+    {
+      "id": "category-5",
+      "name": "Rodents",
+      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/mouse-icon.png"
     }
   ]
 }
