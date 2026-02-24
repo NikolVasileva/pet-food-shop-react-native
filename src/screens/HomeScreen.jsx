@@ -5,11 +5,12 @@ import { shopService } from "../services";
 import Toast from "react-native-toast-message";
 import BrandCard from "../components/BrandCard";
 import CategoryCard from "../components/CategoryCard";
+import ProductCard from "../components/ProductCard";
 
 export default function HomeScreen() {
     const [allBrands, setAllBrands] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [products, setProducts] = useState([]);
+    const [bestSellersProducts, setBestSellersProducts] = useState([]);
     const [toggleRefresh, setToggleRefresh] = useState(false);
     const [refreshing, setRefreshing] = useState(true)
 
@@ -24,9 +25,9 @@ export default function HomeScreen() {
                 const allCategoriesResult = await shopService.fetchGetAllCategories();
                 setCategories(allCategoriesResult.data);
 
-                const allProductsResult = await shopService.fetchGetAllProducts();
-                setProducts(allProductsResult.data);
-                
+                const allBestSellersProductsResult = await shopService.fetchBestSellersProducts();
+                setBestSellersProducts(allBestSellersProductsResult.data);
+
             } catch (error) {
                 Toast.show({
                     type: "error",
@@ -83,8 +84,21 @@ export default function HomeScreen() {
                         {allBrands.map((brand) => (
                             <BrandCard key={brand.id} logo={brand.logo} />
                         ))}
-
                     </ScrollView>
+                </View>
+
+                {/* Best Sellers Section */}
+                <View>
+                    <Text style={styles.sectionTitle}>Best Sellers</Text>
+                    <View>
+                        {bestSellersProducts.map((bestSellerProduct) => (
+                            <ProductCard key={bestSellerProduct.id} 
+                            image={bestSellerProduct.image}
+                            name={bestSellerProduct.name}
+                            price={bestSellerProduct.price}
+                            />
+                        ))}
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>

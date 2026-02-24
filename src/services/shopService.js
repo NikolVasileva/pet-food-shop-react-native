@@ -11,3 +11,7 @@ export async function fetchGetAllCategories() {
 export async function fetchGetAllProducts() {
     return api.get("/products")
 }
+
+export async function fetchBestSellersProducts() {
+    return api.get("/products?isBestSeller=true")
+}

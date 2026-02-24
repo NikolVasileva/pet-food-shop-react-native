@@ -1,6 +1,7 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 export default function ProductCard({
+    id,
     image,
     name,
     price,
