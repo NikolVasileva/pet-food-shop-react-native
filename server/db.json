@@ -79,7 +79,7 @@
             "brand": "brand1",
             "description": "Complete dry food for adult dogs that supports digestion and healthy skin.",
             "price": 79.99,
-            "promoPrice": 64.99,
+            "isPromo": 64.99,
             "image": "https://images.unsplash.com/photo-1601758123927-1969d8b6f6e3",
             "isBestSeller": true
         },
@@ -100,7 +100,7 @@
             "brand": "brand2",
             "description": "High protein formula that helps puppies grow strong and healthy.",
             "price": 69.99,
-            "promoPrice": 54.99,
+            "isPromo": 54.99,
             "image": "https://images.unsplash.com/photo-1583512603872-62c5fbaecb4e",
             "isBestSeller": true
         },
@@ -121,7 +121,7 @@
             "brand": "brand3",
             "description": "Specially formulated food for small breed dogs.",
             "price": 74.90,
-            "promoPrice": 59.90,
+            "isPromo": 59.90,
             "image": "https://images.unsplash.com/photo-1558788353-f76d92427f16",
             "isBestSeller": false
         },
@@ -142,7 +142,7 @@
             "brand": "brand4",
             "description": "Biologically appropriate dog food with fresh ingredients.",
             "price": 89.99,
-            "promoPrice": 72.99,
+            "isPromo": 72.99,
             "image": "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
             "isBestSeller": false
         },
@@ -163,7 +163,7 @@
             "brand": "brand6",
             "description": "Tasty dry dog food with chicken flavor for everyday nutrition.",
             "price": 39.99,
-            "promoPrice": 29.99,
+            "isPromo": 29.99,
             "image": "https://images.unsplash.com/photo-1601758003122-58b2b7a0c9b6",
             "isBestSeller": false
         },
@@ -184,7 +184,7 @@
             "brand": "brand2",
             "description": "Balanced flakes for tropical aquarium fish.",
             "price": 9.99,
-            "promoPrice": 7.49,
+            "isPromo": 7.49,
             "image": "https://images.unsplash.com/photo-1524704796725-9fc3044a58b2",
             "isBestSeller": true
         },

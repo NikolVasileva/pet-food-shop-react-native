@@ -88,16 +88,16 @@ export default function HomeScreen() {
                 </View>
 
                 {/* Best Sellers Section */}
-                <View>
+                <View style={styles.cardSection}>
                     <Text style={styles.sectionTitle}>Best Sellers</Text>
-                    <View>
+                    <View style={styles.sectionRow}>
+
                         {bestSellersProducts.map((bestSellerProduct) => (
-                            <ProductCard key={bestSellerProduct.id} 
-                            image={bestSellerProduct.image}
-                            name={bestSellerProduct.name}
-                            price={bestSellerProduct.price}
-                            />
+                            <View key={bestSellerProduct.id} style={styles.card}>
+                                <ProductCard {...bestSellerProduct} />
+                            </View>
                         ))}
+
                     </View>
                 </View>
             </ScrollView>
@@ -115,6 +115,22 @@ const styles = StyleSheet.create({
         paddingBottom: 8,
         flexDirection: "row",
         flexWrap: "wrap",
+        gap: 12,
+    },
+    sectionRow: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        flexWrap: "wrap"
+        // width: "100%",
+    },
+    cardSection: {
+        padding: 16,
+        paddingBottom: 8,
+        gap: 12,
+    },
+    card: {
+        width: "48%",
+        marginBottom: 20,
         gap: 12,
     },
     sectionBanner: {
