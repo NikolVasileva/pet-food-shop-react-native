@@ -4,6 +4,14 @@ export async function fetchGetAllBrands() {
     return api.get("/brands")
 }
 
+export async function fetchBrandsById(brandId) {
+    if (!brandId) {
+        throw new Error('No ID provided!');
+    }
+
+    return api.get(`/brands/${brandId}`)
+}
+
 export async function fetchGetAllCategories() {
     return api.get("/category")
 }

@@ -1,8 +1,10 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function CategoryCard({
+    id,
     image,
-    name
+    name,
+    onPress
 }) {
 
     // const categoryImages = {
@@ -14,7 +16,7 @@ export default function CategoryCard({
     // };
 
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => onPress(id)}>
             <View style={styles.container}>
                 <Image source={image}
                     style={{

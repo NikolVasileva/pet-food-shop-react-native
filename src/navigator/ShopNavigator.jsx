@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/HomeScreen";
 import { FontAwesome } from "@expo/vector-icons";
+import HomeNavigator from "./HomeNavigator";
 
 export default function ShopNavigator() {
     const Tabs = createBottomTabNavigator();
@@ -9,7 +9,7 @@ export default function ShopNavigator() {
         <Tabs.Navigator>
             <Tabs.Screen
                 name="Home"
-                component={HomeScreen}
+                component={HomeNavigator}
                 options={{
                     headerShown: false, tabBarIcon: ({ focused, size }) => (
                         <FontAwesome name={focused ? "heart" : "heart-o"} size={size} />

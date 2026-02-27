@@ -7,7 +7,9 @@ import BrandCard from "../components/BrandCard";
 import CategoryCard from "../components/CategoryCard";
 import ProductCard from "../components/ProductCard";
 
-export default function HomeScreen() {
+export default function HomeScreen({
+    navigation
+}) {
     const [allBrands, setAllBrands] = useState([]);
     const [categories, setCategories] = useState([]);
     const [bestSellersProducts, setBestSellersProducts] = useState([]);
@@ -39,7 +41,13 @@ export default function HomeScreen() {
             }
         }
         fetchData()
-    }, [toggleRefresh])
+    }, [toggleRefresh]);
+
+    const brandCardPressHandler = (brandId) => {
+        console.log(brandId)
+        navigation.navigate("BrandScreen", {brandId})
+        
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -82,7 +90,7 @@ export default function HomeScreen() {
                         contentContainerStyle={styles.sectionBanner}
                     >
                         {allBrands.map((brand) => (
-                            <BrandCard key={brand.id} logo={brand.logo} />
+                            <BrandCard key={brand.id} {...brand} onPress={brandCardPressHandler}/>
                         ))}
                     </ScrollView>
                 </View>
@@ -144,7 +152,7 @@ const styles = StyleSheet.create({
         color: '#333',
         marginBottom: 12,
         // color: "#00B8BD",
-        color: "#000"
+        color: "#000",
 
     },
 })
