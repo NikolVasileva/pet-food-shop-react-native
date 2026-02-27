@@ -43,9 +43,9 @@ export default function HomeScreen({
         fetchData()
     }, [toggleRefresh]);
 
-    const brandCardPressHandler = (brandId) => {
+    const brandCardPressHandler = (brandId, brandName) => {
         console.log(brandId)
-        navigation.navigate("BrandScreen", {brandId})
+        navigation.navigate("BrandScreen", { brandId, brandName })
         
     }
 

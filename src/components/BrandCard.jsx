@@ -3,10 +3,11 @@ import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 export default function BrandCard({
     id,
     logo,
-    onPress
+    onPress,
+    title
 }) {
     return (
-        <TouchableOpacity style={styles.container} onPress={() => onPress(id)}>
+        <TouchableOpacity style={styles.container} onPress={() => onPress(id, title)}>
             <View style={styles.content}>
                 <Image source={{ uri: logo }}
                     style={{
