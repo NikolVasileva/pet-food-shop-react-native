@@ -1,4 +1,5 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function CategoryCard({
     id,
@@ -17,23 +18,33 @@ export default function CategoryCard({
 
     return (
         <TouchableOpacity onPress={() => onPress(id)}>
-            <View style={styles.container}>
-                <Image source={image}
-                    style={{
-                        width: 50,
-                        height: 50,
-                        resizeMode: "cover",
-                    }} />
-            </View>
-            <Text style={styles.content}>{name}</Text>    
+            <LinearGradient
+                colors={["#00B8BD", "#F2A305"]}
+                style={styles.gradientBorder}
+            >
+                <View style={styles.container}>
+                    <Image source={image}
+                        style={{
+                            width: 50,
+                            height: 50,
+                            resizeMode: "cover",
+                        }} />
+                </View>
+            </LinearGradient>
+            <Text style={styles.content}>{name}</Text>
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#fff',
+    gradientBorder: {
+        padding: 1, 
         borderRadius: 50,
+    },
+    container: {
+        backgroundColor: "#CDECED",
+        borderRadius: 50,
+        borderWidth: 1,
         padding: 16,
         flexDirection: 'row',
         alignItems: 'center',
@@ -47,7 +58,7 @@ const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        padding: 16,
+        padding: 8,
         flexDirection: 'row',
         alignItems: 'center',
         textAlign: "center",
