@@ -15,7 +15,11 @@
         {
             "id": "brand1",
             "title": "Royal Canin",
-            "logo": "https://1000logos.net/wp-content/uploads/2020/07/Royal-Canin-Logo.png"
+            "logo": "https://1000logos.net/wp-content/uploads/2020/07/Royal-Canin-Logo.png",
+            "description": "Royal Canin is a global pet food brand founded in France in 1968. The company focuses on scientifically developed nutrition tailored to the specific needs of different dog and cat breeds, ages, and health conditions. Today, its products are widely recommended by veterinarians and sold around the world.",
+            "year": 1968,
+            "country": "France",
+            "priceRange": "Premium"
         },
         {
             "id": "brand2",
