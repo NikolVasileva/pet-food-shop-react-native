@@ -141,6 +141,9 @@ const styles = StyleSheet.create({
         marginBottom: 12,
         // color: "#00B8BD",
         color: "#000",
-        textAlign: "center"
+        textAlign: "center",
+        textDecorationLine: "underline",
+        textDecorationColor: "#00B8BD",
+        textDecorationStyle: "double"
     },
 })
