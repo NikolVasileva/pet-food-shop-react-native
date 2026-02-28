@@ -23,7 +23,7 @@ export default function BrandCard({
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
-        borderRadius: 12,
+        // borderRadius: 12,
         padding: 16,
         flexDirection: 'row',
         alignItems: 'center',
@@ -34,6 +34,8 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 3,
         marginBottom: 12,
+        borderTopLeftRadius: 20,
+        borderBottomRightRadius: 20
     },
     content: {
         flex: 1,
