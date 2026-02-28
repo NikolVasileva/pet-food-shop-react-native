@@ -47,10 +47,12 @@ export default function HomeScreen({
         navigation.navigate("OfferScreen")
     }
 
-    const brandCardPressHandler = (brandId, brandName) => {
-        console.log(brandId)
-        navigation.navigate("BrandScreen", { brandId, brandName })
+    const categoryCardPressHandler = (categoryId, categoryName) => {
+        navigation.navigate("CategoryScreen", { categoryId, categoryName })
+    }
 
+    const brandCardPressHandler = (brandId, brandName) => {
+        navigation.navigate("BrandScreen", { brandId, brandName })
     }
 
     return (
@@ -80,7 +82,7 @@ export default function HomeScreen({
                         contentContainerStyle={styles.sectionBanner}
                     >
                         {categories.map((category) => (
-                            <CategoryCard key={category.id} image={category.image} name={category.name} />
+                            <CategoryCard key={category.id} {...category} onPress={categoryCardPressHandler}/>
                         ))}
 
                     </ScrollView>

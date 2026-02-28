@@ -17,7 +17,7 @@ export default function CategoryCard({
     // };
 
     return (
-        <TouchableOpacity onPress={() => onPress(id)}>
+        <TouchableOpacity onPress={() => onPress(id, name)}>
             <LinearGradient
                 colors={["#00B8BD", "#F2A305"]}
                 style={styles.gradientBorder}
