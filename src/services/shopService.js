@@ -12,6 +12,10 @@ export async function fetchBrandsById(brandId) {
     return api.get(`/brands/${brandId}`)
 }
 
+export async function fetchProductsByBrand(brandId) {
+    return api.get(`/products?brand=${brandId}`);
+};
+
 export async function fetchGetAllCategories() {
     return api.get("/category")
 }

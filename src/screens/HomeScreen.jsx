@@ -101,8 +101,8 @@ export default function HomeScreen({
                     <View style={styles.sectionRow}>
 
                         {bestSellersProducts.map((bestSellerProduct) => (
-                            <View key={bestSellerProduct.id} style={styles.card}>
-                                <ProductCard {...bestSellerProduct} />
+                            <View style={styles.card}>
+                                <ProductCard key={bestSellerProduct.id} {...bestSellerProduct} />
                             </View>
                         ))}
 

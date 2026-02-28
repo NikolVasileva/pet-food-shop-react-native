@@ -2,6 +2,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { shopService } from "../services";
 import { useEffect, useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
+import ProductCard from "../components/ProductCard";
 
 export default function BrandScreen({
     route,
@@ -9,12 +10,16 @@ export default function BrandScreen({
 }) {
 
     const { brandId } = route.params;
-    const [brand, setBrand] = useState(null)
+    const [brand, setBrand] = useState(null);
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
         async function fetchBrand() {
-            const result = await shopService.fetchBrandsById(brandId);
-            setBrand(result.data);
+            const brandResult = await shopService.fetchBrandsById(brandId);
+            setBrand(brandResult.data);
+
+            const productResult = await shopService.fetchProductsByBrand(brandId);
+            setProducts(productResult.data)
         }
 
         fetchBrand();
@@ -55,6 +60,19 @@ export default function BrandScreen({
                     </View>
                 </View>
             </View>
+            {/* Products Section */}
+            <View style={styles.cardSection}>
+                <Text style={styles.sectionTitle}>Top Products</Text>
+                <View style={styles.sectionRow}>
+
+                    {products.map((product) => (
+                        <View style={styles.card}>
+                            <ProductCard key={product.id} {...product} />
+                        </View>
+                    ))}
+
+                </View>
+            </View>
         </ScrollView>
 
     )
@@ -72,7 +90,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 3,
-        marginBottom: 12,
+        marginBottom: 25,
         gap: 15,
         // flex: 1,
     },
@@ -99,5 +117,30 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         gap: 25,
-    }
+    },
+    sectionRow: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        // width: "100%",
+    },
+    cardSection: {
+        padding: 16,
+        paddingBottom: 8,
+        gap: 12,
+    },
+    card: {
+        width: "48%",
+        marginBottom: 20,
+        gap: 12,
+    },
+    sectionTitle: {
+        fontSize: 20,
+        fontWeight: "bold",
+        color: '#333',
+        marginBottom: 12,
+        // color: "#00B8BD",
+        color: "#000",
+        textAlign: "center"
+    },
 })
