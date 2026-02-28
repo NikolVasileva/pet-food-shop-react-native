@@ -5,13 +5,13 @@ export default function ProductCard({
     image,
     name,
     price,
-    isPromo,
+    isPromoPrice,
     isBestSeller
 
 }) {
     return (
         <TouchableOpacity>
-            {isPromo
+            {isPromoPrice
                 ? <View style={styles.promoLabel}>
                     <Text style={styles.promoText}>Promo</Text>
                 </View> : ""
@@ -28,10 +28,10 @@ export default function ProductCard({
                     </View> : ""}
 
                 <Text style={[styles.title]}>{name}</Text>
-                {isPromo
+                {isPromoPrice
                     ?
                     <View style={styles.promoPriceSection}>
-                        <Text style={[styles.promoPrice]}>${isPromo}</Text>
+                        <Text style={[styles.promoPrice]}>${isPromoPrice}</Text>
                         <Text style={[styles.secondPrice]}>${price}</Text>
                     </View>
                     :

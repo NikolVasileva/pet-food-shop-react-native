@@ -27,3 +27,7 @@ export async function fetchGetAllProducts() {
 export async function fetchBestSellersProducts() {
     return api.get("/products?isBestSeller=true")
 }
+
+export async function fetchPromoProducts() {
+    return api.get("/products?isPromo=true")
+}

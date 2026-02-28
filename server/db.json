@@ -103,9 +103,10 @@
             "brand": "brand1",
             "description": "Complete dry food for adult dogs that supports digestion and healthy skin.",
             "price": 79.99,
-            "isPromo": 64.99,
+            "isPromoPrice": 64.99,
             "image": "https://drantonov.bg/thumbs/1/vhn-health-management-adult-dog-dog-dry-packshot-b1.png",
-            "isBestSeller": true
+            "isBestSeller": true,
+            "isPromo": true
         },
         {
             "id": "product-2",
@@ -124,9 +125,10 @@
             "brand": "brand2",
             "description": "High protein formula that helps puppies grow strong and healthy.",
             "price": 69.99,
-            "isPromo": 54.99,
+            "isPromoPrice": 54.99,
             "image": "https://purinaexpress.com/wp-content/uploads/2021/04/large-breed.png",
-            "isBestSeller": true
+            "isBestSeller": true,
+            "isPromo": true
         },
         {
             "id": "product-4",
@@ -145,9 +147,10 @@
             "brand": "brand3",
             "description": "Specially formulated food for small breed dogs.",
             "price": 74.90,
-            "isPromo": 59.90,
+            "isPromoPrice": 59.90,
             "image": "https://cdn11.bigcommerce.com/s-ucjiusw7rc/images/stencil/1280x1280/products/1343/1248/HILL-052742020884-1__04117.1731283531.png?c=2",
-            "isBestSeller": false
+            "isBestSeller": false,
+            "isPromo": true
         },
         {
             "id": "product-6",
@@ -166,9 +169,10 @@
             "brand": "brand4",
             "description": "Biologically appropriate dog food with fresh ingredients.",
             "price": 89.99,
-            "isPromo": 72.99,
+            "isPromoPrice": 72.99,
             "image": "https://www.orijenpetfoods.com/dw/image/v2/BFDW_PRD/on/demandware.static/-/Sites-orijen-na-master-catalog/default/dw3a5e4059/ORI%20Dog%20Refresh%202023/Original-2023/Original%20Dog%2031lb%20Front%20EN.png?sw=1200",
-            "isBestSeller": false
+            "isBestSeller": false,
+            "isPromo": true
         },
         {
             "id": "product-8",
@@ -176,9 +180,10 @@
             "category": "category-1",
             "brand": "brand5",
             "description": "Grain-free dog food rich in protein and natural nutrients.",
-            "price": 82.30,
+            "isPromoPrice": 82.30,
             "image": "https://www.acanapetfoods.co.uk/wp-content/uploads/2020/06/ACANA-Dog-Highest-Protein-Wild-Prairie-Recipe-11.4kg-Front-Right-EMEA-APAC.png",
-            "isBestSeller": false
+            "isBestSeller": false,
+            "isPromo": true
         },
         {
             "id": "product-9",
@@ -187,9 +192,10 @@
             "brand": "brand6",
             "description": "Tasty dry dog food with chicken flavor for everyday nutrition.",
             "price": 39.99,
-            "isPromo": 29.99,
+            "isPromoPrice": 29.99,
             "image": "https://www.pedigree.in/files/styles/webp/public/2024-02/Adult%20chicken%20%26%20Vegetable%20Sachet-Pouch_1%20kg_FOP.png.webp?VersionId=z3XxXETATMmXpDhCBrFlAxNWMrhN60YS&itok=BlTMhwv7",
-            "isBestSeller": false
+            "isBestSeller": false,
+            "isPromo": true
         },
         {
             "id": "product-10",
@@ -208,9 +214,10 @@
             "brand": "brand2",
             "description": "Balanced flakes for tropical aquarium fish.",
             "price": 9.99,
-            "isPromo": 7.49,
+            "isPromoPrice": 7.49,
             "image": "https://piscespros.com/wp-content/uploads/2020/11/Cichlid-Flake-Frenzy-.7-oz.png",
-            "isBestSeller": true
+            "isBestSeller": true,
+            "isPromo": true
         },
         {
             "id": "product-12",
