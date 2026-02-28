@@ -180,6 +180,7 @@
             "category": "category-1",
             "brand": "brand5",
             "description": "Grain-free dog food rich in protein and natural nutrients.",
+            "price": 90.30,
             "isPromoPrice": 82.30,
             "image": "https://www.acanapetfoods.co.uk/wp-content/uploads/2020/06/ACANA-Dog-Highest-Protein-Wild-Prairie-Recipe-11.4kg-Front-Right-EMEA-APAC.png",
             "isBestSeller": false,

@@ -31,11 +31,11 @@ export default function ProductCard({
                 {isPromoPrice
                     ?
                     <View style={styles.promoPriceSection}>
-                        <Text style={[styles.promoPrice]}>${isPromoPrice}</Text>
-                        <Text style={[styles.secondPrice]}>${price}</Text>
+                        <Text style={[styles.promoPrice]}>{isPromoPrice} €</Text>
+                        <Text style={[styles.secondPrice]}>{price} €</Text>
                     </View>
                     :
-                    <Text style={[styles.price]}>${price}</Text>
+                    <Text style={[styles.price]}>{price} €</Text>
                 }
             </View>
         </TouchableOpacity>
