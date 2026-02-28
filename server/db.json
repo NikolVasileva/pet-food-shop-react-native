@@ -24,28 +24,48 @@
         {
             "id": "brand2",
             "title": "Purina Pro Plan",
-            "logo": "https://www.purina.bg/sites/default/files/2023-09/Purina_Pro_Plan_Gold-01.png"
+            "logo": "https://www.purina.bg/sites/default/files/2023-09/Purina_Pro_Plan_Gold-01.png",
+            "description": "Purina Pro Plan is a premium pet food brand offering scientifically formulated nutrition for dogs and cats to support optimal health and wellbeing. Its products are recommended by veterinarians worldwide.",
+            "year": 1986,
+            "country": "USA",
+            "priceRange": "Premium"
         },
         {
             "id": "brand3",
             "title": "Hill's Science Diet",
-            "logo": "https://www.hillspet.mt/content/dam/cp-sites-aem/hills/hills-pet/global/svg-logos/sp-logo.png"
+            "logo": "https://www.hillspet.mt/content/dam/cp-sites-aem/hills/hills-pet/global/svg-logos/sp-logo.png",
+            "description": "Hill's Science Diet is a premium pet food brand focused on scientifically developed nutrition for dogs and cats. Their products are designed to support health, longevity, and specific dietary needs, recommended by veterinarians globally.",
+            "year": 1939,
+            "country": "USA",
+            "priceRange": "Premium"
         },
         {
             "id": "brand4",
             "title": "Orijen",
-            "logo": "https://1000logos.net/wp-content/uploads/2023/10/Orijen-Logo.png"
+            "logo": "https://1000logos.net/wp-content/uploads/2023/10/Orijen-Logo.png",
+            "description": "Orijen is a Canadian premium pet food brand known for biologically appropriate recipes using fresh, regional ingredients. Their products are designed to mimic the natural diet of dogs and cats, supporting optimal health and wellbeing.",
+            "year": 1985,
+            "country": "Canada",
+            "priceRange": "Premium"
         },
         {
             "id": "brand5",
             "title": "Acana",
-            "logo": "https://1000logos.net/wp-content/uploads/2023/10/Acana-Logo.png"
+            "logo": "https://1000logos.net/wp-content/uploads/2023/10/Acana-Logo.png",
+            "description": "Acana is a Canadian premium pet food brand that focuses on biologically appropriate nutrition for dogs and cats. Their recipes use fresh, regional ingredients to support overall health and vitality.",
+            "year": 1985,
+            "country": "Canada",
+            "priceRange": "Premium"
         },
         {
             "id": "brand6",
             "title": "Pedigree",
-            "logo": "https://host03pet.nexopet.com///media/images/subcategories/Pedigree-logo-0B0352F571-seeklogo.com.png"
-        }
+            "logo": "https://host03pet.nexopet.com///media/images/subcategories/Pedigree-logo-0B0352F571-seeklogo.com.png",
+            "description": "Pedigree is a globally recognized pet food brand providing balanced nutrition for dogs. Its products focus on health, growth, and wellbeing, making it a trusted choice for pet owners worldwide.",
+            "year": 1934,
+            "country": "USA",
+            "priceRange": "Standard"
+          }
     ],
     "category": [
         {
