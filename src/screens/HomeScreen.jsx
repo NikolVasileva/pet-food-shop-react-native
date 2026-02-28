@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { shopService } from "../services";
 import Toast from "react-native-toast-message";
@@ -43,10 +43,14 @@ export default function HomeScreen({
         fetchData()
     }, [toggleRefresh]);
 
+    const pressBannerHadler = () => {
+        navigation.navigate("OfferScreen")
+    }
+
     const brandCardPressHandler = (brandId, brandName) => {
         console.log(brandId)
         navigation.navigate("BrandScreen", { brandId, brandName })
-        
+
     }
 
     return (
@@ -55,13 +59,15 @@ export default function HomeScreen({
 
                 {/* Home Banner */}
                 <View style={{ padding: 16 }}>
-                    <Image source={require("../../assets/promo-banner.png")}
-                        style={{
-                            width: "100%",
-                            height: 205,
-                            resizeMode: "cover",
-                            borderRadius: 20,
-                        }} />
+                    <Pressable onPress={pressBannerHadler}>
+                        <Image source={require("../../assets/promo-banner.png")}
+                            style={{
+                                width: "100%",
+                                height: 205,
+                                resizeMode: "cover",
+                                borderRadius: 20,
+                            }} />
+                    </Pressable>
                 </View>
 
                 {/* Category Section */}
@@ -90,7 +96,7 @@ export default function HomeScreen({
                         contentContainerStyle={styles.sectionBanner}
                     >
                         {allBrands.map((brand) => (
-                            <BrandCard key={brand.id} {...brand} onPress={brandCardPressHandler}/>
+                            <BrandCard key={brand.id} {...brand} onPress={brandCardPressHandler} />
                         ))}
                     </ScrollView>
                 </View>
@@ -101,8 +107,8 @@ export default function HomeScreen({
                     <View style={styles.sectionRow}>
 
                         {bestSellersProducts.map((bestSellerProduct) => (
-                            <View style={styles.card}>
-                                <ProductCard key={bestSellerProduct.id} {...bestSellerProduct} />
+                            <View key={bestSellerProduct.id} style={styles.card}>
+                                <ProductCard {...bestSellerProduct} />
                             </View>
                         ))}
 

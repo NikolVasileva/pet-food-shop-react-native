@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 import BrandScreen from "../screens/BrandScreen";
+import OfferScreen from "../screens/OfferScreen";
 
 export default function HomeNavigator() {
     const Stack = createNativeStackNavigator();
@@ -21,6 +22,18 @@ export default function HomeNavigator() {
                         fontWeight: "bold",
                     },
                 })} />
+                <Stack.Screen name="OfferScreen" component={OfferScreen} 
+                  options={{
+                    headerShown: true, 
+                    title: "Easter Offer",
+                    headerStyle: {
+                      backgroundColor: "#00B8BD",
+                    },
+                    headerTintColor: "#fff",
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                    },
+                  }}/>
         </Stack.Navigator>
     )
 }
