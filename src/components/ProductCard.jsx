@@ -6,21 +6,27 @@ export default function ProductCard({
     name,
     price,
     isPromo,
+    isBestSeller
 
 }) {
     return (
         <TouchableOpacity>
-             {isPromo
-                    ? <View style={styles.promoLabel}>
-                        <Text style={styles.promoText}>Promo</Text>
-                    </View> : ""
-                }
+            {isPromo
+                ? <View style={styles.promoLabel}>
+                    <Text style={styles.promoText}>Promo</Text>
+                </View> : ""
+            }
             <View style={[styles.card]}>
                 <Image
                     source={{ uri: image }}
                     style={styles.image}
                     resizeMode="cover"
                 />
+                {isBestSeller
+                    ? <View style={styles.bestSellerLabel}>
+                        <Text style={styles.sellerText}>Best Seller</Text>
+                    </View> : ""}
+
                 <Text style={[styles.title]}>{name}</Text>
                 {isPromo
                     ?
@@ -81,7 +87,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 180,
         resizeMode: "contain",
-        marginBottom: 20
+        marginBottom: 30
     },
     secondPrice: {
         textDecorationLine: "line-through",
@@ -104,7 +110,21 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 10,
         borderBottomRightRadius: 10
     },
+    bestSellerLabel: {
+        backgroundColor: "#00B8BD",
+        position: "absolute",
+        bottom: 143,
+        padding: 5,
+        zIndex: 2,
+        left: 0,
+        borderTopLeftRadius: 10,
+        borderBottomRightRadius: 10
+    },
     promoText: {
         fontWeight: "bold"
+    },
+    sellerText: {
+        fontWeight: "bold",
+        color: "#fff"
     }
 })
