@@ -5,7 +5,8 @@ export default function ProductCard({
     image,
     name,
     price,
-    isPromo
+    isPromo,
+
 }) {
     return (
         <TouchableOpacity>
@@ -25,7 +26,7 @@ export default function ProductCard({
                     ?
                     <View style={styles.promoPriceSection}>
                         <Text style={[styles.promoPrice]}>${isPromo}</Text>
-                        <Text style={[styles.price, styles.secondPrice]}>${price}</Text>
+                        <Text style={[styles.secondPrice]}>${price}</Text>
                     </View>
                     :
                     <Text style={[styles.price]}>${price}</Text>
@@ -65,8 +66,9 @@ const styles = StyleSheet.create({
     },
     price: {
         fontSize: 16,
-        color: '#7C7C7C',
+        color: "#262825",
         textAlign: "center",
+        fontWeight: "500",
         // padding: 10,
     },
     promoPrice: {
@@ -83,6 +85,10 @@ const styles = StyleSheet.create({
     },
     secondPrice: {
         textDecorationLine: "line-through",
+        fontSize: 16,
+        color: '#7C7C7C',
+        textAlign: "center",
+        // padding: 10,
     },
     promoPriceSection: {
         flexDirection: "row",

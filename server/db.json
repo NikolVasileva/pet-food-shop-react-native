@@ -125,7 +125,7 @@
             "description": "High protein formula that helps puppies grow strong and healthy.",
             "price": 69.99,
             "isPromo": 54.99,
-            "image": "https://images.unsplash.com/photo-1583512603872-62c5fbaecb4e",
+            "image": "https://purinaexpress.com/wp-content/uploads/2021/04/large-breed.png",
             "isBestSeller": true
         },
         {
@@ -135,7 +135,7 @@
             "brand": "brand2",
             "description": "Premium nutrition for adult cats with essential vitamins.",
             "price": 62.50,
-            "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+            "image": "https://drantonov.bg/thumbs/1/07613036529150_c1n1_44201196.png",
             "isBestSeller": true
         },
         {
@@ -146,7 +146,7 @@
             "description": "Specially formulated food for small breed dogs.",
             "price": 74.90,
             "isPromo": 59.90,
-            "image": "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+            "image": "https://cdn11.bigcommerce.com/s-ucjiusw7rc/images/stencil/1280x1280/products/1343/1248/HILL-052742020884-1__04117.1731283531.png?c=2",
             "isBestSeller": false
         },
         {
@@ -156,7 +156,7 @@
             "brand": "brand3",
             "description": "Supports healthy weight and digestion for indoor cats.",
             "price": 66.40,
-            "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006",
+            "image": "https://pxmshare.colgatepalmolive.com/PNG_2000/1RLpTbNBJGoJyf3OHR5mQ.png",
             "isBestSeller": false
         },
         {
@@ -167,7 +167,7 @@
             "description": "Biologically appropriate dog food with fresh ingredients.",
             "price": 89.99,
             "isPromo": 72.99,
-            "image": "https://images.unsplash.com/photo-1561037404-61cd46aa615b",
+            "image": "https://www.orijenpetfoods.com/dw/image/v2/BFDW_PRD/on/demandware.static/-/Sites-orijen-na-master-catalog/default/dw3a5e4059/ORI%20Dog%20Refresh%202023/Original-2023/Original%20Dog%2031lb%20Front%20EN.png?sw=1200",
             "isBestSeller": false
         },
         {
@@ -177,7 +177,7 @@
             "brand": "brand5",
             "description": "Grain-free dog food rich in protein and natural nutrients.",
             "price": 82.30,
-            "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b",
+            "image": "https://www.acanapetfoods.co.uk/wp-content/uploads/2020/06/ACANA-Dog-Highest-Protein-Wild-Prairie-Recipe-11.4kg-Front-Right-EMEA-APAC.png",
             "isBestSeller": false
         },
         {
@@ -188,7 +188,7 @@
             "description": "Tasty dry dog food with chicken flavor for everyday nutrition.",
             "price": 39.99,
             "isPromo": 29.99,
-            "image": "https://images.unsplash.com/photo-1601758003122-58b2b7a0c9b6",
+            "image": "https://www.pedigree.in/files/styles/webp/public/2024-02/Adult%20chicken%20%26%20Vegetable%20Sachet-Pouch_1%20kg_FOP.png.webp?VersionId=z3XxXETATMmXpDhCBrFlAxNWMrhN60YS&itok=BlTMhwv7",
             "isBestSeller": false
         },
         {
@@ -198,7 +198,7 @@
             "brand": "brand5",
             "description": "Healthy seed mix for parrots and small birds.",
             "price": 14.99,
-            "image": "https://images.unsplash.com/photo-1591198936750-16d8e15edb9e",
+            "image": "https://hawthornpetsupplies.co.uk/wp-content/uploads/2020/05/Premium-Wild-Bird-20kg-2.png",
             "isBestSeller": true
         },
         {
@@ -209,7 +209,7 @@
             "description": "Balanced flakes for tropical aquarium fish.",
             "price": 9.99,
             "isPromo": 7.49,
-            "image": "https://images.unsplash.com/photo-1524704796725-9fc3044a58b2",
+            "image": "https://piscespros.com/wp-content/uploads/2020/11/Cichlid-Flake-Frenzy-.7-oz.png",
             "isBestSeller": true
         },
         {
@@ -219,7 +219,7 @@
             "brand": "brand1",
             "description": "Nutritious mix for hamsters, mice and small rodents.",
             "price": 11.99,
-            "image": "https://images.unsplash.com/photo-1595433562696-5f46f99c7b71",
+            "image": "https://www.balance-petfood.com/images/rodents-structure-mix.png?crc=325316140",
             "isBestSeller": false
         }
     ]
