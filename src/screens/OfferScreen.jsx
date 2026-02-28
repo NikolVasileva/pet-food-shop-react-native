@@ -10,9 +10,9 @@ export default function OfferScreen() {
                     <Image source={require("../../assets/offer-banner.png")}
                         style={styles.bannerImage} />
                 </View>
-                <View style={{ gap: 15, padding: 5, }}>
-                    <Text style={{ fontSize: 24, color: "#262825", fontWeight: "medium", alignItems: "center", textAlign: "center" }}>Promo Deals</Text>
-                    <Text style={{ fontSize: 16, color: "#808080", alignItems: "center", textAlign: "center" }}>The Best Promo Deals</Text>
+                <View style={{ gap: 20, padding: 5, paddingVertical: 20 }}>
+                    <Text style={styles.headline}>Speacial Easter Deals</Text>
+                    <Text style={styles.secondHeadline}>Hurry up!</Text>
                     <CountdownTimer endDate={new Date(2026, 4, 15, 23, 59, 59)} />
                 </View>
             </View>
@@ -35,5 +35,20 @@ const styles = StyleSheet.create({
         height: 250,
         borderBottomRightRadius: 100,
         borderBottomLeftRadius: 100, 
+    },
+    headline: {
+        fontSize: 24, 
+        color: "#262825", 
+        fontWeight: "600", 
+        alignItems: "center", 
+        textAlign: "center" 
+    },
+    secondHeadline: {
+        fontSize: 16, 
+        fontWeight: "800",
+        color: "#808080", 
+        alignItems: "center", 
+        textAlign: "center" 
     }
+
 })
