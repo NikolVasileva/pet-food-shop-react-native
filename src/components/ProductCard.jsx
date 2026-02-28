@@ -9,6 +9,11 @@ export default function ProductCard({
 }) {
     return (
         <TouchableOpacity>
+             {isPromo
+                    ? <View style={styles.promoLabel}>
+                        <Text style={styles.promoText}>Promo</Text>
+                    </View> : ""
+                }
             <View style={[styles.card]}>
                 <Image
                     source={{ uri: image }}
@@ -16,14 +21,14 @@ export default function ProductCard({
                     resizeMode="cover"
                 />
                 <Text style={[styles.title]}>{name}</Text>
-                {isPromo 
-                ? 
-                <View>
-                    <Text style={[styles.isPromo]}>${isPromo}</Text>
-                    <Text style={[styles.price, styles.secondPrice]}>${price}</Text>
-                </View>
-                : 
-                <Text style={[styles.price]}>${price}</Text>
+                {isPromo
+                    ?
+                    <View style={styles.promoPriceSection}>
+                        <Text style={[styles.promoPrice]}>${isPromo}</Text>
+                        <Text style={[styles.price, styles.secondPrice]}>${price}</Text>
+                    </View>
+                    :
+                    <Text style={[styles.price]}>${price}</Text>
                 }
             </View>
         </TouchableOpacity>
@@ -42,35 +47,58 @@ const styles = StyleSheet.create({
         elevation: 5,
         padding: 10,
         width: "100%",
-        height: 270,
+        height: 350,
+        padding: 15,
+        position: "relative"
     },
     brand: {
         fontSize: 16,
-        color: '#262825',
+        color: "#262825",
         marginBottom: 5,
     },
     title: {
-        fontSize: 16,
-        color: '#262825',
+        fontSize: 17,
+        color: "#262825",
         marginBottom: 15,
+        textAlign: "center",
+        fontWeight: "500"
     },
     price: {
-        fontSize: 14,
+        fontSize: 16,
         color: '#7C7C7C',
         textAlign: "center",
-        padding: 10,
+        // padding: 10,
     },
     promoPrice: {
-        fontSize: 18,
-        color: '#925076',
+        fontSize: 16,
+        color: "#262825",
         textAlign: "center",
-        padding: 0,
+        fontWeight: "500",
     },
     image: {
         width: "100%",
-        height: 150,
+        height: 180,
+        resizeMode: "contain",
+        marginBottom: 20
     },
     secondPrice: {
         textDecorationLine: "line-through",
+    },
+    promoPriceSection: {
+        flexDirection: "row",
+        justifyContent: "space-around"
+    },
+    promoLabel: {
+        backgroundColor: "#F2A305",
+        position: "absolute",
+        top: 10,
+        padding: 5,
+        zIndex: 2,
+        left: 140,
+        borderTopLeftRadius: 10,
+        borderBottomRightRadius: 10
+    },
+    promoText: {
+        fontWeight: "bold"
     }
 })
