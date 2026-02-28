@@ -35,11 +35,13 @@ export default function CategoryScreen({
                 <View style={styles.logo}>
                     <Image source={{ uri: category.image }}
                         style={{
-                            width: 200,
+                            width: 100,
                             height: 100,
                             resizeMode: "cover",
                         }} />
                 </View>
+                <Text style={styles.description}>“The greatness of a nation and its moral progress can be judged by the way its animals are treated.”</Text>
+                <Text style={styles.author}>Mahatma Gandhi</Text>
             </View>
             <Text>{category.name}</Text>
         </ScrollView>
@@ -69,6 +71,12 @@ const styles = StyleSheet.create({
     description: {
         textAlign: "center",
         fontSize: 17,
-        padding: 10,
+        paddingHorizontal: 10,
+        fontStyle: "italic"
+    },
+    author: {
+        fontSize: 17,
+        fontStyle: "italic",
+        fontWeight: "600"
     }
 })
