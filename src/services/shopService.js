@@ -28,6 +28,10 @@ export async function fetchCategoriesById(categoryId) {
     return api.get(`/category/${categoryId}`)
 }
 
+export async function fetchProductsByCategory(categoryId) {
+    return api.get(`/products?category=${categoryId}`);
+}
+
 export async function fetchGetAllProducts() {
     return api.get("/products")
 }
