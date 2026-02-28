@@ -12,7 +12,7 @@ export default function RootNavigator() {
     return(
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             {!isAuthenticated
-            ? <Stack.Screen name="Home" component={HomeNavigator} />
+            ? <Stack.Screen name="Shop" component={ShopNavigator} />
             : <Stack.Screen name="Auth" component={AuthNavigator} />
             }
         </Stack.Navigator>

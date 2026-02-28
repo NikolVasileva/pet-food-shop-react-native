@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     bestSellerLabel: {
         backgroundColor: "#00B8BD",
         position: "absolute",
-        bottom: 143,
+        bottom: 137,
         padding: 5,
         zIndex: 2,
         left: 0,
