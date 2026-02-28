@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
         top: 10,
         padding: 5,
         zIndex: 2,
-        left: 140,
+        left: 137,
         borderTopLeftRadius: 10,
         borderBottomRightRadius: 10
     },

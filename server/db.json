@@ -71,27 +71,27 @@
         {
             "id": "category-1",
             "name": "Dogs",
-            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/dog-icon.png"
+            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/dog-icon2.png"
         },
         {
             "id": "category-2",
             "name": "Cats",
-            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/cat-icon.png"
+            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/cat-icon2.png"
         },
         {
             "id": "category-3",
             "name": "Birds",
-            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/bird-icon.png"
+            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/parrot-icon.png"
         },
         {
             "id": "category-4",
             "name": "Fish",
-            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/fish-icon.png"
+            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/fish-icon2.png"
         },
         {
             "id": "category-5",
             "name": "Rodents",
-            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/mouse-icon.png"
+            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/rabbit-icon.png"
         }
     ],
 
