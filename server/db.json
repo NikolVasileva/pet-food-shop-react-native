@@ -29,6 +29,36 @@
       "email": "test16@abv.bg",
       "password": "$2a$10$qJkWneVTyCmOjYf/gRbEm.MPEvWD7DkGXjaxlGUq81M/xZH2TzpcC",
       "id": 6
+    },
+    {
+      "email": "test17@abv.bg",
+      "password": "$2a$10$pSh0REEx.rbqdzRHUFWBf.FkjqmlvRbjNgqVdCMa8eRiqF2soBH8a",
+      "id": 7
+    },
+    {
+      "email": "tetst18@abv.bg",
+      "password": "$2a$10$wN6GrAA62nDcxUw1gDksveUOxQlhi0x4PDyFiz7gjXht96tlhCvlK",
+      "id": 8
+    },
+    {
+      "email": "test19@abv.bg",
+      "password": "$2a$10$1sesWDUG1H7bcPLlHFP8Ju/FRw0GhXLSqrllTOnwakEG2zyJnEVDm",
+      "id": 9
+    },
+    {
+      "email": "test20@abv.bg",
+      "password": "$2a$10$W705ZrroxMM0gLK7lCIKIecv0z4zDz9e9stDAs.wDzUPKfcOQ8XXG",
+      "id": 10
+    },
+    {
+      "email": "test21@abv.bg",
+      "password": "$2a$10$8dRPgyXLdwy705CS6T.2heMoHnH0C6ovZhoMZItKDXlRPb2RrmG7C",
+      "id": 11
+    },
+    {
+      "email": "test22@abv.bg",
+      "password": "$2a$10$lkIEvQvMHr3BXa/sW4wgOueHxDSzy/Rprn91aslMTOJ1lJB2qVyYy",
+      "id": 12
     }
   ],
   "brands": [

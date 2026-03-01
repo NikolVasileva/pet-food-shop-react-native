@@ -21,8 +21,8 @@ export default function RegisterScreen({ navigation }) {
     const [showPassword, setShowPassword] = useState(false);
 
     const [fieldErrors, setFieldErrors] = useState({
-        email: false,
-        password: false,
+        email: "",
+        password: "",
     });
 
     const validate = () => {

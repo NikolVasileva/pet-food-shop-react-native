@@ -25,8 +25,8 @@ export default function AuthProvider({ children }) {
     const register = async (email, password) => {
         try {
             setIsLoading(true);
-            const userData = await authService.register(email, password);
-            setUser(userData);
+            const { user, accessToken } = await authService.register(email, password);
+            setUser(user);
             return { success: true };
         } catch (err) {
             let message = "Registration failed!";
@@ -42,6 +42,7 @@ export default function AuthProvider({ children }) {
             setIsLoading(false);
         }
     };
+
 
     const login = async (email, password) => {
         try {
