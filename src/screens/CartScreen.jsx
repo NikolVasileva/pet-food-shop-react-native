@@ -2,7 +2,9 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-nati
 import { useCart } from "../contexts/cart/CartProvider";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function CartScreen() {
+export default function CartScreen({
+    navigation
+}) {
     const { items, total, removeFromCart, updateQuantity } = useCart();
 
     if (items.length === 0) {
@@ -14,6 +16,10 @@ export default function CartScreen() {
                 </View>
             </SafeAreaView>
         );
+    }
+
+    const pressDeliveryHandler = () => {
+        navigation.navigate("CartDeliveryScreen")
     }
 
     return (
@@ -57,8 +63,8 @@ export default function CartScreen() {
 
                 <View style={styles.totalSection}>
                     <Text style={styles.totalText}>Total: {total.toFixed(2)} €</Text>
-                    <TouchableOpacity style={styles.checkoutButton}>
-                        <Text style={styles.checkoutText}>Payment</Text>
+                    <TouchableOpacity style={styles.checkoutButton} onPress={pressDeliveryHandler}>
+                        <Text style={styles.checkoutText}>Next step</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
