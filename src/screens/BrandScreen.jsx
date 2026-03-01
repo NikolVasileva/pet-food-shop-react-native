@@ -3,6 +3,7 @@ import { shopService } from "../services";
 import { useEffect, useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 import ProductCard from "../components/ProductCard";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function BrandScreen({
     route,
@@ -34,46 +35,46 @@ export default function BrandScreen({
     }
 
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <View style={styles.logo}>
-                    <Image source={{ uri: brand.logo }}
-                        style={{
-                            width: 200,
-                            height: 100,
-                            resizeMode: "cover",
-                        }} />
-                </View>
-                <Text style={styles.description}>{brand.description}</Text>
-                <View style={styles.pointsSection}>
-                    <View style={styles.points}>
-                        <MaterialIcons name="pets" size={20} color="#F2A305" />
-                        <Text style={styles.pointsText}>{brand.year} year</Text>
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={styles.logo}>
+                        <Image source={{ uri: brand.logo }}
+                            style={{
+                                width: 200,
+                                height: 100,
+                                resizeMode: "cover",
+                            }} />
                     </View>
-                    <View style={styles.points}>
-                        <MaterialIcons name="pets" size={20} color="#00B8BD" />
-                        <Text style={styles.pointsText}>{brand.country}</Text>
-                    </View>
-                    <View style={styles.points}>
-                        <MaterialIcons name="pets" size={20} color="#FA163F" />
-                        <Text style={styles.pointsText}>{brand.priceRange} food</Text>
-                    </View>
-                </View>
-            </View>
-            {/* Products Section */}
-            <View style={styles.cardSection}>
-                <Text style={styles.sectionTitle}>Top Products</Text>
-                <View style={styles.sectionRow}>
-
-                    {products.map((product) => (
-                        <View style={styles.card}>
-                            <ProductCard key={product.id} {...product} />
+                    <Text style={styles.description}>{brand.description}</Text>
+                    <View style={styles.pointsSection}>
+                        <View style={styles.points}>
+                            <MaterialIcons name="pets" size={20} color="#F2A305" />
+                            <Text style={styles.pointsText}>{brand.year} year</Text>
                         </View>
-                    ))}
-
+                        <View style={styles.points}>
+                            <MaterialIcons name="pets" size={20} color="#00B8BD" />
+                            <Text style={styles.pointsText}>{brand.country}</Text>
+                        </View>
+                        <View style={styles.points}>
+                            <MaterialIcons name="pets" size={20} color="#FA163F" />
+                            <Text style={styles.pointsText}>{brand.priceRange} food</Text>
+                        </View>
+                    </View>
                 </View>
-            </View>
-        </ScrollView>
+                {/* Products Section */}
+                <View style={styles.cardSection}>
+                    <Text style={styles.sectionTitle}>Top Products</Text>
+                    <View style={styles.sectionRow}>
+
+                        {products.map((product) => (
+                            <View key={product.id} style={styles.card}>
+                                <ProductCard {...product} />
+                            </View>
+                        ))}
+
+                    </View>
+                </View>
+            </ScrollView>
 
     )
 }
@@ -87,6 +88,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
+        overflow: "hidden",
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 3,
