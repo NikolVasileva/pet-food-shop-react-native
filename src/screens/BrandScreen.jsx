@@ -34,6 +34,10 @@ export default function BrandScreen({
         );
     }
 
+    const productCardPressHandler = (productId) => {
+        navigation.navigate("ProductScreen", { productId })
+    }
+
     return (
             <ScrollView>
                 <View style={styles.container}>
@@ -68,7 +72,7 @@ export default function BrandScreen({
 
                         {products.map((product) => (
                             <View key={product.id} style={styles.card}>
-                                <ProductCard {...product} />
+                                <ProductCard {...product} onPress={productCardPressHandler}/>
                             </View>
                         ))}
 
