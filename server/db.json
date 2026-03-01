@@ -31,7 +31,7 @@
       "id": 6
     },
     {
-      "email": "test17@abv.bg",
+      "email": "test17test@abv.bg",
       "password": "$2a$10$pSh0REEx.rbqdzRHUFWBf.FkjqmlvRbjNgqVdCMa8eRiqF2soBH8a",
       "id": 7
     },
@@ -59,6 +59,51 @@
       "email": "test22@abv.bg",
       "password": "$2a$10$lkIEvQvMHr3BXa/sW4wgOueHxDSzy/Rprn91aslMTOJ1lJB2qVyYy",
       "id": 12
+    },
+    {
+      "email": "test14@abv.bg",
+      "password": "$2a$10$egOH0xOLPMx.Vyysm.yZbuYXnh52hLZ3r2pDaLZWGf22069p3fojq",
+      "id": 13
+    },
+    {
+      "email": "test18@abv.bg",
+      "password": "$2a$10$1KoQP3VWHsNmmPfkyMtDP.0M2IiEcsfZC41osJ.U4GPBEzh2Kv44K",
+      "id": 14
+    },
+    {
+      "email": "test26@abv.bg",
+      "password": "$2a$10$6uVD874qgXc3s1MmlcrlI.Y.rmvj/7w8XJF2XjHN8PGNo5ZgV4Qcq",
+      "id": 15
+    },
+    {
+      "email": "test27tthhht@abv.bg",
+      "password": "$2a$10$GIwOlQDSrEYlIqgcUVvNJu2GIleCqLKF7GFZk2lZ1gYhqYfDe46jm",
+      "id": 16
+    },
+    {
+      "email": "test30testnikol@abv.bg",
+      "password": "$2a$10$wfO9O7ATmWWBX/aatNf1ruXICRR5OTbnooOXC2ytLmymEEwdsr0mm",
+      "id": 17
+    },
+    {
+      "email": "dddd@abv.bg",
+      "password": "$2a$10$Kj3tfpPXch7E7LCogUeAheX/uLKIvajRU5ty8zdbUJ1p9lP1axS.2",
+      "id": 18
+    },
+    {
+      "email": "ffftttttttf@abv.bg",
+      "password": "$2a$10$dQxXAt63Gq4hHTPkNjCyYOEcUX1EjhcjcV.kNXOT38bNzYiaZR7e2",
+      "id": 19
+    },
+    {
+      "email": "rrrr@abv.bg",
+      "password": "$2a$10$PQGFj6myWTngO4.14qIzD.ZIm8TxNlH/aWfSiWGXofFH.TAXCKQNm",
+      "id": 20
+    },
+    {
+      "email": "nikolllyyyy@abv.bg",
+      "password": "$2a$10$SNKsHg77zOwrr1tkhjnAh.yHIWf07.NXHk5fRrlM4gtA.4Z28Gihm",
+      "id": 21
     }
   ],
   "brands": [

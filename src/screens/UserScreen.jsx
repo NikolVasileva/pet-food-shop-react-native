@@ -1,29 +1,55 @@
-import { useEffect, useState } from "react";
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { useAuth } from "../contexts/auth/useAuth";
+import { authService } from "../services";
 
 export default function UserScreen({}) {
-    const { user, logout } = useAuth(); 
+    const { user, auth, logout, setUser } = useAuth(); 
     const [email, setEmail] = useState(user?.email || "");
     const [isEditing, setIsEditing] = useState(false);
+    const [isSaving, setIsSaving] = useState(false);
 
-    const saveEmail = () => {
+    const saveEmail = async () => {
         if (!email.includes("@")) {
             return Alert.alert("Invalid email", "Please enter a valid email address");
         }
-        Alert.alert("Success", `Email updated to ${email}`);
-        setIsEditing(false);
+    
+        if (!auth?.accessToken) {
+            return Alert.alert("Error", "You must be logged in to update email.");
+        }
+    
+        try {
+            setIsSaving(true);
+            const updatedUser = await authService.updateUser(
+                user.id,
+                { email },
+                auth.accessToken
+            );
+    
+            if (updatedUser && updatedUser.email) {
+                setUser(updatedUser);
+                console.log("Updated user:", updatedUser);
+                Alert.alert("Success", `Email updated to ${updatedUser.email}`); // <- виждате новия имейл
+                setIsEditing(false);
+            } else {
+                Alert.alert("Success", "Email updated successfully!"); // fallback
+            }
+        } catch (err) {
+            console.log(err.response || err);
+            Alert.alert("Error", "Failed to update email.");
+            console.log("Updating user", user.id, { email }, auth.accessToken);
+        } finally {
+            setIsSaving(false);
+        }
     };
 
     useEffect(() => {
         if (user?.email) setEmail(user.email);
-      }, [user]);
+    }, [user]);
 
     const handleLogout = () => {
         logout();
         Alert.alert("Logout", "You have been logged out");
-        
     };
 
     return (
@@ -42,26 +68,38 @@ export default function UserScreen({}) {
                             autoCapitalize="none"
                         />
                     ) : (
-                        <Text style={[styles.input, { flex: 1, paddingVertical: 12 }]}>{email}</Text>
+                        <Text style={[styles.input, { flex: 1, paddingVertical: 12 }]}>
+                            {email}
+                        </Text>
                     )}
-                    <TouchableOpacity
-                        onPress={() => {
-                            if (isEditing) saveEmail();
-                            else setIsEditing(true);
-                        }}
-                        style={{ marginLeft: 8 }}
-                    >
-                        <FontAwesome
-                            name={isEditing ? "check" : "pencil"}
-                            size={20}
-                            color="#00B8BD"
-                        />
-                    </TouchableOpacity>
+                    {!isEditing && (
+                        <TouchableOpacity
+                            onPress={() => setIsEditing(true)}
+                            style={{ marginLeft: 8 }}
+                        >
+                            <FontAwesome name="pencil" size={20} color="#00B8BD" />
+                        </TouchableOpacity>
+                    )}
                 </View>
+
+                {isEditing && (
+                    <TouchableOpacity
+                        style={[styles.button, { marginTop: 10, opacity: isSaving ? 0.5 : 1 }]}
+                        onPress={saveEmail}
+                        disabled={isSaving}
+                    >
+                        <Text style={styles.buttonText}>
+                            {isSaving ? "Saving..." : "Save Changes"}
+                        </Text>
+                    </TouchableOpacity>
+                )}
             </View>
 
             <View style={styles.group}>
-                <TouchableOpacity style={[styles.button, styles.logoutButton]} onPress={handleLogout}>
+                <TouchableOpacity
+                    style={[styles.button, styles.logoutButton]}
+                    onPress={handleLogout}
+                >
                     <Text style={styles.buttonText}>Logout</Text>
                 </TouchableOpacity>
             </View>

@@ -26,7 +26,15 @@ export default function AuthProvider({ children }) {
         try {
             setIsLoading(true);
             const { user, accessToken } = await authService.register(email, password);
-            setUser(user);
+    
+            // Ако user няма пълен обект, извличаме текущия
+            let fullUser = user;
+            if (!user.id) {
+                fullUser = await authService.getCurrentUser(accessToken); // нов метод в authService
+            }
+    
+            setUser(fullUser);
+            setAuth({ accessToken });
             return { success: true };
         } catch (err) {
             let message = "Registration failed!";
@@ -42,6 +50,26 @@ export default function AuthProvider({ children }) {
             setIsLoading(false);
         }
     };
+    // const register = async (email, password) => {
+    //     try {
+    //         setIsLoading(true);
+    //         const { user, accessToken } = await authService.register(email, password);
+    //         setUser(user);
+    //         return { success: true };
+    //     } catch (err) {
+    //         let message = "Registration failed!";
+    //         if (err.response && err.response.status === 400) {
+    //             message = err.response.data?.message || "Email already exists!";
+    //         } else if (err.message) {
+    //             message = err.message;
+    //         }
+    
+    //         setError(message);
+    //         return { success: false, message };
+    //     } finally {
+    //         setIsLoading(false);
+    //     }
+    // };
 
 
     const login = async (email, password) => {
@@ -82,7 +110,8 @@ export default function AuthProvider({ children }) {
         isAuthenticated: !!user,
         error,
         clearError: () => setError(null),
-        logout
+        logout,
+        setUser
     }
 
     return (
