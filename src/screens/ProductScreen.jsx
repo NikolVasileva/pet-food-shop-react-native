@@ -19,30 +19,58 @@ export default function ProductScreen({
                 console.log("Cannot load the product", error);
             }
         }
-    
+
         fetchProduct();
     }, [productId]);
 
-    return(
+    return (
         <ScrollView>
-        <View style={styles.container}>
-            <View style={styles.logo}>
-                <Image source={{ uri: product.image }}
+            <View style={styles.container}>
+                <View>
+                    {/* <Image source={require("../../assets/dog-product.jpg")}
+                    style={{
+                        width: 120,
+                        height: 100,
+                        resizeMode: "cover",
+                    }} /> */}
+                    <Image source={{ uri: product.image }}
+                        style={{
+                            width: 200,
+                            height: 300,
+                            resizeMode: "cover",
+                        }} />
+                </View>
+            </View>
+            <View>
+                {product.isBestSeller && (
+                    <View style={styles.bestSellerLabel}>
+                        <Text style={styles.sellerText}>Best Seller</Text>
+                    </View>
+                )}
+                <View>
+                    <Text style={styles.title}>{product.name}</Text>
+                    <Text style={styles.description}>{product.description}</Text>
+                </View>
+                <Image source={require("../../assets/dog-product2.png")}
                     style={{
                         width: 200,
-                        height: 300,
+                        height: 200,
                         resizeMode: "cover",
+                        position: "absolute",
+                        top: 200,
+                        right: 0,
                     }} />
             </View>
-        </View>
-    </ScrollView>
+        </ScrollView>
 
-)}
+    )
+}
 
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#fff",
-        borderRadius: 12,
+        borderBottomRightRadius: 100,
+        borderBottomLeftRadius: 100,
         padding: 16,
         alignItems: "center",
         justifyContent: "space-between",
@@ -55,57 +83,31 @@ const styles = StyleSheet.create({
         marginBottom: 25,
         gap: 15,
         // flex: 1,
-    },
-    logo: {
-        flex: 1,
-        alignItems: "center",
+        position: "relative",
     },
     description: {
         textAlign: "center",
-        fontSize: 17,
+        fontSize: 18,
         padding: 10,
     },
-    points: {
-        flexDirection: "row",
-        alignItems: "center",
-        // justifyContent: "space-between",
-        gap: 5,
-    },
-    pointsText: {
-        fontSize: 15,
-        fontWeight: "800",
-    },
-    pointsSection: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        gap: 25,
-    },
-    sectionRow: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        flexWrap: "wrap",
-        // width: "100%",
-    },
-    cardSection: {
-        padding: 16,
-        paddingBottom: 8,
-        gap: 12,
-    },
-    card: {
-        width: "48%",
-        marginBottom: 20,
-        gap: 12,
-    },
-    sectionTitle: {
+    title: {
         fontSize: 20,
         fontWeight: "bold",
-        color: '#333',
-        marginBottom: 12,
-        // color: "#00B8BD",
-        color: "#000",
-        textAlign: "center",
-        textDecorationLine: "underline",
-        textDecorationColor: "#00B8BD",
-        textDecorationStyle: "double"
+        textAlign: "center"
     },
+    bestSellerLabel: {
+        backgroundColor: "#00B8BD",
+        position: "absolute",
+        bottom: 107,
+        padding: 5,
+        zIndex: 2,
+        left: 180,
+        borderTopLeftRadius: 10,
+        borderBottomRightRadius: 10
+    },
+    sellerText: {
+        fontWeight: "bold",
+        color: "#fff"
+    }
+
 })
