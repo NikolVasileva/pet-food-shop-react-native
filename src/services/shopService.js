@@ -36,6 +36,10 @@ export async function fetchGetAllProducts() {
     return api.get("/products")
 }
 
+export async function fetchGetProductsById(productId) {
+    return api.get(`/products/${productId}`)
+}
+
 export async function fetchBestSellersProducts() {
     return api.get("/products?isBestSeller=true")
 }
