@@ -5,6 +5,7 @@ import RootNavigator from './navigator/RootNavigator';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AuthProvider from './contexts/auth/AuthProvider';
 import Toast from 'react-native-toast-message';
+import CartProvider from './contexts/cart/CartProvider';
 
 export default function App() {
   return (
@@ -13,7 +14,9 @@ export default function App() {
         <StatusBar translucent backgroundColor="transparent" style="dark" />
 
         <AuthProvider>
-          <RootNavigator />
+          <CartProvider>
+            <RootNavigator />
+          </CartProvider>
         </AuthProvider>
 
         <Toast />

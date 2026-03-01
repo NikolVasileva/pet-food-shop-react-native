@@ -15,13 +15,13 @@ export default function HomeNavigator() {
 
             <Stack.Screen name="BrandScreen" component={BrandScreen}
                 options={({ route }) => ({
-                    headerShown: true,             // показваме хедъра
-                    headerTitle: route.params.brandName,  // заглавие
-                    headerBackTitleVisible: false, // премахва текста на бутона Back
+                    headerShown: true,          
+                    headerTitle: route.params.brandName,  
+                    headerBackTitleVisible: false, 
                     headerStyle: {
-                        backgroundColor: "#00B8BD", // цветът на лентата
+                        backgroundColor: "#00B8BD", 
                     },
-                    headerTintColor: "#fff", // цветът на стрелката и текста
+                    headerTintColor: "#fff",
                     headerTitleStyle: {
                         fontWeight: "bold",
                     },
@@ -40,27 +40,26 @@ export default function HomeNavigator() {
                 }} />
             <Stack.Screen name="CategoryScreen" component={CategoryScreen}
                 options={({ route }) => ({
-                    headerShown: true,             // показваме хедъра
-                    headerTitle: route.params.categoryName,  // заглавие
-                    headerBackTitleVisible: false, // премахва текста на бутона Back
+                    headerShown: true,       
+                    headerTitle: route.params.categoryName, 
+                    headerBackTitleVisible: false, 
                     headerStyle: {
-                        backgroundColor: "#00B8BD", // цветът на лентата
+                        backgroundColor: "#00B8BD",
                     },
-                    headerTintColor: "#fff", // цветът на стрелката и текста
+                    headerTintColor: "#fff",
                     headerTitleStyle: {
                         fontWeight: "bold",
                     },
                 })} />
             <Stack.Screen name="ProductScreen" component={ProductScreen}
                 options={({ route }) => ({
-                    headerShown: true,             // показваме хедъра
+                    headerShown: true,   
                     title: "About the product",
-                    // headerTitle: route.params.categoryName,  // заглавие
-                    headerBackTitleVisible: false, // премахва текста на бутона Back
+                    headerBackTitleVisible: false, 
                     headerStyle: {
-                        backgroundColor: "#00B8BD", // цветът на лентата
+                        backgroundColor: "#00B8BD", 
                     },
-                    headerTintColor: "#fff", // цветът на стрелката и текста
+                    headerTintColor: "#fff",
                     headerTitleStyle: {
                         fontWeight: "bold",
                     },

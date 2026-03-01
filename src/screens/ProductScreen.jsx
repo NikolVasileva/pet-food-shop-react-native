@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { shopService } from "../services";
+import { useCart } from "../contexts/cart/CartProvider.jsx";
+
 
 export default function ProductScreen({ route, navigation }) {
     const { productId } = route.params;
@@ -8,6 +10,8 @@ export default function ProductScreen({ route, navigation }) {
     const [product, setProduct] = useState([]);
     const [quantity, setQuantity] = useState(1);
     const [isFavorite, setIsFavorite] = useState(false);
+    const { addToCart } = useCart()
+
 
     useEffect(() => {
         async function fetchProduct() {
@@ -102,8 +106,8 @@ export default function ProductScreen({ route, navigation }) {
                 </View>
 
                 {/* Order */}
-                <TouchableOpacity style={styles.orderButton}>
-                    <Text style={styles.orderText}>Поръчай ({quantity})</Text>
+                <TouchableOpacity style={styles.orderButton} onPress={() => addToCart(product, quantity)}>
+                    <Text style={styles.orderText}>Поръчай ({quantity}) </Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>
