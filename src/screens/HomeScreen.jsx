@@ -126,9 +126,9 @@ const styles = StyleSheet.create({
     section: {
         padding: 16,
         paddingBottom: 8,
-        flexDirection: "row",
-        flexWrap: "wrap",
-        gap: 12,
+        // flexDirection: "row",
+        // flexWrap: "wrap",
+        // gap: 12,
     },
     sectionRow: {
         flexDirection: "row",
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     },
     sectionBanner: {
         flexDirection: "row",
-        flexWrap: "wrap",
+        // flexWrap: "wrap",
         gap: 12,
     },
     sectionTitle: {
