@@ -6,11 +6,16 @@ import ProductCard from "../components/ProductCard";
 
 
 export default function CategoryScreen({
-    route
+    route,
+    navigation
 }) {
     const { categoryId } = route.params;
-    const [category, setCategory] = useState(null);
+    const [category, setCategory] = useState([]);
     const [products, setProducts] = useState([])
+
+    const productCardPressHandler = (productId) => {
+        navigation.navigate("ProductScreen", { productId })
+    }
 
     useEffect(() => {
         async function fetchCategory() {
@@ -52,8 +57,8 @@ export default function CategoryScreen({
                 <View style={styles.sectionRow}>
 
                     {products.map((product) => (
-                        <View style={styles.card}>
-                            <ProductCard key={product.id} {...product} />
+                        <View style={styles.card} key={product.id} >
+                            <ProductCard {...product} onPress={productCardPressHandler}/>
                         </View>
                     ))}
 

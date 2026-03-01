@@ -12,6 +12,7 @@ export default function ProductCard({
 }) {
     return (
         <TouchableOpacity onPress={() => onPress(id)}>
+
             {/* {isPromoPrice
                 ? <View style={styles.promoLabel}>
                     <Text style={styles.promoText}>Promo</Text>
