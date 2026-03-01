@@ -68,6 +68,8 @@ export default function AuthProvider({ children }) {
     const logout = () => {
         setUser(null);
         setAuth(null);
+        setIsLoading(false);
+        setError(null);
     };
 
     const contextValue = {

@@ -90,7 +90,7 @@ export default function RegisterScreen({ navigation }) {
         } catch (error) {
             Toast.show({
                 type: "error",
-                text1: err.message || "Something went wrong!",
+                text1: error.message || "Something went wrong!",
                 topOffset: 160,
             });
         }

@@ -1,234 +1,253 @@
 {
-    "users": [
-        {
-            "email": "test@abv.bg",
-            "password": "$2a$10$C.T.4FzER4dQUbijJ96QFOas9FJqAwa8MIP5hcWzSNT.Y081fTV86",
-            "id": 1
-        },
-        {
-            "email": "test13@abv.bg",
-            "password": "$2a$10$MmafD2KMDvS5./tRzPwG2uAF4yyioCI474ZP0a8ZNtJ//EaHxSBHe",
-            "id": 2
-        }
-    ],
-    "brands": [
-        {
-            "id": "brand1",
-            "title": "Royal Canin",
-            "logo": "https://1000logos.net/wp-content/uploads/2020/07/Royal-Canin-Logo.png",
-            "description": "Royal Canin is a global pet food brand founded in France in 1968. The company focuses on scientifically developed nutrition tailored to the specific needs of different dog and cat breeds, ages, and health conditions. Today, its products are widely recommended by veterinarians and sold around the world.",
-            "year": 1968,
-            "country": "France",
-            "priceRange": "Premium"
-        },
-        {
-            "id": "brand2",
-            "title": "Purina Pro Plan",
-            "logo": "https://www.purina.bg/sites/default/files/2023-09/Purina_Pro_Plan_Gold-01.png",
-            "description": "Purina Pro Plan is a premium pet food brand offering scientifically formulated nutrition for dogs and cats to support optimal health and wellbeing. Its products are recommended by veterinarians worldwide.",
-            "year": 1986,
-            "country": "USA",
-            "priceRange": "Premium"
-        },
-        {
-            "id": "brand3",
-            "title": "Hill's Science Diet",
-            "logo": "https://www.hillspet.mt/content/dam/cp-sites-aem/hills/hills-pet/global/svg-logos/sp-logo.png",
-            "description": "Hill's Science Diet is a premium pet food brand focused on scientifically developed nutrition for dogs and cats. Their products are designed to support health, longevity, and specific dietary needs, recommended by veterinarians globally.",
-            "year": 1939,
-            "country": "USA",
-            "priceRange": "Premium"
-        },
-        {
-            "id": "brand4",
-            "title": "Orijen",
-            "logo": "https://1000logos.net/wp-content/uploads/2023/10/Orijen-Logo.png",
-            "description": "Orijen is a Canadian premium pet food brand known for biologically appropriate recipes using fresh, regional ingredients. Their products are designed to mimic the natural diet of dogs and cats, supporting optimal health and wellbeing.",
-            "year": 1985,
-            "country": "Canada",
-            "priceRange": "Premium"
-        },
-        {
-            "id": "brand5",
-            "title": "Acana",
-            "logo": "https://1000logos.net/wp-content/uploads/2023/10/Acana-Logo.png",
-            "description": "Acana is a Canadian premium pet food brand that focuses on biologically appropriate nutrition for dogs and cats. Their recipes use fresh, regional ingredients to support overall health and vitality.",
-            "year": 1985,
-            "country": "Canada",
-            "priceRange": "Premium"
-        },
-        {
-            "id": "brand6",
-            "title": "Pedigree",
-            "logo": "https://host03pet.nexopet.com///media/images/subcategories/Pedigree-logo-0B0352F571-seeklogo.com.png",
-            "description": "Pedigree is a globally recognized pet food brand providing balanced nutrition for dogs. Its products focus on health, growth, and wellbeing, making it a trusted choice for pet owners worldwide.",
-            "year": 1934,
-            "country": "USA",
-            "priceRange": "Standard"
-          }
-    ],
-    "category": [
-        {
-            "id": "category-1",
-            "name": "Dogs",
-            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/dog-icon2.png"
-        },
-        {
-            "id": "category-2",
-            "name": "Cats",
-            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/cat-icon2.png"
-        },
-        {
-            "id": "category-3",
-            "name": "Birds",
-            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/parrot-icon.png"
-        },
-        {
-            "id": "category-4",
-            "name": "Fish",
-            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/fish-icon2.png"
-        },
-        {
-            "id": "category-5",
-            "name": "Rodents",
-            "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/rabbit-icon.png"
-        }
-    ],
-
-    "products": [
-        {
-            "id": "product-1",
-            "name": "Royal Canin Adult Dog Food",
-            "category": "category-1",
-            "brand": "brand1",
-            "description": "Complete dry food for adult dogs that supports digestion and healthy skin.",
-            "price": 79.99,
-            "isPromoPrice": 64.99,
-            "image": "https://drantonov.bg/thumbs/1/vhn-health-management-adult-dog-dog-dry-packshot-b1.png",
-            "isBestSeller": true,
-            "isPromo": true
-        },
-        {
-            "id": "product-2",
-            "name": "Royal Canin Kitten Food",
-            "category": "category-2",
-            "brand": "brand1",
-            "description": "Balanced nutrition specially designed for growing kittens.",
-            "price": 59.99,
-            "image": "https://cdn11.bigcommerce.com/s-ucjiusw7rc/images/stencil/1280x1280/products/1405/1181/Royal_Canin_Second_Age_Kitten-1__49515.1731283532.png?c=2",
-            "isBestSeller": true
-        },
-        {
-            "id": "product-3",
-            "name": "Purina Pro Plan Puppy",
-            "category": "category-1",
-            "brand": "brand2",
-            "description": "High protein formula that helps puppies grow strong and healthy.",
-            "price": 69.99,
-            "isPromoPrice": 54.99,
-            "image": "https://purinaexpress.com/wp-content/uploads/2021/04/large-breed.png",
-            "isBestSeller": true,
-            "isPromo": true
-        },
-        {
-            "id": "product-4",
-            "name": "Purina Pro Plan Cat Adult",
-            "category": "category-2",
-            "brand": "brand2",
-            "description": "Premium nutrition for adult cats with essential vitamins.",
-            "price": 62.50,
-            "image": "https://drantonov.bg/thumbs/1/07613036529150_c1n1_44201196.png",
-            "isBestSeller": true
-        },
-        {
-            "id": "product-5",
-            "name": "Hill's Science Diet Small Dog",
-            "category": "category-1",
-            "brand": "brand3",
-            "description": "Specially formulated food for small breed dogs.",
-            "price": 74.90,
-            "isPromoPrice": 59.90,
-            "image": "https://cdn11.bigcommerce.com/s-ucjiusw7rc/images/stencil/1280x1280/products/1343/1248/HILL-052742020884-1__04117.1731283531.png?c=2",
-            "isBestSeller": false,
-            "isPromo": true
-        },
-        {
-            "id": "product-6",
-            "name": "Hill's Science Diet Indoor Cat",
-            "category": "category-2",
-            "brand": "brand3",
-            "description": "Supports healthy weight and digestion for indoor cats.",
-            "price": 66.40,
-            "image": "https://pxmshare.colgatepalmolive.com/PNG_2000/1RLpTbNBJGoJyf3OHR5mQ.png",
-            "isBestSeller": false
-        },
-        {
-            "id": "product-7",
-            "name": "Orijen Original Dog Food",
-            "category": "category-1",
-            "brand": "brand4",
-            "description": "Biologically appropriate dog food with fresh ingredients.",
-            "price": 89.99,
-            "isPromoPrice": 72.99,
-            "image": "https://www.orijenpetfoods.com/dw/image/v2/BFDW_PRD/on/demandware.static/-/Sites-orijen-na-master-catalog/default/dw3a5e4059/ORI%20Dog%20Refresh%202023/Original-2023/Original%20Dog%2031lb%20Front%20EN.png?sw=1200",
-            "isBestSeller": false,
-            "isPromo": true
-        },
-        {
-            "id": "product-8",
-            "name": "Acana Wild Prairie Dog",
-            "category": "category-1",
-            "brand": "brand5",
-            "description": "Grain-free dog food rich in protein and natural nutrients.",
-            "price": 90.30,
-            "isPromoPrice": 82.30,
-            "image": "https://www.acanapetfoods.co.uk/wp-content/uploads/2020/06/ACANA-Dog-Highest-Protein-Wild-Prairie-Recipe-11.4kg-Front-Right-EMEA-APAC.png",
-            "isBestSeller": false,
-            "isPromo": true
-        },
-        {
-            "id": "product-9",
-            "name": "Pedigree Adult Dog Chicken",
-            "category": "category-1",
-            "brand": "brand6",
-            "description": "Tasty dry dog food with chicken flavor for everyday nutrition.",
-            "price": 39.99,
-            "isPromoPrice": 29.99,
-            "image": "https://www.pedigree.in/files/styles/webp/public/2024-02/Adult%20chicken%20%26%20Vegetable%20Sachet-Pouch_1%20kg_FOP.png.webp?VersionId=z3XxXETATMmXpDhCBrFlAxNWMrhN60YS&itok=BlTMhwv7",
-            "isBestSeller": false,
-            "isPromo": true
-        },
-        {
-            "id": "product-10",
-            "name": "Bird Seed Mix Premium",
-            "category": "category-3",
-            "brand": "brand5",
-            "description": "Healthy seed mix for parrots and small birds.",
-            "price": 14.99,
-            "image": "https://hawthornpetsupplies.co.uk/wp-content/uploads/2020/05/Premium-Wild-Bird-20kg-2.png",
-            "isBestSeller": true
-        },
-        {
-            "id": "product-11",
-            "name": "Fish Frenzy Flakes Nutrition",
-            "category": "category-4",
-            "brand": "brand2",
-            "description": "Balanced flakes for tropical aquarium fish.",
-            "price": 9.99,
-            "isPromoPrice": 7.49,
-            "image": "https://piscespros.com/wp-content/uploads/2020/11/Cichlid-Flake-Frenzy-.7-oz.png",
-            "isBestSeller": true,
-            "isPromo": true
-        },
-        {
-            "id": "product-12",
-            "name": "Rodent Food Mix",
-            "category": "category-5",
-            "brand": "brand1",
-            "description": "Nutritious mix for hamsters, mice and small rodents.",
-            "price": 11.99,
-            "image": "https://www.balance-petfood.com/images/rodents-structure-mix.png?crc=325316140",
-            "isBestSeller": false
-        }
-    ]
+  "users": [
+    {
+      "email": "test@abv.bg",
+      "password": "$2a$10$C.T.4FzER4dQUbijJ96QFOas9FJqAwa8MIP5hcWzSNT.Y081fTV86",
+      "id": 1
+    },
+    {
+      "email": "test13@abv.bg",
+      "password": "$2a$10$MmafD2KMDvS5./tRzPwG2uAF4yyioCI474ZP0a8ZNtJ//EaHxSBHe",
+      "id": 2
+    },
+    {
+      "email": "testnikol@abv.bg",
+      "password": "$2a$10$BtU6xXHN67sj375I94pB2OjkZ.l.SxTzMwRRlEz4b1.eaIgxHxyU.",
+      "id": 3
+    },
+    {
+      "email": "tttttttt@abv.bg",
+      "password": "$2a$10$19j0HeZeccJvmGeos0jq/uqX/YQWEIl5V.akuG/VAERPwLcddO2fW",
+      "id": 4
+    },
+    {
+      "email": "test15@abv.bg",
+      "password": "$2a$10$r.YEmG5Spkq9QwRmgtqM8eHPcPl9U0m/nffBaCSZhPUY2rrzAfvTG",
+      "id": 5
+    },
+    {
+      "email": "test16@abv.bg",
+      "password": "$2a$10$qJkWneVTyCmOjYf/gRbEm.MPEvWD7DkGXjaxlGUq81M/xZH2TzpcC",
+      "id": 6
+    }
+  ],
+  "brands": [
+    {
+      "id": "brand1",
+      "title": "Royal Canin",
+      "logo": "https://1000logos.net/wp-content/uploads/2020/07/Royal-Canin-Logo.png",
+      "description": "Royal Canin is a global pet food brand founded in France in 1968. The company focuses on scientifically developed nutrition tailored to the specific needs of different dog and cat breeds, ages, and health conditions. Today, its products are widely recommended by veterinarians and sold around the world.",
+      "year": 1968,
+      "country": "France",
+      "priceRange": "Premium"
+    },
+    {
+      "id": "brand2",
+      "title": "Purina Pro Plan",
+      "logo": "https://www.purina.bg/sites/default/files/2023-09/Purina_Pro_Plan_Gold-01.png",
+      "description": "Purina Pro Plan is a premium pet food brand offering scientifically formulated nutrition for dogs and cats to support optimal health and wellbeing. Its products are recommended by veterinarians worldwide.",
+      "year": 1986,
+      "country": "USA",
+      "priceRange": "Premium"
+    },
+    {
+      "id": "brand3",
+      "title": "Hill's Science Diet",
+      "logo": "https://www.hillspet.mt/content/dam/cp-sites-aem/hills/hills-pet/global/svg-logos/sp-logo.png",
+      "description": "Hill's Science Diet is a premium pet food brand focused on scientifically developed nutrition for dogs and cats. Their products are designed to support health, longevity, and specific dietary needs, recommended by veterinarians globally.",
+      "year": 1939,
+      "country": "USA",
+      "priceRange": "Premium"
+    },
+    {
+      "id": "brand4",
+      "title": "Orijen",
+      "logo": "https://1000logos.net/wp-content/uploads/2023/10/Orijen-Logo.png",
+      "description": "Orijen is a Canadian premium pet food brand known for biologically appropriate recipes using fresh, regional ingredients. Their products are designed to mimic the natural diet of dogs and cats, supporting optimal health and wellbeing.",
+      "year": 1985,
+      "country": "Canada",
+      "priceRange": "Premium"
+    },
+    {
+      "id": "brand5",
+      "title": "Acana",
+      "logo": "https://1000logos.net/wp-content/uploads/2023/10/Acana-Logo.png",
+      "description": "Acana is a Canadian premium pet food brand that focuses on biologically appropriate nutrition for dogs and cats. Their recipes use fresh, regional ingredients to support overall health and vitality.",
+      "year": 1985,
+      "country": "Canada",
+      "priceRange": "Premium"
+    },
+    {
+      "id": "brand6",
+      "title": "Pedigree",
+      "logo": "https://host03pet.nexopet.com///media/images/subcategories/Pedigree-logo-0B0352F571-seeklogo.com.png",
+      "description": "Pedigree is a globally recognized pet food brand providing balanced nutrition for dogs. Its products focus on health, growth, and wellbeing, making it a trusted choice for pet owners worldwide.",
+      "year": 1934,
+      "country": "USA",
+      "priceRange": "Standard"
+    }
+  ],
+  "category": [
+    {
+      "id": "category-1",
+      "name": "Dogs",
+      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/dog-icon2.png"
+    },
+    {
+      "id": "category-2",
+      "name": "Cats",
+      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/cat-icon2.png"
+    },
+    {
+      "id": "category-3",
+      "name": "Birds",
+      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/parrot-icon.png"
+    },
+    {
+      "id": "category-4",
+      "name": "Fish",
+      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/fish-icon2.png"
+    },
+    {
+      "id": "category-5",
+      "name": "Rodents",
+      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/rabbit-icon.png"
+    }
+  ],
+  "products": [
+    {
+      "id": "product-1",
+      "name": "Royal Canin Adult Dog Food",
+      "category": "category-1",
+      "brand": "brand1",
+      "description": "Complete dry food for adult dogs that supports digestion and healthy skin.",
+      "price": 79.99,
+      "isPromoPrice": 64.99,
+      "image": "https://drantonov.bg/thumbs/1/vhn-health-management-adult-dog-dog-dry-packshot-b1.png",
+      "isBestSeller": true,
+      "isPromo": true
+    },
+    {
+      "id": "product-2",
+      "name": "Royal Canin Kitten Food",
+      "category": "category-2",
+      "brand": "brand1",
+      "description": "Balanced nutrition specially designed for growing kittens.",
+      "price": 59.99,
+      "image": "https://cdn11.bigcommerce.com/s-ucjiusw7rc/images/stencil/1280x1280/products/1405/1181/Royal_Canin_Second_Age_Kitten-1__49515.1731283532.png?c=2",
+      "isBestSeller": true
+    },
+    {
+      "id": "product-3",
+      "name": "Purina Pro Plan Puppy",
+      "category": "category-1",
+      "brand": "brand2",
+      "description": "High protein formula that helps puppies grow strong and healthy.",
+      "price": 69.99,
+      "isPromoPrice": 54.99,
+      "image": "https://purinaexpress.com/wp-content/uploads/2021/04/large-breed.png",
+      "isBestSeller": true,
+      "isPromo": true
+    },
+    {
+      "id": "product-4",
+      "name": "Purina Pro Plan Cat Adult",
+      "category": "category-2",
+      "brand": "brand2",
+      "description": "Premium nutrition for adult cats with essential vitamins.",
+      "price": 62.5,
+      "image": "https://drantonov.bg/thumbs/1/07613036529150_c1n1_44201196.png",
+      "isBestSeller": true
+    },
+    {
+      "id": "product-5",
+      "name": "Hill's Science Diet Small Dog",
+      "category": "category-1",
+      "brand": "brand3",
+      "description": "Specially formulated food for small breed dogs.",
+      "price": 74.9,
+      "isPromoPrice": 59.9,
+      "image": "https://cdn11.bigcommerce.com/s-ucjiusw7rc/images/stencil/1280x1280/products/1343/1248/HILL-052742020884-1__04117.1731283531.png?c=2",
+      "isBestSeller": false,
+      "isPromo": true
+    },
+    {
+      "id": "product-6",
+      "name": "Hill's Science Diet Indoor Cat",
+      "category": "category-2",
+      "brand": "brand3",
+      "description": "Supports healthy weight and digestion for indoor cats.",
+      "price": 66.4,
+      "image": "https://pxmshare.colgatepalmolive.com/PNG_2000/1RLpTbNBJGoJyf3OHR5mQ.png",
+      "isBestSeller": false
+    },
+    {
+      "id": "product-7",
+      "name": "Orijen Original Dog Food",
+      "category": "category-1",
+      "brand": "brand4",
+      "description": "Biologically appropriate dog food with fresh ingredients.",
+      "price": 89.99,
+      "isPromoPrice": 72.99,
+      "image": "https://www.orijenpetfoods.com/dw/image/v2/BFDW_PRD/on/demandware.static/-/Sites-orijen-na-master-catalog/default/dw3a5e4059/ORI%20Dog%20Refresh%202023/Original-2023/Original%20Dog%2031lb%20Front%20EN.png?sw=1200",
+      "isBestSeller": false,
+      "isPromo": true
+    },
+    {
+      "id": "product-8",
+      "name": "Acana Wild Prairie Dog",
+      "category": "category-1",
+      "brand": "brand5",
+      "description": "Grain-free dog food rich in protein and natural nutrients.",
+      "price": 90.3,
+      "isPromoPrice": 82.3,
+      "image": "https://www.acanapetfoods.co.uk/wp-content/uploads/2020/06/ACANA-Dog-Highest-Protein-Wild-Prairie-Recipe-11.4kg-Front-Right-EMEA-APAC.png",
+      "isBestSeller": false,
+      "isPromo": true
+    },
+    {
+      "id": "product-9",
+      "name": "Pedigree Adult Dog Chicken",
+      "category": "category-1",
+      "brand": "brand6",
+      "description": "Tasty dry dog food with chicken flavor for everyday nutrition.",
+      "price": 39.99,
+      "isPromoPrice": 29.99,
+      "image": "https://www.pedigree.in/files/styles/webp/public/2024-02/Adult%20chicken%20%26%20Vegetable%20Sachet-Pouch_1%20kg_FOP.png.webp?VersionId=z3XxXETATMmXpDhCBrFlAxNWMrhN60YS&itok=BlTMhwv7",
+      "isBestSeller": false,
+      "isPromo": true
+    },
+    {
+      "id": "product-10",
+      "name": "Bird Seed Mix Premium",
+      "category": "category-3",
+      "brand": "brand5",
+      "description": "Healthy seed mix for parrots and small birds.",
+      "price": 14.99,
+      "image": "https://hawthornpetsupplies.co.uk/wp-content/uploads/2020/05/Premium-Wild-Bird-20kg-2.png",
+      "isBestSeller": true
+    },
+    {
+      "id": "product-11",
+      "name": "Fish Frenzy Flakes Nutrition",
+      "category": "category-4",
+      "brand": "brand2",
+      "description": "Balanced flakes for tropical aquarium fish.",
+      "price": 9.99,
+      "isPromoPrice": 7.49,
+      "image": "https://piscespros.com/wp-content/uploads/2020/11/Cichlid-Flake-Frenzy-.7-oz.png",
+      "isBestSeller": true,
+      "isPromo": true
+    },
+    {
+      "id": "product-12",
+      "name": "Rodent Food Mix",
+      "category": "category-5",
+      "brand": "brand1",
+      "description": "Nutritious mix for hamsters, mice and small rodents.",
+      "price": 11.99,
+      "image": "https://www.balance-petfood.com/images/rodents-structure-mix.png?crc=325316140",
+      "isBestSeller": false
+    }
+  ]
 }
