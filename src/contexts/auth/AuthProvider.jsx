@@ -1,4 +1,4 @@
-import { createContext, use, useState } from "react";
+import { createContext, useState } from "react";
 import { authService } from "../../services";
 
 export const AuthContext = createContext({
@@ -18,7 +18,9 @@ export default function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [auth, setAuth] = useState(null)
     const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null)
+    const [error, setError] = useState(null);
+
+    // const isAuthenticated = !!user;
 
     const register = async (email, password) => {
         try {
@@ -63,13 +65,21 @@ export default function AuthProvider({ children }) {
         }
     }
 
+    const logout = () => {
+        setUser(null);
+        setAuth(null);
+    };
+
     const contextValue = {
         user,
+        auth,
         login,
         register,
         isLoading,
+        isAuthenticated: !!user,
         error,
-        clearError: () => setError(null)
+        clearError: () => setError(null),
+        logout
     }
 
     return (

@@ -1,10 +1,11 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { FontAwesome, Ionicons, FontAwesome5 } from "@expo/vector-icons";
 import HomeNavigator from "./HomeNavigator";
 import CartScreen from "../screens/CartScreen";
 import { useCart } from "../contexts/cart/CartProvider";
 import { Text, View } from "react-native";
 import CartNavigator from "./CartNavigator";
+import UserScreen from "../screens/UserScreen";
 
 export default function ShopNavigator() {
     const Tabs = createBottomTabNavigator();
@@ -53,6 +54,16 @@ export default function ShopNavigator() {
                             )}
                         </View>
                     )
+                }}
+            />
+            <Tabs.Screen
+                name="Profile"
+                component={UserScreen}
+                options={{
+                    headerShown: false, tabBarIcon: ({ focused, size }) => (
+                        <FontAwesome5 name={focused ? "user-alt" : "user"} size={size}
+                        color={focused ? "#00B8BD" : "#000"}  />
+                    ),
                 }}
             />
         </Tabs.Navigator>

@@ -11,7 +11,7 @@ export default function RootNavigator() {
 
     return(
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            {!isAuthenticated
+            {isAuthenticated
             ? <Stack.Screen name="Shop" component={ShopNavigator} />
             : <Stack.Screen name="Auth" component={AuthNavigator} />
             }
