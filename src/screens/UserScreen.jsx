@@ -2,6 +2,8 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from "reac
 import { FontAwesome } from "@expo/vector-icons";
 import { useAuth } from "../contexts/auth/useAuth";
 import { authService } from "../services";
+import { useState, useEffect } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function UserScreen({}) {
     const { user, auth, logout, setUser } = useAuth(); 
@@ -53,6 +55,7 @@ export default function UserScreen({}) {
     };
 
     return (
+        <SafeAreaView style={{flex: 1}}>
         <View style={styles.container}>
             <Text style={styles.title}>User Settings</Text>
 
@@ -104,6 +107,7 @@ export default function UserScreen({}) {
                 </TouchableOpacity>
             </View>
         </View>
+        </SafeAreaView>
     );
 }
 
@@ -111,7 +115,7 @@ const styles = StyleSheet.create({
     container: { 
         flex: 1, 
         padding: 16, 
-        backgroundColor: "#f8f8f8" 
+        backgroundColor: "#f8f8f8",
     },
     title: { 
         fontSize: 28, 
