@@ -47,6 +47,12 @@ export default function CountdownTimer({ endDate }) {
                     <Text style={[styles.circleText, styles.circle]}>{timeLeft.days}</Text>
                     <Text style={styles.time}>days</Text>
                 </View>
+                // <View style={styles.elements}>
+                //     <View style={styles.circle}>
+                //         <Text style={styles.circleText}>{pad(timeLeft.hours)}</Text>
+                //     </View>
+                //     <Text style={styles.time}>hours</Text>
+                // </View>
             )}
             <View style={styles.elements}>
                 <Text style={[styles.circleText, styles.circle]}>{pad(timeLeft.hours)}</Text>
@@ -88,7 +94,7 @@ const styles = StyleSheet.create({
     },
     circle: {
         backgroundColor: "#00B8BD",
-        borderRadius: "50%",
+        borderRadius: 25,
         padding: 12,
     },
     circleText: {

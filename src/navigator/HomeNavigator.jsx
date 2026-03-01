@@ -9,10 +9,12 @@ export default function HomeNavigator() {
 
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="HomeScreen" component={HomeScreen} />
+            <Stack.Screen name="HomeScreen" component={HomeScreen} 
+            options={{headerShown: false}}/>
+            
             <Stack.Screen name="BrandScreen" component={BrandScreen}
                 options={({ route }) => ({
-                    headerShown: true,             // показваме хедъра
+                    headerShown: false,             // показваме хедъра
                     headerTitle: route.params.brandName,  // заглавие
                     headerBackTitleVisible: false, // премахва текста на бутона Back
                     headerStyle: {
@@ -37,7 +39,7 @@ export default function HomeNavigator() {
                 }} />
             <Stack.Screen name="CategoryScreen" component={CategoryScreen}
                 options={({ route }) => ({
-                    headerShown: true,             // показваме хедъра
+                    headerShown: false,             // показваме хедъра
                     headerTitle: route.params.categoryName,  // заглавие
                     headerBackTitleVisible: false, // премахва текста на бутона Back
                     headerStyle: {

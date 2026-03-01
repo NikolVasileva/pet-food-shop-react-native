@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         elevation: 3,
         marginBottom: 12,
         borderTopLeftRadius: 20,
-        borderBottomRightRadius: 20
+        borderBottomRightRadius: 20,
     },
     content: {
         flex: 1,

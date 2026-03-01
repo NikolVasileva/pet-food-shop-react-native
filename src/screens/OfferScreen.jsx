@@ -14,6 +14,13 @@ export default function OfferScreen() {
             try {
                 const promoResult = await shopService.fetchPromoProducts();
                 setPromoProducts(promoResult.data);
+                // const normalizedProducts = promoResult.data.map(item => ({
+                //     ...item,
+                //     price: Number(item.price),
+                //     isPromoPrice: item.isPromoPrice ? Number(item.isPromoPrice) : null,
+                // }));
+    
+                // setPromoProducts(normalizedProducts);
             } catch (error) {
                 Toast.show({
                     type: "error",
@@ -57,6 +64,7 @@ const styles = StyleSheet.create({
     bannerContainer: {
         borderBottomRightRadius: 100,
         borderBottomLeftRadius: 100,
+        overflow: "hidden",
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
@@ -66,8 +74,8 @@ const styles = StyleSheet.create({
     bannerImage: {
         width: "100%",
         height: 250,
-        borderBottomRightRadius: 100,
-        borderBottomLeftRadius: 100,
+        // borderBottomRightRadius: 100,
+        // borderBottomLeftRadius: 100,
     },
     headline: {
         fontSize: 24,

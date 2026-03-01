@@ -60,15 +60,12 @@ export default function HomeScreen({
             <ScrollView>
 
                 {/* Home Banner */}
-                <View style={{ padding: 16 }}>
+                <View style={{ padding: 16, borderRadius: 20, overflow: "hidden" }}>
                     <Pressable onPress={pressBannerHadler}>
-                        <Image source={require("../../assets/promo-banner.png")}
-                            style={{
-                                width: "100%",
-                                height: 205,
-                                resizeMode: "cover",
-                                borderRadius: 20,
-                            }} />
+                        <Image
+                            source={require("../../assets/promo-banner.png")}
+                            style={{ width: "100%", height: 205, resizeMode: "cover" }}
+                        />
                     </Pressable>
                 </View>
 
@@ -82,7 +79,7 @@ export default function HomeScreen({
                         contentContainerStyle={styles.sectionBanner}
                     >
                         {categories.map((category) => (
-                            <CategoryCard key={category.id} {...category} onPress={categoryCardPressHandler}/>
+                            <CategoryCard key={category.id} {...category} onPress={categoryCardPressHandler} />
                         ))}
 
                     </ScrollView>

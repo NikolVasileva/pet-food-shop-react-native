@@ -11,24 +11,35 @@ export default function ProductCard({
 }) {
     return (
         <TouchableOpacity>
-            {isPromoPrice
+            {/* {isPromoPrice
                 ? <View style={styles.promoLabel}>
                     <Text style={styles.promoText}>Promo</Text>
-                </View> : ""
-            }
+                </View> : null
+            } */}
+
+            {isPromoPrice && (
+                <View style={styles.promoLabel}>
+                    <Text style={styles.promoText}>Promo</Text>
+                </View>
+            )}
             <View style={[styles.card]}>
                 <Image
                     source={{ uri: image }}
                     style={styles.image}
                     resizeMode="cover"
                 />
-                {isBestSeller
+                {/* {isBestSeller
                     ? <View style={styles.bestSellerLabel}>
                         <Text style={styles.sellerText}>Best Seller</Text>
-                    </View> : ""}
+                    </View> : null} */}
+                {isBestSeller && (
+                    <View style={styles.bestSellerLabel}>
+                        <Text style={styles.sellerText}>Best Seller</Text>
+                    </View>
+                )}
 
                 <Text style={[styles.title]}>{name}</Text>
-                {isPromoPrice
+                {/* {isPromoPrice
                     ?
                     <View style={styles.promoPriceSection}>
                         <Text style={[styles.promoPrice]}>{isPromoPrice} €</Text>
@@ -36,7 +47,16 @@ export default function ProductCard({
                     </View>
                     :
                     <Text style={[styles.price]}>{price} €</Text>
-                }
+                } */}
+
+                {isPromoPrice ? (
+                    <View style={styles.promoPriceSection}>
+                        <Text style={styles.promoPrice}>{isPromoPrice} €</Text>
+                        <Text style={styles.secondPrice}>{price} €</Text>
+                    </View>
+                ) : (
+                    <Text style={styles.price}>{price} €</Text>
+                )}
             </View>
         </TouchableOpacity>
     )
