@@ -4,6 +4,7 @@ import HomeNavigator from "./HomeNavigator";
 import CartScreen from "../screens/CartScreen";
 import { useCart } from "../contexts/cart/CartProvider";
 import { Text, View } from "react-native";
+import CartNavigator from "./CartNavigator";
 
 export default function ShopNavigator() {
     const Tabs = createBottomTabNavigator();
@@ -14,6 +15,7 @@ export default function ShopNavigator() {
         <Tabs.Navigator screenOptions={{
             tabBarActiveTintColor: "#000",
             tabBarInactiveTintColor: "#000",
+            headerShown: false,
           }}>
             <Tabs.Screen
                 name="Home"
@@ -27,7 +29,7 @@ export default function ShopNavigator() {
             />
             <Tabs.Screen 
                 name="Cart" 
-                component={CartScreen}
+                component={CartNavigator}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <View>
