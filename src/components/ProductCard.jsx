@@ -8,57 +8,41 @@ export default function ProductCard({
     isPromoPrice,
     isBestSeller,
     onPress
-
 }) {
     return (
         <TouchableOpacity onPress={() => onPress(id)}>
-
-            {/* {isPromoPrice
-                ? <View style={styles.promoLabel}>
-                    <Text style={styles.promoText}>Promo</Text>
-                </View> : null
-            } */}
-
-            {isPromoPrice && (
-                <View style={styles.promoLabel}>
-                    <Text style={styles.promoText}>Promo</Text>
-                </View>
-            )}
-            <View style={[styles.card]}>
-                <Image
-                    source={{ uri: image }}
-                    style={styles.image}
-                    resizeMode="cover"
-                />
-                {/* {isBestSeller
-                    ? <View style={styles.bestSellerLabel}>
-                        <Text style={styles.sellerText}>Best Seller</Text>
-                    </View> : null} */}
+            <View style={styles.card}>
+                {/* Floating Labels */}
+                {isPromoPrice && (
+                    <View style={styles.promoLabel}>
+                        <Text style={styles.promoText}>Promo</Text>
+                    </View>
+                )}
                 {isBestSeller && (
                     <View style={styles.bestSellerLabel}>
                         <Text style={styles.sellerText}>Best Seller</Text>
                     </View>
                 )}
 
-                <Text style={[styles.title]}>{name}</Text>
-                {/* {isPromoPrice
-                    ?
-                    <View style={styles.promoPriceSection}>
-                        <Text style={[styles.promoPrice]}>{isPromoPrice} €</Text>
-                        <Text style={[styles.secondPrice]}>{price} €</Text>
-                    </View>
-                    :
-                    <Text style={[styles.price]}>{price} €</Text>
-                } */}
+                {/* Product Image */}
+                <Image
+                    source={{ uri: image }}
+                    style={styles.image}
+                    resizeMode="contain"
+                />
 
-                {isPromoPrice ? (
-                    <View style={styles.promoPriceSection}>
-                        <Text style={styles.promoPrice}>{isPromoPrice} €</Text>
-                        <Text style={styles.secondPrice}>{price} €</Text>
-                    </View>
-                ) : (
-                    <Text style={styles.price}>{price} €</Text>
-                )}
+                {/* Product Info */}
+                <View style={styles.info}>
+                    <Text style={styles.title} numberOfLines={2}>{name}</Text>
+                    {isPromoPrice ? (
+                        <View style={styles.promoPriceSection}>
+                            <Text style={styles.promoPrice}>{isPromoPrice} €</Text>
+                            <Text style={styles.secondPrice}>{price} €</Text>
+                        </View>
+                    ) : (
+                        <Text style={styles.price}>{price} €</Text>
+                    )}
+                </View>
             </View>
         </TouchableOpacity>
     )
@@ -66,87 +50,83 @@ export default function ProductCard({
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: '#fff',
-        borderRadius: 12,
-        // overflow: 'hidden',
-        shadowColor: '#000',
+        backgroundColor: "#fff",
+        borderRadius: 16,
+        shadowColor: "#000",
         shadowOffset: { width: 0, height: 0 },
         shadowOpacity: 0.3,
-        shadowRadius: 5,
+        shadowRadius: 6,
         elevation: 5,
-        padding: 10,
-        width: "100%",
-        height: 350,
-        padding: 15,
-        position: "relative"
-    },
-    brand: {
-        fontSize: 16,
-        color: "#262825",
-        marginBottom: 5,
-    },
-    title: {
-        fontSize: 17,
-        color: "#262825",
-        marginBottom: 15,
-        textAlign: "center",
-        fontWeight: "500"
-    },
-    price: {
-        fontSize: 16,
-        color: "#262825",
-        textAlign: "center",
-        fontWeight: "500",
-        // padding: 10,
-    },
-    promoPrice: {
-        fontSize: 16,
-        color: "#262825",
-        textAlign: "center",
-        fontWeight: "500",
+        padding: 12,
+        marginBottom: 20,
+        position: "relative",
     },
     image: {
         width: "100%",
         height: 180,
-        resizeMode: "contain",
-        marginBottom: 30
+        borderRadius: 12,
+        marginBottom: 12,
     },
-    secondPrice: {
-        textDecorationLine: "line-through",
+    info: {
+        alignItems: "center",
+        paddingHorizontal: 5,
+    },
+    title: {
         fontSize: 16,
-        color: '#7C7C7C',
+        fontWeight: "600",
         textAlign: "center",
-        // padding: 10,
+        marginBottom: 8,
+        color: "#262825",
+    },
+    price: {
+        fontSize: 16,
+        fontWeight: "bold",
+        color: "#262825",
     },
     promoPriceSection: {
         flexDirection: "row",
-        justifyContent: "space-around"
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 10,
+    },
+    promoPrice: {
+        fontSize: 16,
+        fontWeight: "bold",
+        color: "#00B8BD",
+    },
+    secondPrice: {
+        fontSize: 14,
+        color: "#7C7C7C",
+        textDecorationLine: "line-through",
     },
     promoLabel: {
+        position: "absolute",
+        top: 12,
+        left: 12,
         backgroundColor: "#F2A305",
-        position: "absolute",
-        top: 10,
-        padding: 5,
+        paddingHorizontal: 8,
+        paddingVertical: 4,
+        borderRadius: 8,
         zIndex: 2,
-        left: 137,
-        borderTopLeftRadius: 10,
-        borderBottomRightRadius: 10
-    },
-    bestSellerLabel: {
-        backgroundColor: "#00B8BD",
-        position: "absolute",
-        bottom: 137,
-        padding: 5,
-        zIndex: 2,
-        left: 0,
-        borderTopLeftRadius: 10,
-        borderBottomRightRadius: 10
     },
     promoText: {
-        fontWeight: "bold"
+        fontWeight: "bold",
+        color: "#fff",
+        fontSize: 12,
+    },
+    bestSellerLabel: {
+        position: "absolute",
+        top: 12,
+        right: 12,
+        backgroundColor: "#00B8BD",
+        paddingHorizontal: 8,
+        paddingVertical: 4,
+        borderRadius: 8,
+        zIndex: 2,
     },
     sellerText: {
         fontWeight: "bold",
-        color: "#fff"
-    }
-})
+        color: "#fff",
+        fontSize: 12,
+    },
+});
