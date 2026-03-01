@@ -6,11 +6,12 @@ export default function ProductCard({
     name,
     price,
     isPromoPrice,
-    isBestSeller
+    isBestSeller,
+    onPress
 
 }) {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => onPress(id)}>
             {/* {isPromoPrice
                 ? <View style={styles.promoLabel}>
                     <Text style={styles.promoText}>Promo</Text>

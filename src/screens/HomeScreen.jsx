@@ -55,6 +55,10 @@ export default function HomeScreen({
         navigation.navigate("BrandScreen", { brandId, brandName })
     }
 
+    const productCardPressHandler = (productId) => {
+        navigation.navigate("ProductScreen", { productId })
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView>
@@ -107,7 +111,7 @@ export default function HomeScreen({
 
                         {bestSellersProducts.map((bestSellerProduct) => (
                             <View key={bestSellerProduct.id} style={styles.card}>
-                                <ProductCard {...bestSellerProduct} />
+                                <ProductCard {...bestSellerProduct} onPress={productCardPressHandler}/>
                             </View>
                         ))}
 

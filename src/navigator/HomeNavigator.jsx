@@ -3,15 +3,16 @@ import HomeScreen from "../screens/HomeScreen";
 import BrandScreen from "../screens/BrandScreen";
 import OfferScreen from "../screens/OfferScreen";
 import CategoryScreen from "../screens/CategoryScreen";
+import ProductScreen from "../screens/ProductScreen";
 
 export default function HomeNavigator() {
     const Stack = createNativeStackNavigator();
 
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="HomeScreen" component={HomeScreen} 
-            options={{headerShown: false}}/>
-            
+            <Stack.Screen name="HomeScreen" component={HomeScreen}
+                options={{ headerShown: false }} />
+
             <Stack.Screen name="BrandScreen" component={BrandScreen}
                 options={({ route }) => ({
                     headerShown: true,             // показваме хедъра
@@ -41,6 +42,20 @@ export default function HomeNavigator() {
                 options={({ route }) => ({
                     headerShown: true,             // показваме хедъра
                     headerTitle: route.params.categoryName,  // заглавие
+                    headerBackTitleVisible: false, // премахва текста на бутона Back
+                    headerStyle: {
+                        backgroundColor: "#00B8BD", // цветът на лентата
+                    },
+                    headerTintColor: "#fff", // цветът на стрелката и текста
+                    headerTitleStyle: {
+                        fontWeight: "bold",
+                    },
+                })} />
+            <Stack.Screen name="ProductScreen" component={ProductScreen}
+                options={({ route }) => ({
+                    headerShown: true,             // показваме хедъра
+                    title: "About the product",
+                    // headerTitle: route.params.categoryName,  // заглавие
                     headerBackTitleVisible: false, // премахва текста на бутона Back
                     headerStyle: {
                         backgroundColor: "#00B8BD", // цветът на лентата
