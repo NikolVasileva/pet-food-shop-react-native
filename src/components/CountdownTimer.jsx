@@ -94,8 +94,9 @@ const styles = StyleSheet.create({
     },
     circle: {
         backgroundColor: "#00B8BD",
-        borderRadius: 25,
+        borderRadius: 50,
         padding: 12,
+        paddingHorizontal: 15,
     },
     circleText: {
         fontSize: 18,
