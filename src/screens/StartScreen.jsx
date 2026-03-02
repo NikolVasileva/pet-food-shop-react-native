@@ -28,13 +28,13 @@ export default function StartScreen({ navigation }) {
             }}>
                 <Image source={require("../../assets/Dog.png")}
                     style={{
-                        width: 385,
-                        height: 510,
+                        width: 420,
+                        height: 540,
                         resizeMode: "cover",
                     }} />
             </View>
             <View style={styles.whiteContainer}>
-                <View style={{ paddingHorizontal: 40, paddingVertical: 70, gap: 30, alignItems: "center" }}>
+                <View style={{ paddingHorizontal: 40, paddingVertical: 90, gap: 30, alignItems: "center" }}>
                     <Text style={{ fontSize: 26, fontWeight: "bold", textAlign: "center", color: "#324B49" }}>Evertything needed for you <Text style={{ color: "#00B8BD" }}>lovely friend</Text>!</Text>
                     <MainButton title="Register Now" onPress={registerPressHandler} />
                     <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "bold", 
         color: "#324B49", 
-        marginTop: 30, 
+        marginTop: 15, 
         textAlign: "center",
         textDecorationLine: "underline",
         textDecorationColor: "#324B49", 

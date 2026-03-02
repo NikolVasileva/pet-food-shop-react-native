@@ -112,7 +112,7 @@ export default function RegisterScreen({ navigation }) {
                     }} />
                 <View style={styles.whiteContainer}>
                     <View style={{ alignItems: "center" }}>
-                        <Text style={{ fontSize: 35, color: "#324B49", fontWeight: "bold", textAlign: "center", paddingVertical: 20 }}>Register</Text>
+                        <Text style={{ fontSize: 35, color: "#324B49", fontWeight: "bold", textAlign: "center", paddingVertical: 10 }}>Register</Text>
                     </View>
                     <KeyboardAvoidingView
                         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -211,7 +211,7 @@ export default function RegisterScreen({ navigation }) {
                                 />
                             </View>
 
-                            <MainButton title="Register" onPress={registerHandler} disabled={isLoading} style={{ marginTop: 70 }} />
+                            <MainButton title="Register" onPress={registerHandler} disabled={isLoading} style={{ marginTop: 20 }} />
                             {/* <Text style={{ fontWeight: "bold", color: "#324B49", marginTop: 30, textAlign: "center" }}>Have an account? Log in.</Text> */}
                             <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
                                 <Text style={styles.linkText}>
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
     },
     input: {
         padding: 15,
-        borderRadius: 25,
+        borderRadius: 12,
         marginBottom: 15,
         fontSize: 16,
         borderWidth: 2,
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "bold", 
         color: "#324B49", 
-        marginTop: 30, 
+        marginTop: 15, 
         textAlign: "center",
         textDecorationLine: "underline",
         textDecorationColor: "#324B49", 
