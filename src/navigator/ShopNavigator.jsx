@@ -1,7 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome, Ionicons, FontAwesome5 } from "@expo/vector-icons";
 import HomeNavigator from "./HomeNavigator";
-import CartScreen from "../screens/CartScreen";
 import { useCart } from "../contexts/cart/CartProvider";
 import { Text, View } from "react-native";
 import CartNavigator from "./CartNavigator";

@@ -96,10 +96,24 @@ export default function CartDeliveryScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  safe: { flex: 1, backgroundColor: "#F7F7F7" },
-  scrollContainer: { flexGrow: 1, padding: 16 },
-  title: { fontSize: 28, fontWeight: "bold", color: "#00B8BD", marginBottom: 24, textAlign: "center" },
-  form: { flex: 1 },
+  safe: { 
+    flex: 1, 
+    backgroundColor: "#F7F7F7" 
+},
+  scrollContainer: { 
+    flexGrow: 1, 
+    padding: 16 
+},
+  title: { 
+    fontSize: 28, 
+    fontWeight: "bold", 
+    color: "#00B8BD", 
+    marginBottom: 24, 
+    textAlign: "center" 
+},
+  form: { 
+    flex: 1 
+},
   input: {
     borderWidth: 1,
     borderColor: "#ddd",

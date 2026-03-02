@@ -8,8 +8,6 @@ import Toast from "react-native-toast-message";
 import { useAuth } from "../contexts/auth/useAuth";
 import { FontAwesome } from "@expo/vector-icons";
 
-
-
 export default function RegisterScreen({ navigation }) {
     const { width } = Dimensions.get("window");
 

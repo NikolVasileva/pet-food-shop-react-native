@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
       fontSize: 28,
       fontWeight: "bold",
       textAlign: "center",
-      marginVertical: 16,
+      marginVertical: 46,
       color: "#00B8BD",
     },
     container: {
