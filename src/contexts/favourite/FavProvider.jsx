@@ -3,7 +3,7 @@ import { favouriteService } from "../../services";
 
 const FavContext = createContext();
 
-export function FavoriteProvider({ children }) {
+export function FavProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
 
   const loadFavoritesFromUser = async (userId) => {
@@ -41,7 +41,7 @@ export function FavoriteProvider({ children }) {
   };
 
   return (
-    <FavoritesContext.Provider
+    <FavContext.Provider
       value={{
         favorites,
         loadFavoritesFromUser,
@@ -51,7 +51,7 @@ export function FavoriteProvider({ children }) {
       }}
     >
       {children}
-    </FavoritesContext.Provider>
+    </FavContext.Provider>
   );
 }
 
