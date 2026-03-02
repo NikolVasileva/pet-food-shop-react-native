@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function UserScreen({ }) {
-    const { user, auth, logout, setUser } = useAuth();
+    const { user, auth, logout, setAuth } = useAuth();
     const [email, setEmail] = useState(user?.email || "");
     const [isEditing, setIsEditing] = useState(false);
     const [isSaving, setIsSaving] = useState(false);
@@ -29,7 +29,10 @@ export default function UserScreen({ }) {
             );
 
             if (updatedUser && updatedUser.email) {
-                setUser(updatedUser);
+                setAuth({
+                    ...auth,
+                    user: updatedUser
+                });
                 console.log("Updated user:", updatedUser);
                 Alert.alert("Success", `Email updated to ${updatedUser.email}`); // <- виждате новия имейл
                 setIsEditing(false);

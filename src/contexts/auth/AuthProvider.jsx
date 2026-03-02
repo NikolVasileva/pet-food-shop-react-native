@@ -220,6 +220,7 @@ export default function AuthProvider({ children }) {
     const contextValue = {
         user: auth.user,
         auth,
+        setAuth,
         login,
         register,
         isLoading,
