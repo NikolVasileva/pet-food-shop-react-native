@@ -36,6 +36,10 @@ export default function CartProvider({ children }) {
         );
     };
 
+    const clearCart = () => {
+        setItems([]);
+    };
+
     const total = items.reduce(
         (acc, item) => acc + item.product.price * item.quantity,
         0
@@ -43,7 +47,7 @@ export default function CartProvider({ children }) {
 
     return (
         <CartContext.Provider
-            value={{ items, addToCart, removeFromCart, updateQuantity, total }}
+            value={{ items, addToCart, removeFromCart, updateQuantity, total, clearCart }}
         >
             {children}
         </CartContext.Provider>
