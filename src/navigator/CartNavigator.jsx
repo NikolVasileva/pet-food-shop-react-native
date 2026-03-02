@@ -7,7 +7,7 @@ export default function CartNavigator() {
 
     return(
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Cart" component={CartScreen}
+            <Stack.Screen name="CartScreen" component={CartScreen}
                 options={{ headerShown: false }} />
             <Stack.Screen name="CartDeliveryScreen" component={CartDeliveryScreen}
                 options={{ headerShown: true, title: "Delivery information" }} />
