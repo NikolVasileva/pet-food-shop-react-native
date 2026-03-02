@@ -365,9 +365,7 @@
       "id": 1,
       "userId": 1,
       "products": [
-        "product-1",
-        "product-3",
-        "product-8"
+        "product-1"
       ]
     }
   ]

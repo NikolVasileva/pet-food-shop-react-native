@@ -24,21 +24,55 @@ export default function FavProvider({ children }) {
     }
   };
 
-
-  const addToFavorites = async (userId, productId) => {
+  const addToFavorites = async (productId) => {
     try {
-      const result = await favService.addFavorite(userId, productId);
-      setFavorites((prev) => [...prev, result.data]); 
- 
-    } catch (err) {
-      console.log("Cannot add favorite", err);
+      const userFav = favorites.find(f => f.userId === user.id);
+      if (!userFav) return;
+  
+      if (userFav.products.includes(productId)) return;
+  
+      const updatedProducts = [...userFav.products, productId];
+  
+      await api.put(`/favorites/${userFav.id}`, {
+        ...userFav,
+        products: updatedProducts
+      });
+  
+      setFavorites(prev =>
+        prev.map(f =>
+          f.id === userFav.id
+            ? { ...f, products: updatedProducts }
+            : f
+        )
+      );
+  
+    } catch (error) {
+      console.log("Cannot add favorite", error);
     }
   };
 
-  const removeFromFavorites = async (favoriteId) => {
+  const removeFromFavorites = async (productId) => {
     try {
-      await favService.removeFavorite(favoriteId);
-      setFavorites((prev) => prev.filter((f) => f.id !== favoriteId));
+      const userFav = favorites.find(f => f.userId === user.id);
+      if (!userFav) return;
+  
+      const updatedProducts = userFav.products.filter(
+        (p) => p !== productId
+      );
+  
+      const updatedFav = {
+        ...userFav,
+        products: updatedProducts
+      };
+  
+      await favService.updateFavorites(userFav.id, updatedFav);
+  
+      setFavorites(prev =>
+        prev.map(f =>
+          f.id === userFav.id ? updatedFav : f
+        )
+      );
+  
     } catch (err) {
       console.log("Cannot remove favorite", err);
     }
