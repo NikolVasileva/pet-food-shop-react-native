@@ -55,4 +55,4 @@ export function FavoritesProvider({ children }) {
   );
 }
 
-export const useFavorites = () => useContext(FavoritesContext);
+// export const useFavorites = () => useContext(FavoritesContext);
