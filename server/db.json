@@ -196,27 +196,27 @@
     {
       "id": "category-1",
       "name": "Dogs",
-      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/dog-icon2.png"
+      "image": "https://i.postimg.cc/W1y8XDy4/dog-icon2.png"
     },
     {
       "id": "category-2",
       "name": "Cats",
-      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/cat-icon2.png"
+      "image": "https://i.postimg.cc/ZqcRJ3hT/cat-icon2.png"
     },
     {
       "id": "category-3",
       "name": "Birds",
-      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/parrot-icon.png"
+      "image": "https://i.postimg.cc/mD1gCnHy/parrot-icon.png"
     },
     {
       "id": "category-4",
       "name": "Fish",
-      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/fish-icon2.png"
+      "image": "https://i.postimg.cc/4xRNtwfZ/fish-icon2.png"
     },
     {
       "id": "category-5",
       "name": "Rodents",
-      "image": "http://localhost:8081/assets/?unstable_path=.%2Fassets/rabbit-icon.png"
+      "image": "https://i.postimg.cc/3xZ4xzXY/rabbit-icon.png"
     }
   ],
   "products": [

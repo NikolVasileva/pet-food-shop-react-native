@@ -8,14 +8,6 @@ export default function CategoryCard({
     onPress
 }) {
 
-    // const categoryImages = {
-    //     dog: require("../../assets/dog-icon.png"),
-    //     cat: require("../../assets/cat-icon.png"),
-    //     bird: require("../../assets/bird-icon.png"),
-    //     fish: require("../../assets/fish-icon.png"),
-    //     mouse: require("../../assets/mouse-icon.png"),
-    // };
-
     return (
         <TouchableOpacity onPress={() => onPress(id, name)}>
             <LinearGradient
@@ -23,7 +15,7 @@ export default function CategoryCard({
                 style={styles.gradientBorder}
             >
                 <View style={styles.container}>
-                    <Image source={image}
+                    <Image source={{ uri: image }}
                         style={{
                             width: 50,
                             height: 50,
