@@ -104,6 +104,36 @@
       "email": "nikolllyyyy@abv.bg",
       "password": "$2a$10$SNKsHg77zOwrr1tkhjnAh.yHIWf07.NXHk5fRrlM4gtA.4Z28Gihm",
       "id": 21
+    },
+    {
+      "email": "newtest@abv.bg",
+      "password": "$2a$10$i.uTm2sdBCpeTv8W8njq4eyWLRRG2aRMXSOR6VSHM5Qj6CCitmlSK",
+      "id": 22
+    },
+    {
+      "email": "test@abv.brr",
+      "password": "$2a$10$l/ZkA76AZU.Ks2SA3kcEhu4hikm7SFKjTkg0L/EcqPunwQiVsWoPi",
+      "id": 23
+    },
+    {
+      "email": "testttt@abv.bg",
+      "password": "$2a$10$5RqXWsbKcluROJutsFcVse5rjpqMDDxHDAhiP8e6hJY4./W3xQ22K",
+      "id": 24
+    },
+    {
+      "email": "pppp@abv.bg",
+      "password": "$2a$10$RqCI4CZNQ98EzClH628Rreu6OCEL.SeED3MC1NpAPNroGmzJbh1qe",
+      "id": 25
+    },
+    {
+      "email": "yyyy@abv.bg",
+      "password": "$2a$10$Mq.nlUqB3vO4qKrDYGvdSOp.RCXtae17q4tz/Bv1DAxsbwf9K4D2i",
+      "id": 26
+    },
+    {
+      "email": "wwww4@abv.bg",
+      "password": "$2a$10$U8gj3qqKaDiLq2ED0096yO3yBcPKSy287qzk9eYCKxuZSUsMbXy5i",
+      "id": 27
     }
   ],
   "brands": [
