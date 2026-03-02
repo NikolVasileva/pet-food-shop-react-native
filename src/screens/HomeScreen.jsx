@@ -68,7 +68,7 @@ export default function HomeScreen({
                     <Pressable onPress={pressBannerHadler}>
                         <Image
                             source={require("../../assets/promo-banner.png")}
-                            style={{ width: "100%", height: 205, resizeMode: "cover" }}
+                            style={{ width: "100%", height: 205, resizeMode: "cover", borderRadius: 20, }}
                         />
                     </Pressable>
                 </View>
