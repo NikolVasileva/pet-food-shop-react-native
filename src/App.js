@@ -6,7 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AuthProvider from './contexts/auth/AuthProvider';
 import Toast from 'react-native-toast-message';
 import CartProvider from './contexts/cart/CartProvider';
-import FavouriteProvider, { FavProvider } from './contexts/favourite/FavProvider';
+import FavProvider from './contexts/favourite/FavProvider';
 
 export default function App() {
   return (

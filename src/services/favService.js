@@ -5,7 +5,7 @@ export async function fetchFavorites() {
 };
 
 export async function fetchFavoritesByUserId(userId) {
-    return api.get(`/favorites?userId=${userId}`);
+    return api.get(`/favorites?userId=${userId}`); 
   }
 
 // export async function addFavorite(productId) {

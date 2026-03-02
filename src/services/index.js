@@ -1,3 +1,3 @@
 export * as authService from "./authService.js"
 export * as shopService from "./shopService.js"
-export * as favoriteService from "./favService.js"
+export * as favService from "./favService.js"

@@ -1,14 +1,23 @@
-import { createContext, useContext, useState } from "react";
-import { favouriteService } from "../../services";
+import { createContext, useContext, useEffect, useState } from "react";
+import { favService } from "../../services";
+import { useAuth } from "../auth/useAuth";
+
 
 const FavContext = createContext();
 
-export function FavProvider({ children }) {
+export default function FavProvider({ children }) {
+  const { user } = useAuth()
   const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    if (user) {
+      loadFavoritesFromUser(user.id);
+    }
+  }, [user]);
 
   const loadFavoritesFromUser = async (userId) => {
     try {
-      const result = await favouriteService.fetchFavorites(userId);
+      const result = await favService.fetchFavorites(userId);
       setFavorites(result.data); 
     } catch (err) {
       console.log("Cannot load favorites", err);
@@ -18,7 +27,7 @@ export function FavProvider({ children }) {
 
   const addToFavorites = async (userId, productId) => {
     try {
-      const result = await favouriteService.addFavorite(userId, productId);
+      const result = await favService.addFavorite(userId, productId);
       setFavorites((prev) => [...prev, result.data]); 
  
     } catch (err) {
@@ -28,7 +37,7 @@ export function FavProvider({ children }) {
 
   const removeFromFavorites = async (favoriteId) => {
     try {
-      await favouriteService.removeFavorite(favoriteId);
+      await favService.removeFavorite(favoriteId);
       setFavorites((prev) => prev.filter((f) => f.id !== favoriteId));
     } catch (err) {
       console.log("Cannot remove favorite", err);
@@ -55,4 +64,6 @@ export function FavProvider({ children }) {
   );
 }
 
-// export const useFavorites = () => useContext(FavoritesContext);
+export function useFavContext() {
+  return useContext(FavContext);
+}
