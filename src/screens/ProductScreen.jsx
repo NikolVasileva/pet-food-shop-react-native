@@ -60,8 +60,7 @@ export default function ProductScreen({ route, navigation }) {
                 {/* Title + Favorite */}
                 <View style={styles.titleRow}>
                     <Text style={styles.title}>{product.name}</Text>
-
-                    {/* <TouchableOpacity
+                    <TouchableOpacity
                         style={[
                             styles.favoriteButton,
                             isFavorite && styles.favoriteActive
@@ -71,7 +70,7 @@ export default function ProductScreen({ route, navigation }) {
                         <Text style={styles.favoriteIcon}>
                             {isFavorite ? "❤️" : "🤍"}
                         </Text>
-                    </TouchableOpacity> */}
+                    </TouchableOpacity>
                 </View>
 
                 <Text style={styles.description}>{product.description}</Text>
