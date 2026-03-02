@@ -5,6 +5,7 @@ import { useCart } from "../contexts/cart/CartProvider";
 import { Text, View } from "react-native";
 import CartNavigator from "./CartNavigator";
 import UserScreen from "../screens/UserScreen";
+import FavScreen from "../screens/FavScreen";
 
 export default function ShopNavigator() {
     const Tabs = createBottomTabNavigator();
@@ -54,6 +55,16 @@ export default function ShopNavigator() {
                             )}
                         </View>
                     )
+                }}
+            />
+            <Tabs.Screen
+                name="Favorites"
+                component={FavScreen}
+                options={{
+                    headerShown: false, tabBarIcon: ({ focused, size }) => (
+                        <FontAwesome name={focused ? "heart" : "heart-o"} size={size}
+                            color={focused ? "#00B8BD" : "#000"} />
+                    ),
                 }}
             />
             <Tabs.Screen

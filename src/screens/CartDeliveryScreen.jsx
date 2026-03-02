@@ -3,6 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import { FontAwesome } from "@expo/vector-icons";
 import { useCart } from "../contexts/cart/CartProvider";
+// import { useCart } from "../contexts/cart/cartContext";
 import { CommonActions } from '@react-navigation/native';
 
 export default function CartDeliveryScreen({ navigation }) {
@@ -11,7 +12,7 @@ export default function CartDeliveryScreen({ navigation }) {
   const [address, setAddress] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
 
-  const { items, total, clearCart } = useCart();
+  const { items, total, clearCart } = useCart()
 
   const pressOrderHandler = () => {
     if (!name || !phone || !address) {

@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { Image, ScrollView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { shopService } from "../services";
 import { useCart } from "../contexts/cart/CartProvider.jsx";
+// import { FavouriteContext } from "../contexts/favourite/favouriteContext.js";
 
 
 export default function ProductScreen({ route, navigation }) {
     const { productId } = route.params;
+    // const { addToFavorites, removeFromFavorites, isFavorite } = FavouriteContext()
 
     const [product, setProduct] = useState([]);
     const [quantity, setQuantity] = useState(1);
@@ -38,6 +40,14 @@ export default function ProductScreen({ route, navigation }) {
         setIsFavorite((prev) => !prev);
     };
 
+    // const handleToggleFavorite = async () => {
+    //     if (isFavorite(productId)) {
+    //       await removeFromFavorites(productId);
+    //     } else {
+    //       await addToFavorites(productId);
+    //     }
+    //   };
+
     return (
         <ScrollView style={styles.screen}>
             <View style={styles.imageSection}>
@@ -64,11 +74,13 @@ export default function ProductScreen({ route, navigation }) {
                         style={[
                             styles.favoriteButton,
                             isFavorite && styles.favoriteActive
+                            // isFavorite(productId) && styles.favoriteActive
                         ]}
                         onPress={toggleFavorite}
                         >
                         <Text style={styles.favoriteIcon}>
                             {isFavorite ? "❤️" : "🤍"}
+                            {/* {isFavorite(productId) ? "❤️" : "🤍"} */}
                         </Text>
                     </TouchableOpacity>
                 </View>

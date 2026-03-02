@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Alert, Platform } from "react-native";
 import { useCart } from "../contexts/cart/CartProvider";
+// import { useCart } from "../contexts/cart/cartContext";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import * as Clipboard from 'expo-clipboard';

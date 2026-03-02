@@ -1,9 +1,9 @@
 import { createContext, useContext, useState } from "react";
 import { favouriteService } from "../../services";
 
-const FavoritesContext = createContext();
+const FavContext = createContext();
 
-export function FavoritesProvider({ children }) {
+export function FavoriteProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
 
   const loadFavoritesFromUser = async (userId) => {
