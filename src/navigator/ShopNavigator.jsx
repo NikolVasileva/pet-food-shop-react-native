@@ -17,24 +17,25 @@ export default function ShopNavigator() {
             tabBarActiveTintColor: "#000",
             tabBarInactiveTintColor: "#000",
             headerShown: false,
-          }}>
+        }}>
             <Tabs.Screen
                 name="Home"
                 component={HomeNavigator}
                 options={{
                     headerShown: false, tabBarIcon: ({ focused, size }) => (
                         <Ionicons name={focused ? "home-sharp" : "home-outline"} size={size}
-                        color={focused ? "#00B8BD" : "#000"}  />
+                            color={focused ? "#00B8BD" : "#000"} />
                     ),
                 }}
             />
-            <Tabs.Screen 
-                name="Cart" 
+            <Tabs.Screen
+                name="Cart"
                 component={CartNavigator}
                 options={{
-                    tabBarIcon: ({ color, size }) => (
+                    tabBarIcon: ({ focused, size }) => (
                         <View>
-                            <Ionicons name="cart-outline" size={size} color={color} />
+                            <Ionicons name={focused ? "cart" : "cart-outline"} size={size}
+                                color={focused ? "#00B8BD" : "#000"} />
                             {cartCount > 0 && (
                                 <View style={{
                                     position: "absolute",
@@ -62,7 +63,7 @@ export default function ShopNavigator() {
                 options={{
                     headerShown: false, tabBarIcon: ({ focused, size }) => (
                         <FontAwesome5 name={focused ? "user-alt" : "user"} size={size}
-                        color={focused ? "#00B8BD" : "#000"}  />
+                            color={focused ? "#00B8BD" : "#000"} />
                     ),
                 }}
             />
