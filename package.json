@@ -10,7 +10,7 @@
     "ios": "cross-env NODE_ENV=development expo run:ios",
     "web": "cross-env NODE_ENV=development expo start --web",
     "prebuild": "cross-env NODE_ENV=production expo prebuild",
-    "build:apk": "cd android && gradlew assembleRelease"
+    "build:apk": "cd android && ./gradlew assembleRelease"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -24,6 +24,7 @@
     "expo-linear-gradient": "~15.0.8",
     "expo-secure-store": "~15.0.8",
     "expo-status-bar": "~3.0.9",
+    "expo-system-ui": "^55.0.9",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-native": "0.81.5",
