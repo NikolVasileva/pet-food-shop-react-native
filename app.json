@@ -20,7 +20,8 @@
         "foregroundImage": "./assets/app-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.petfoodshopreactnative"
     },
     "web": {
       "favicon": "./assets/app-icon.png"

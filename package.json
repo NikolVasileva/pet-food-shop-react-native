@@ -32,5 +32,8 @@
     "react-native-toast-message": "^2.3.3",
     "react-native-web": "^0.21.0"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "cross-env": "^10.1.0"
+  }
 }
