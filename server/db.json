@@ -24,6 +24,51 @@
       "email": "testttvam1@abv.bg",
       "password": "$2a$10$E3zmUT/CM1b9M2YaAq63wu3EuznxF1KoeKFzG8Mb.9yUlBRdZlnCW",
       "id": 5
+    },
+    {
+      "email": "demoacc@abv.bg",
+      "password": "$2a$10$usw0ChB.qM899IjQ5U/mLuUGr3w7Dj6hovfaCMBwdB715lripHkvS",
+      "id": 6
+    },
+    {
+      "email": "1234@abv.bg",
+      "password": "$2a$10$IjK85od539Ob5C47OftMzOBSk9hhNmDttc7nHVmCbs3mLjmlUASoq",
+      "id": 7
+    },
+    {
+      "email": "demo90@abv.bg",
+      "password": "$2a$10$gQ8zyf3mfSuNzJcVmxod4.y2ksRPDDAohKHi6qeXqtmpBJirepFui",
+      "id": 8
+    },
+    {
+      "email": "test55@abv.bg",
+      "password": "$2a$10$FdByZZKEmsFJOj2flR1vZeThR4l7TBPEHo3AqMahvyJvyfO6Uuxqe",
+      "id": 9
+    },
+    {
+      "email": "test60@abv.bg",
+      "password": "$2a$10$MgRJRyWgcOaNQRUlnHkUeeXeiL32Ntpk9Ot1Q2dnvUv0L9.DEAgki",
+      "id": 10
+    },
+    {
+      "email": "test78@abv.bg",
+      "password": "$2a$10$I3WxGCNmibNeZ6GFKesZTezHhNk0xCoxTVtRBnevthwKBklPtSKRm",
+      "id": 11
+    },
+    {
+      "email": "test54@abv.bg",
+      "password": "$2a$10$T.K4efv5SRhilmehJ.6J9Owb/o/8TLQXkLEXS2olYB.bJk26SgNzy",
+      "id": 12
+    },
+    {
+      "email": "test88@abv.bg",
+      "password": "$2a$10$UDjuubmn9mEdLbJaewWYMOSCAdVPslkr7s/6AUwqYBeccawlwVNKm",
+      "id": 13
+    },
+    {
+      "email": "33333@abv.bg",
+      "password": "$2a$10$MGWCoyAP6t5VLHjRqUtbE.4vN9foeCreV80NeAqm1A62l.fz/Oyky",
+      "id": 14
     }
   ],
   "brands": [
@@ -285,6 +330,53 @@
       "userId": 5,
       "products": [],
       "id": 6
+    },
+    {
+      "userId": 6,
+      "products": [],
+      "id": 7
+    },
+    {
+      "userId": 7,
+      "products": [],
+      "id": 8
+    },
+    {
+      "userId": 8,
+      "products": [],
+      "id": 9
+    },
+    {
+      "userId": 9,
+      "products": [],
+      "id": 10
+    },
+    {
+      "userId": 10,
+      "products": [],
+      "id": 11
+    },
+    {
+      "userId": 11,
+      "products": [
+        "product-10"
+      ],
+      "id": 12
+    },
+    {
+      "userId": 12,
+      "products": [],
+      "id": 13
+    },
+    {
+      "userId": 13,
+      "products": [],
+      "id": 14
+    },
+    {
+      "userId": 14,
+      "products": [],
+      "id": 15
     }
   ]
 }

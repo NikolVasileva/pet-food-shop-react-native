@@ -1,15 +1,20 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { useSecureState } from "../auth/useSecureState";
+import { useAuth } from "../auth/useAuth";
 
 export const CartContext = createContext();
 
 export default function CartProvider({ children }) {
-    const [items, setItems] = useSecureState("cart", []);
-    const [voucher, setVoucher] = useState(null);
+    const { auth } = useAuth();
+    const userId = auth?.user?.id;
 
-    const discountVoucher = "SAVE20";
+    const [items, setItems] = userId
+        ? useSecureState(`cart_${userId}`, [])
+        : [[], () => {}]; 
 
     const addToCart = (product, quantity = 1) => {
+        if (!userId) return;
+
         setItems(prevItems => {
             const existing = prevItems.find(item => item.product.id === product.id);
 
@@ -26,10 +31,12 @@ export default function CartProvider({ children }) {
     };
 
     const removeFromCart = (productId) => {
+        if (!userId) return;
         setItems(prev => prev.filter(item => item.product.id !== productId));
     };
 
     const updateQuantity = (productId, quantity) => {
+        if (!userId) return;
         setItems(prev =>
             prev.map(item =>
                 item.product.id === productId
@@ -39,51 +46,14 @@ export default function CartProvider({ children }) {
         );
     };
 
-    const clearCart = () => {
-        setItems([]);
-    };
-
-    // const total = items.reduce(
-    //     (acc, item) => acc + item.product.price * item.quantity,
-    //     0
-    // );
-
-    const applyVoucher = (code) => {
-        if (code.toUpperCase() === discountVoucher) {
-            setVoucher({ code, discount: 0.2 });
-            return true;
-        }
-        return false;
-    };
-
-    const clearVoucher = () => setVoucher(null);
-
-    const subtotal = items.reduce(
-        (acc, item) => {
-            const price = item.product.isPromo && item.product.isPromoPrice
-                ? item.product.isPromoPrice
-                : item.product.price;
-            return acc + price * item.quantity;
-        },
+    const total = items.reduce(
+        (acc, item) => acc + item.product.price * item.quantity,
         0
     );
 
-    const total = voucher ? subtotal * (1 - voucher.discount) : subtotal;
-
     return (
         <CartContext.Provider
-            value={{ 
-                items,
-                addToCart,
-                removeFromCart,
-                updateQuantity,
-                total,
-                subtotal,
-                voucher,
-                applyVoucher,
-                clearVoucher,
-                clearCart 
-            }}
+            value={{ items, addToCart, removeFromCart, updateQuantity, total }}
         >
             {children}
         </CartContext.Provider>
