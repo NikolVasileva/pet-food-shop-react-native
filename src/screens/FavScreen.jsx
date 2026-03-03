@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: "bold",
         marginBottom: 10,
-        color: "#FF6B81",
+        color: "#00B8BD",
         textAlign: "center",
     },
     emptyText: {
