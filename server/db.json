@@ -370,7 +370,9 @@
     },
     {
       "userId": 13,
-      "products": [],
+      "products": [
+        "product-2"
+      ],
       "id": 14
     },
     {

@@ -1,27 +1,14 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Alert, Platform } from "react-native";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Alert } from "react-native";
 import { useCart } from "../contexts/cart/CartProvider";
-// import { useCart } from "../contexts/cart/cartContext";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import * as Clipboard from 'expo-clipboard';
 
 export default function CartScreen({ navigation }) {
-    const { items, total, subtotal, applyVoucher, voucher, removeFromCart, updateQuantity } = useCart();
+    const { items, total, voucher, addToCart, removeFromCart, updateQuantity, applyVoucher } = useCart();
     const [voucherCode, setVoucherCode] = useState("");
-    // const [applied, setApplied] = useState(false);
 
     const discountVoucher = "SAVE20";
-
-    // const totalWithDiscount = voucher ? total * 0.8 : total;
-
-    // const applyVoucheHandler = () => {
-    //     if (voucherCode.toUpperCase() === discountVoucher) {
-    //         setApplied(true);
-    //         Alert.alert("Success", "Voucher applied! You get 20% off.");
-    //     } else {
-    //         Alert.alert("Invalid", "This voucher code is not valid.");
-    //     }
-    // };
 
     const applyVoucherHandler = () => {
         const success = applyVoucher(voucherCode);
@@ -38,6 +25,10 @@ export default function CartScreen({ navigation }) {
         Alert.alert("Copied!", `Voucher code ${discountVoucher} copied to clipboard.`);
     };
 
+    const pressDeliveryHandler = () => {
+        navigation.navigate("CartDeliveryScreen")
+    };
+
     if (items.length === 0) {
         return (
             <SafeAreaView style={styles.safe}>
@@ -49,10 +40,6 @@ export default function CartScreen({ navigation }) {
         );
     }
 
-    const pressDeliveryHandler = () => {
-        navigation.navigate("CartDeliveryScreen")
-    }
-
     return (
         <SafeAreaView style={styles.safe}>
             <Text style={styles.title}>Your Cart</Text>
@@ -61,7 +48,6 @@ export default function CartScreen({ navigation }) {
                     <View key={product.id} style={styles.cartItem}>
                         <View style={styles.itemInfo}>
                             <Text style={styles.itemName}>{product.name}</Text>
-                            {/* <Text style={styles.itemPrice}>{(product.price * quantity).toFixed(2)} €</Text> */}
                             <Text style={styles.itemPrice}>
                                 {product.isPromo && product.isPromoPrice
                                     ? `${(product.isPromoPrice * quantity).toFixed(2)} €`
@@ -72,7 +58,7 @@ export default function CartScreen({ navigation }) {
                         <View style={styles.quantityRow}>
                             <TouchableOpacity
                                 style={styles.qtyButton}
-                                onPress={() => updateQuantity(product.id, quantity - 1)}
+                                onPress={() => updateQuantity(product.id, quantity - 1, setVoucherCode)}
                                 disabled={quantity <= 1}
                             >
                                 <Text style={styles.qtyText}>−</Text>
@@ -82,14 +68,14 @@ export default function CartScreen({ navigation }) {
 
                             <TouchableOpacity
                                 style={styles.qtyButton}
-                                onPress={() => updateQuantity(product.id, quantity + 1)}
+                                onPress={() => updateQuantity(product.id, quantity + 1, setVoucherCode)}
                             >
                                 <Text style={styles.qtyText}>+</Text>
                             </TouchableOpacity>
 
                             <TouchableOpacity
                                 style={styles.removeButton}
-                                onPress={() => removeFromCart(product.id)}
+                                onPress={() => removeFromCart(product.id, setVoucherCode)}
                             >
                                 <Text style={styles.removeText}>✕</Text>
                             </TouchableOpacity>
@@ -97,7 +83,6 @@ export default function CartScreen({ navigation }) {
                     </View>
                 ))}
 
-                {/* Vaucher section*/}
                 <View style={styles.voucherSection}>
                     <Text style={{ fontWeight: "bold", marginBottom: 8 }}>Have a voucher?</Text>
 
@@ -118,12 +103,7 @@ export default function CartScreen({ navigation }) {
                     </TouchableOpacity>
                 </View>
 
-                {/* Total section*/}
                 <View style={styles.totalSection}>
-                    {/* <Text style={styles.totalText}>
-                        Total: {totalWithDiscount.toFixed(2)} €
-                        {voucher && " (20% off applied)"}
-                    </Text> */}
                     <Text style={styles.totalText}>
                         Total: {total.toFixed(2)} €
                         {voucher && ` (${voucher.discount * 100}% off applied)`}
@@ -139,166 +119,155 @@ export default function CartScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     safe: {
-        flex: 1,
-        backgroundColor: "#F7F7F7",
+      flex: 1,
+      backgroundColor: "#F7F7F7",
     },
     title: {
-        fontSize: 28,
-        fontWeight: "bold",
-        textAlign: "center",
-        marginVertical: 46,
-        color: "#00B8BD",
+      fontSize: 28,
+      fontWeight: "bold",
+      textAlign: "center",
+      marginVertical: 46,
+      color: "#00B8BD",
     },
     container: {
-        flex: 1,
-        paddingHorizontal: 16,
+      flex: 1,
+      paddingHorizontal: 16,
     },
     emptyContainer: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        paddingTop: 50,
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      paddingTop: 50,
     },
     emptyText: {
-        fontSize: 18,
-        color: "#555",
+      fontSize: 18,
+      color: "#555",
     },
     cartItem: {
-        backgroundColor: "#fff",
-        borderRadius: 16,
-        padding: 16,
-        marginBottom: 16,
-        shadowColor: "#000",
-        shadowOpacity: 0.05,
-        shadowRadius: 8,
-        elevation: 3,
+      backgroundColor: "#fff",
+      borderRadius: 16,
+      padding: 16,
+      marginBottom: 16,
+      shadowColor: "#000",
+      shadowOpacity: 0.05,
+      shadowRadius: 8,
+      elevation: 3,
     },
     itemInfo: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginBottom: 12,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginBottom: 12,
     },
     itemName: {
-        fontSize: 18,
-        fontWeight: "500",
-        flex: 1,
-        marginRight: 10,
+      fontSize: 18,
+      fontWeight: "500",
+      flex: 1,
+      marginRight: 10,
     },
     itemPrice: {
-        fontSize: 18,
-        fontWeight: "bold",
+      fontSize: 18,
+      fontWeight: "bold",
     },
     quantityRow: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 12,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 12,
     },
     qtyButton: {
-        width: 36,
-        height: 36,
-        borderRadius: 12,
-        backgroundColor: "#EFEFEF",
-        justifyContent: "center",
-        alignItems: "center",
+      width: 36,
+      height: 36,
+      borderRadius: 12,
+      backgroundColor: "#EFEFEF",
+      justifyContent: "center",
+      alignItems: "center",
     },
     qtyText: {
-        fontSize: 20,
-        fontWeight: "bold",
+      fontSize: 20,
+      fontWeight: "bold",
     },
     quantity: {
-        fontSize: 18,
-        fontWeight: "bold",
-        width: 40,
-        textAlign: "center",
+      fontSize: 18,
+      fontWeight: "bold",
+      width: 40,
+      textAlign: "center",
     },
     removeButton: {
-        marginLeft: "auto",
-        paddingHorizontal: 8,
-        paddingVertical: 4,
-        backgroundColor: "#FF6B6B",
-        borderRadius: 8,
+      marginLeft: "auto",
+      paddingHorizontal: 8,
+      paddingVertical: 4,
+      backgroundColor: "#FF6B6B",
+      borderRadius: 8,
     },
     removeText: {
-        color: "#fff",
-        fontWeight: "bold",
-        fontSize: 16,
+      color: "#fff",
+      fontWeight: "bold",
+      fontSize: 16,
     },
     totalSection: {
-        marginTop: 20,
-        padding: 16,
-        backgroundColor: "#fff",
-        borderRadius: 16,
-        shadowColor: "#000",
-        shadowOpacity: 0.05,
-        shadowRadius: 8,
-        elevation: 3,
+      marginTop: 20,
+      padding: 16,
+      backgroundColor: "#fff",
+      borderRadius: 16,
+      shadowColor: "#000",
+      shadowOpacity: 0.05,
+      shadowRadius: 8,
+      elevation: 3,
     },
     totalText: {
-        fontSize: 20,
-        fontWeight: "bold",
-        marginBottom: 12,
-        textAlign: "right",
+      fontSize: 20,
+      fontWeight: "bold",
+      marginBottom: 12,
+      textAlign: "right",
     },
     checkoutButton: {
-        backgroundColor: "#00B8BD",
-        paddingVertical: 14,
-        borderRadius: 12,
-        alignItems: "center",
+      backgroundColor: "#00B8BD",
+      paddingVertical: 14,
+      borderRadius: 12,
+      alignItems: "center",
     },
     checkoutText: {
-        color: "#fff",
-        fontSize: 18,
-        fontWeight: "bold",
+      color: "#fff",
+      fontSize: 18,
+      fontWeight: "bold",
     },
     voucherSection: {
-        marginTop: 20,
-        marginBottom: 10,
-        padding: 16,
-        backgroundColor: "#fff",
-        borderRadius: 16,
+      marginTop: 20,
+      marginBottom: 10,
+      padding: 16,
+      backgroundColor: "#fff",
+      borderRadius: 16,
     },
     voucherRow: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 8,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 8,
     },
     voucherInput: {
-        flex: 1,
-        borderWidth: 1,
-        borderColor: "#ddd",
-        borderRadius: 12,
-        padding: 10,
-        fontSize: 16,
-        backgroundColor: "#F7F7F7",
+      flex: 1,
+      borderWidth: 1,
+      borderColor: "#ddd",
+      borderRadius: 12,
+      padding: 10,
+      fontSize: 16,
+      backgroundColor: "#F7F7F7",
     },
     applyButton: {
-        paddingVertical: 10,
-        paddingHorizontal: 16,
-        backgroundColor: "#00B8BD",
-        borderRadius: 12,
-        marginTop: 12,
-        alignSelf: "flex-start",
+      paddingVertical: 10,
+      paddingHorizontal: 16,
+      backgroundColor: "#00B8BD",
+      borderRadius: 12,
+      marginTop: 12,
+      alignSelf: "flex-start",
     },
     buttonText: {
-        color: "#fff",
-        fontWeight: "bold",
+      color: "#fff",
+      fontWeight: "bold",
     },
     copyButton: {
-        marginTop: 8,
+      marginTop: 8,
     },
     copyText: {
-        color: "#00B8BD",
-        fontWeight: "bold",
+      color: "#00B8BD",
+      fontWeight: "bold",
     },
-    dashedSeparator: {
-        width: 1,
-        height: 40,
-        borderStyle: "dashed",
-        borderWidth: 1,
-        borderColor: "#00B8BD",
-        marginHorizontal: 8,
-    },
-    copyIcon: {
-        padding: 4,
-    },
-});
+  });
