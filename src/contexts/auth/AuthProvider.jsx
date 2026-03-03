@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { authService } from "../../services";
-import { usePersistedState } from "./usePersistedState";
+import { useSecureState } from "./useSecureState";
 
 export const AuthContext = createContext({
     isLoading: false,
@@ -15,7 +15,7 @@ export const AuthContext = createContext({
 });
 
 export default function AuthProvider({ children }) {
-    const [auth, setAuth] = usePersistedState("auth", {
+    const [auth, setAuth, isHydrated] = useSecureState("auth", {
         accessToken: null,
         user: null,
     });
@@ -97,6 +97,7 @@ export default function AuthProvider({ children }) {
         user: auth.user,
         auth,
         setAuth,
+        isHydrated,
         login,
         register,
         isLoading,

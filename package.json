@@ -19,6 +19,7 @@
     "expo": "~54.0.33",
     "expo-clipboard": "~8.0.8",
     "expo-linear-gradient": "~15.0.8",
+    "expo-secure-store": "~15.0.8",
     "expo-status-bar": "~3.0.9",
     "json-server": "^0.17.4",
     "json-server-auth": "^2.1.0",

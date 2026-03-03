@@ -1,20 +1,23 @@
 import { useState, useEffect } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as SecureStore from 'expo-secure-store';
 
-export function usePersistedState(key, initialValue) {
+export function useSecureState(key, initialValue) {
     const [state, setState] = useState(initialValue);
     const [isHydrated, setIsHydrated] = useState(false);
 
     useEffect(() => {
         async function loadState() {
             try {
-                const storedValue = await AsyncStorage.getItem(key);
+                const storedValue = await SecureStore.getItemAsync(key)
+                console.log("SecureStore methods:", Object.keys(SecureStore));
+                console.log(storedValue)
 
-                if (storedValue) {
+                if (storedValue != null) {
                     setState(JSON.parse(storedValue));
                 }
             } catch (error) {
-                console.log("Failed to load state", error);
+                console.error("Failed to load state", error);
+
             } finally {
                 setIsHydrated(true);
             }
@@ -29,9 +32,9 @@ export function usePersistedState(key, initialValue) {
                 value instanceof Function ? value(state) : value;
 
             setState(valueToStore);
-            await AsyncStorage.setItem(key, JSON.stringify(valueToStore));
+            await SecureStore.setItemAsync(key, JSON.stringify(valueToStore));
         } catch (error) {
-            console.log("Failed to save state", error);
+            console.error("Failed to load state", error);
         }
     };
 
